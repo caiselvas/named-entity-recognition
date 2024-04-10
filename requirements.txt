@@ -1,0 +1,8 @@
+numpy
+nltk
+scikit-learn
+svgling
+python-crfsuite
+spacy
+matplotlib
+seaborn
