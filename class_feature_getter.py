@@ -1,7 +1,7 @@
 from typing import Any
 
 class FeatureGetter:
-	def __init__(self, params: list) -> None:
+	def __init__(self, params: list = []) -> None:
 		self.__params = params
 
 	def __call__(self, token, idx) -> Any:
