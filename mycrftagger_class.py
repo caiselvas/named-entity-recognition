@@ -105,6 +105,8 @@ class MyCRFTagger(TaggerI):
 			self._names = open("data/names_esp.txt").readlines()
 			self._surnames = open("data/surnames_esp.txt").readlines()
 
+		self._cities = open("data/cities.txt").readlines()
+
 	def set_model_file(self, model_file):
 		self._model_file = model_file
 		self._tagger.open(self._model_file)
@@ -220,6 +222,16 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("PREV_SURNAME")
 			if idx < len(tokens) - 1 and tokens[idx + 1] in self._surnames:
 				feature_list.append("NEXT_SURNAME")
+
+		# Cities
+		if token in self._cities:
+			feature_list.append("CITY")
+
+			# Previous and next city
+			if idx > 0 and tokens[idx - 1] in self._cities:
+				feature_list.append("PREV_CITY")
+			if idx < len(tokens) - 1 and tokens[idx + 1] in self._cities:
+				feature_list.append("NEXT_CITY")
 
 		# # Previous tag prediction
 		# if idx > 0:
