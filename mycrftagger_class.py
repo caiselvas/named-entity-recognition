@@ -94,7 +94,16 @@ class MyCRFTagger(TaggerI):
 		
 		self._pos_tagger = pos_tag
 		self._lemmatizer = WordNetLemmatizer()
+
+		assert language in ["ned", "esp"], "Language should be either 'ned' or 'esp'"
 		self._language = language
+		
+		if self._language == "ned":
+			self._names = open("data/names_ned.txt").readlines()
+			self._surnames = open("data/surnames_ned.txt").readlines()
+		elif self._language == "esp":
+			self._names = open("data/names_esp.txt").readlines()
+			self._surnames = open("data/surnames_esp.txt").readlines()
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -192,6 +201,25 @@ class MyCRFTagger(TaggerI):
 		# Lemma
 		feature_list.append("LEMMA_" + self._lemmatizer.lemmatize(token))
 
+		# Gazetteer
+		# Names and surnames
+		if token in self._names:
+			feature_list.append("NAME")
+
+			# Previous and next name
+			if idx > 0 and tokens[idx - 1] in self._names:
+				feature_list.append("PREV_NAME")
+			if idx < len(tokens) - 1 and tokens[idx + 1] in self._names:
+				feature_list.append("NEXT_NAME")
+
+		if token in self._surnames:
+			feature_list.append("SURNAME")
+
+			# Previous and next surname
+			if idx > 0 and tokens[idx - 1] in self._surnames:
+				feature_list.append("PREV_SURNAME")
+			if idx < len(tokens) - 1 and tokens[idx + 1] in self._surnames:
+				feature_list.append("NEXT_SURNAME")
 
 		# # Previous tag prediction
 		# if idx > 0:
