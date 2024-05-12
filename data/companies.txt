@@ -1,0 +1,6018 @@
+Apple
+Saudi Aramco
+Microsoft
+Alphabet
+Google
+Amazon
+Tesla
+Berkshire Hathaway
+Meta
+Facebook
+NVIDIA
+TSMC
+UnitedHealth
+Tencent
+Johnson & Johnson
+Visa
+Walmart
+JPMorgan Chase
+Samsung
+Exxon Mobil
+Procter & Gamble
+Nestlé
+Roche
+Chevron
+Home Depot
+Bank of America
+Kweichow Moutai
+LVMH
+Mastercard
+Pfizer
+AbbVie
+Eli Lilly
+Coca-Cola
+BHP Group
+ASML
+ICBC
+Novo Nordisk
+Walt Disney
+Costco
+Broadcom
+Cisco
+Alibaba
+Toyota
+Verizon
+Pepsico
+Thermo Fisher Scientific
+Reliance Industries
+Oracle
+Comcast
+Abbott Laboratories
+L'Oréal
+Merck
+Accenture
+Adobe
+Shell
+Salesforce
+Danaher
+Wells Fargo
+Astrazeneca
+Novartis
+Nike
+China Construction Bank
+Intel
+CATL
+United Parcel Service
+Tata Consultancy Services
+McDonald
+AMD
+Union Pacific Corporation
+AT&T
+Agricultural Bank of China
+QUALCOMM
+CM Bank
+Charles Schwab
+Nextera Energy
+T-Mobile US
+Texas Instruments
+Royal Bank Of Canada
+Morgan Stanley
+Lowe's Companies
+Netflix
+Bristol-Myers Squibb
+PetroChina
+Linde
+Raytheon Technologies
+Prosus
+Toronto Dominion Bank
+Medtronic
+Philip Morris
+CVS Health
+Bank of China
+S&P Global
+Hermès
+Ping An Insurance
+China Mobile
+American Express
+SAP
+TotalEnergies
+HSBC
+Commonwealth Bank
+Amgen
+Sanofi
+Honeywell
+ConocoPhillips
+Sony
+AIA
+Lockheed Martin
+Deere & Company
+Intuit
+Caterpillar
+Unilever
+Anheuser-Busch Inbev
+Siemens
+PayPal
+Rio Tinto
+IBM
+Anthem
+Goldman Sachs
+Prologis
+Dior
+HDFC Bank
+Applied Materials
+Citigroup
+American Tower
+Keyence
+Meituan
+BlackRock
+Diageo
+Nippon Telegraph & Telephone
+SABIC
+GlaxoSmithKline
+Infosys
+Equinor
+Al Rajhi Bank
+ServiceNow
+Boeing
+General Electric
+Wuliangye Yibin
+Volkswagen
+Charter Communications
+Target
+China Life Insurance
+Intuitive Surgical
+Vale
+Airbnb
+Schneider Electric
+Stryker Corporation
+British American Tobacco
+CSL
+BP
+Altria Group
+Starbucks
+Allianz
+BYD
+Estee Lauder
+Enbridge
+Petrobras
+Deutsche Telekom
+Airbus
+Chubb
+Zoetis
+Automatic Data Processing
+Scotiabank
+Canadian National Railway
+Merck KGaA
+CME Group
+Mondelez
+The Saudi National Bank
+3M
+Glencore
+Duke Energy
+Booking.com
+Brookfield Asset Management
+HCA Healthcare
+U.S. Bancorp
+Mitsubishi UFJ Financial
+Blackstone Group
+Micron Technology
+Truist Financial
+PNC Financial Services
+Analog Devices
+China Yangtze Power
+EssilorLuxottica
+Air Liquide
+Marsh & McLennan Companies
+Inditex
+Jingdong Mall
+Bank of Montreal
+KDDI
+China Shenhua Energy
+CSX Corporation
+Crown Castle
+Sinopec
+Kering
+Becton Dickinson
+TJX Companies
+Gilead Sciences
+Southern Company
+National Australia Bank
+Cigna
+Postal Savings Bank of China
+Fomento Económico Mexicano
+Tokyo Electron
+Regeneron Pharmaceuticals
+Canadian Pacific Railway
+Intercontinental Exchange
+Bank Central Asia
+Mercedes-Benz
+Northrop Grumman
+Shopify
+Freeport-McMoRan
+Iberdrola
+LG Energy Solution
+EOG Resources
+Siemens Healthineers
+Canadian Natural Resources
+Zurich Insurance Group
+Anglo American
+Gazprom
+LONGi Green Energy Technology
+ABB
+Recruit
+Dominion Energy
+Enel
+Lam Research
+BNP Paribas
+General Dynamics
+AXA
+Illinois Tool Works
+SoftBank
+Hikvision
+Ford
+Waste Management
+Norfolk Southern
+Edwards Lifesciences
+Aon
+Industrial Bank
+Investor AB
+Walmex
+Public Storage
+DBS
+ICICI Bank
+Atlas Copco
+Activision Blizzard
+Maersk
+SK Hynix
+Midea
+Oriental Land
+Hindustan Unilever
+Colgate-Palmolive
+Equinix
+Sherwin-Williams
+Compagnie Financière Richemont
+Progressive
+Shin-Etsu Chemical
+Vertex Pharmaceuticals
+Fiserv
+Newmont
+Bayer
+Schlumberger
+Atlassian
+Moderna
+Foshan Haitian Flavouring and Food
+Uber
+America Movil
+Dassault Systèmes
+Boston Scientific
+General Motors
+Nintendo
+Eaton
+Block
+UBS
+Saudi Telecom Company
+Deutsche Post
+State Bank of India
+Hong Kong Exchanges & Clearing
+Workday
+CIBC
+FedEx
+Mindray
+Moody's
+Santander
+Pioneer Natural Resources
+Capital One
+Snowflake
+Vinci
+Emerson
+Humana
+BASF
+London Stock Exchange
+Nutrien
+National Grid
+ANZ Bank
+Ørsted
+Fidelity National Information Services
+RELX
+Reckitt Benckiser
+Palo Alto Networks
+Hapag-Lloyd
+Southern Copper
+Adyen
+Bharti Airtel
+Enterprise Products
+MetLife
+Bank of Communications
+Housing Development Finance Corporation
+Marriott International
+TC Energy
+Keurig Dr Pepper
+Chugai Pharmaceutical
+Heineken
+Bajaj Finance
+Westpac Banking
+Occidental Petroleum
+Daikin
+Macquarie
+BMW
+Liberty Bancshares
+Fast Retailing
+MediaTek
+Verbund AG
+CNOOC
+Marvell Technology Group
+ENI
+Sea
+Garena
+China Telecom
+Pernod Ricard
+NetEase
+Thomson Reuters
+Itōchū Shōji
+Lonza
+Nongfu Spring
+Centene
+Banco Santander Brasil
+China Tourism Group Duty Free
+Foxconn
+Snap
+Sempra Energy
+Bank Rakyat Indonesia
+Air Products and Chemicals
+Dollar General
+BCE
+L3Harris Technologies
+KLA
+Simon Property Group
+Illumina
+American Electric Power
+Safran
+Stellantis
+Itaú Unibanco
+Ecolab
+American International Group
+Archer Daniels Midland
+Sumitomo Mitsui Financial Group
+Kraft Heinz
+Roper Technologies
+Honda
+Cognizant Technology Solutions
+Takeda Pharmaceutical
+Vmware
+Denso
+NXP Semiconductors
+O'Reilly Automotive
+Dow
+Jardine Matheson
+MercadoLibre
+Kotak Mahindra Bank
+Fortinet
+Nidec
+Suncor Energy
+Xiaomi
+Sika
+Lloyds Banking Group
+IHS Markit
+Marathon Petroleum
+KKR & Co.
+Samsung Biologics
+Hitachi
+Paychex
+CITIC Securities
+Vodafone
+Ping An Bank
+Baidu
+Amphenol
+The Travelers Companies
+Exelon Corporation
+Synopsys
+McKesson
+Adidas
+Intesa Sanpaolo
+Johnson Controls
+The Hershey Company
+Ambev
+Grupo México
+Barrick Gold
+Wipro
+Alimentation Couche-Tard
+CrowdStrike
+Constellation Brands
+Maybank
+East Money Information
+Autodesk
+HCL Technologies
+Walgreens Boots Alliance
+Chipotle Mexican Grill
+TE Connectivity
+Prudential Financial
+Kinder Morgan
+DSV
+Nordea Bank
+IDEXX Laboratories
+Wesfarmers
+7-Eleven
+Bank of New York Mellon
+Muyuan Foods
+Mitsui Bussan
+Welltower
+Republic Services
+IQVIA
+Pinduoduo
+Zijin Mining
+Kroger
+Kimberly-Clark
+Coinbase
+Murata Seisakusho
+Lukoil
+Dell
+Aflac
+DexCom
+Hilton Worldwide
+Naver
+Corteva
+Baxter
+Luxshare Precision
+Prudential
+Banco Bradesco
+Sysco
+Vonovia
+Cintas
+Hoya
+Monster Beverage
+Maaden
+Cadence Design Systems
+Compass Group
+Manulife Financial
+Digital Realty
+OCBC Bank
+Wanhua Chemical
+Infineon
+Realty Income
+Tokio Marine
+Fortescue
+Agilent Technologies
+ITC
+Baker Hughes
+Microchip Technology
+Xcel Energy
+Williams Companies
+Munich RE
+General Mills
+lululemon athletica
+UOB
+AutoZone
+Datadog
+Adani Green Energy
+Asian Paints
+Dupont De Nemours
+MSCI
+Barclays
+WuXi AppTec
+Valero Energy
+Bank of China
+ING
+S.F. Express
+BioNTech
+Motorola Solutions
+Banco Bilbao Vizcaya Argentaria
+Danone
+Nornickel
+Carrier
+Volvo Group
+Jiangsu Hengrui Medicine
+Kakao
+HP
+Alcon
+Global Payments
+DMart
+Shanghai Pudong Development Bank
+Apollo Global Management
+Givaudan
+SMC
+Lucid Motors
+Yili Group
+Nucor
+Ferrari
+COSCO Shipping
+Arista Networks
+STMicroelectronics
+Crédit Agricole
+Trane Technologies
+Hexagon
+Parker-Hannifin
+Daiichi Sankyō
+Allstate
+Devon Energy
+Bank of Ningbo
+Telus
+Hang Seng Bank
+Ecopetrol
+Waste Connections
+SBA Communications
+ResMed
+Experian
+Phillips 66
+TransDigm
+Old Dominion Freight Line
+Sydney Airport
+LyondellBasell
+Capgemini
+Dollar Tree
+Budweiser APAC
+Mizuho Financial Group
+Constellation Software
+Saudi Electricity
+Sberbank
+Ferguson
+Equity Residential
+Chunghwa Telecom
+Kühne + Nagel
+Electronic Arts
+AvalonBay Communities
+PSEG
+DNB
+Telstra
+PTT PCL
+Yum! Brands
+Cement Roadstone Holding
+Cheniere Energy
+Halliburton
+Japan Post Bank
+MPLX
+Sun Hung Kai Properties
+Hyundai
+Great Wall Motors
+Bajaj Finserv
+Arthur J. Gallagher & Co.
+Z Holdings
+YANGHE
+Fanuc
+Adani Transmission
+NatWest Group
+MTR Corporation
+Larsen &amp; Toubro
+Consolidated Edison
+Telkom Indonesia
+Rivian
+Compagnie de Saint-Gobain
+United Heavy Machinery
+SAIC Motor
+Fifth Third Bank
+Formosa Petrochemical
+Fastenal
+T. Rowe Price
+NIO
+Woolworths Group
+GlobalFoundries
+Sun Life Financial
+Orange
+Discover Financial Services
+Singtel
+Tyson Foods
+Otis Worldwide
+EDF
+EQT
+Corning
+eBay
+Deutsche Börse
+AmerisourceBergen
+Japan Tobacco
+Cellnex Telecom
+China Pacific Insurance
+State Street Corporation
+Anhui Conch Cement
+Foxconn Industrial Internet
+Swisscom
+Partners Group
+Nu Holdings
+Generali
+Ahold Delhaize
+Ross Stores
+Ameriprise Financial
+Paccar
+Kuaishou Technology
+Energy Transfer Partners
+Franco-Nevada
+E.ON
+Henkel
+Alexandria Real Estate Equities
+SVB Financial Group
+UDR Apartments
+Fubon Financial
+Cenovus Energy
+Verisk Analytics
+Loblaws
+Neste
+ENGIE
+Anta Sports
+Align Technology
+Rockwell Automation
+Goodman Group
+Gree Electric Appliances
+International Flavors & Fragrances
+Astellas Pharma
+KBC
+Ashtead
+Titan Company
+WEC Energy Group
+Riyad Bank
+DSM
+Ametek
+Mettler-Toledo
+BAE Systems
+Zoom
+Evergreen Marine
+Brown Forman
+Japan Post Holdings
+Novatek
+Nokia
+Hess
+Maruti Suzuki India
+Vestas Wind Systems
+Imperial Oil
+Techtronic Industries
+CBRE Group
+Weyerhaeuser
+First Republic Bank
+PPG Industries
+Oneok
+Ericsson
+Cloudflare
+Holcim
+Eversource Energy
+Transurban
+Biogen
+Ball Corporation
+WuXi Biologics
+Zscaler
+Cathay Financial Holding
+Coupang
+Fujitsu
+Aptiv
+Cummins
+Sun Pharmaceutical
+Coloplast
+Expedia
+Equifax
+Axis Bank
+KONE
+ArcelorMittal
+American Water Works
+Tradeweb
+Assa Abloy
+Copart
+Philips
+West Pharma
+D. R. Horton
+Cerner
+Nasdaq
+Amadeus IT Group
+Hormel Foods
+China Overseas Land &amp; Investment
+FirstRand
+Tesco
+Agnico Eagle Mines
+Airports of Thailand
+Rogers Communication
+Extra Space Storage
+Sandvik
+RWE
+Central Japan Railway
+Oil &amp; Natural Gas
+Kansas City Southern
+Hong Kong and China Gas
+Great-West Lifeco
+DoorDash
+Twitter
+CaixaBank
+LG Chem
+McCormick & Company
+National Bank of Canada
+Veeva Systems
+Keysight
+Bridgestone
+NTT Data
+Bank Mandiri
+People’s Insurance Company of China
+Willis Towers Watson
+Lindt
+Interactive Brokers
+Samsung SDI
+CK Hutchison Holdings
+Swiss Re
+Wolters Kluwer
+WEG ON
+Sartorius
+Brookfield Renewable Partners
+Naturgy
+Royalty Pharma
+Restaurant Brands International
+Thales
+The Trade Desk
+Rosneft
+Telefónica
+Tractor Supply
+Ansys
+Intact Financial
+Nan Ya Plastics
+Saudi Arabian Fertilizer Company
+FirstEnergy
+Sampo
+Match Group
+EnBW Energie
+Pacific Gas and Electric
+Legrand
+Seagen
+BOE Technology
+BTG Pactual
+CLP Group
+LabCorp
+Porsche SE
+W. W. Grainger
+AIER Eye Hospital
+Zimmer Biomet
+Edison International
+China Everbright Bank
+Deutsche Bank
+Las Vegas Sands
+DTE Energy
+Canon
+H&M
+Vanke
+Mid-America Apartment Communities
+Sirius XM
+Adani Enterprises
+Live Nation
+BT Group
+Invitation Homes
+SMIC
+Lennar
+China Securities
+Mitsubishi Electric
+Spotify
+Flutter Entertainment
+Southwest Airlines
+Stanley Black &amp; Decker
+Formosa Plastics
+Vulcan Materials
+Church & Dwight
+Martin Marietta
+Fujifilm
+ON Semiconductor
+Cheniere Energy
+Horizon Therapeutics
+United Rentals
+Ventas
+Skandinaviska Enskilda Banken
+Roblox
+Diamondback Energy
+SSE
+Schindler Group
+Delta Electronics
+Okta
+CK Asset Holdings
+Liberty Broadband
+Northern Trust
+China Minsheng Bank
+Shenzhen Inovance
+The Mosaic Company
+Best Buy
+Terumo
+Twilio
+M&T Bank
+Sany Heavy Industry
+UltraTech Cement
+Essex Property Trust
+Gartner
+ORIX
+Ameren
+CDW Corporation
+EDP Renováveis
+Fortis
+Entergy
+Michelin
+Kia
+The Hartford
+United Microelectronics
+Sonova
+Fresenius
+Olympus
+CoStar Group
+Aena
+KeyCorp
+UniCredit
+Komatsu
+Panasonic
+VeriSign
+Li Auto
+Steris
+Unity Software
+East Japan Railway
+Dover
+Nestlé India
+Woodside Petroleum
+Dai-ichi Life Holdings
+Aviva
+Huntington Bancshares
+Naspers
+Huatai Securities
+Teleperformance
+Evolution Gaming
+Hewlett Packard Enterprise
+Longfor Group
+Endesa
+Straumann
+MongoDB
+Palantir
+Coca-Cola European Partners
+Genmab
+Regions Financial
+Wilmar
+Wheaton Precious Metals
+Veolia
+Geberit
+The Saudi British Bank
+Beiersdorf
+Kubota
+Enphase Energy
+Daimler Truck
+Epiroc
+Fox Corporation
+Nomura Research Institute
+Garmin
+ZTO Express
+Duke Realty
+Power Corporation of Canada
+VF Corporation
+Sumitomo
+Unicharm
+Continental Resources
+UCB
+Avantor
+ZoomInfo
+China Steel
+Albemarle
+Mengniu Dairy
+Citizens Financial Group
+Rocket Companies
+CNH Industrial
+Cincinnati Financial
+CRRC
+Toyota Industries
+Delta Air Lines
+Teck Resources
+J. B. Hunt
+PerkinElmer
+Fortive
+Kellogg's
+Raymond James
+ČEZ Group
+Nexon
+Telenor
+SGS
+VICI Properties
+Sun Communities
+JSW Steel
+Credit Suisse
+China Railway Group
+Zebra Technologies
+Celltrion
+Renesas Electronics
+Société Générale
+Sociedad Química y Minera
+Carnival
+First Quantum Minerals
+ULTA Beauty
+XPeng
+Shimano
+Adani Ports & SEZ
+Skyworks Solutions
+Tata Motors
+Hannover Rück
+Tata Steel
+Ferrovial
+CF Industries
+Pembina Pipeline
+Teledyne
+Rede D'Or Sao Luiz
+SS&C Technologies
+CGI
+Banorte
+Marubeni
+Ingersoll Rand
+Bill.com
+Kyocera
+Repsol
+NIBE Industrier
+Æon
+ViacomCBS
+Galaxy Entertainment
+Boston Properties
+PPL
+CMS Energy
+Henderson Land Development
+Powergrid Corporation of India
+Carlsberg
+Ryanair
+Seagate Technology
+Svenska Handelsbanken
+Cooper Companies
+Coterra Energy
+Waters Corporation
+Fresenius Medical Care
+BeiGene
+Kaō
+Shiseido
+Carvana
+Volvo Car
+Standard Chartered
+Shionogi
+MS&amp;AD Insurance
+Copel
+Synchrony
+Nippon Paint
+Markel
+Brookfield Infrastructure Partners
+TransUnion
+Banco do Brasil
+MFHC
+Novozymes
+Tech Mahindra
+EDP Group
+HubSpot
+Alinma Bank
+Otsuka Holdings
+POSCO
+Alnylam Pharmaceuticals
+China Communications Construction
+Imperial Brands
+Swiss Life
+CTBC Financial Holding
+George Weston
+Molina Healthcare
+Brown &amp; Brown
+Paycom
+Monolithic Power Systems
+NetApp
+Nuance Communications
+Fleetcor
+CenterPoint Energy
+Snam
+China Resources Beer
+Check Point Software
+ICON plc
+Astra International
+Essity
+CP All
+China Merchants Securities
+Santos
+POOLCORP
+Generac Power Systems
+Signature Bank
+Arch Capital
+Air China
+Splunk
+Quanta Services
+Power Financial
+KB Financial Group
+HEICO
+Healthpeak Properties
+Hologic
+Norsk Hydro
+LG Electronics
+Royal Caribbean
+Genuine Parts Company
+Akamai
+Aristocrat
+Principal
+Vedanta
+UPM-Kymmene
+Itaúsa
+Albertsons
+Catalent
+Vodacom
+Daiwa House
+Coles Group
+Teradyne
+Swedbank
+Avangrid
+Amcor
+MGM Resorts
+Hindustan Zinc
+Camden Property Trust
+Orient Overseas Container Line
+Nippon Yūsen
+Magna International
+NortonLifeLock
+Link REIT
+Liberty Media
+China Tower
+Broadridge Financial Solutions
+Sunny Optical
+Warner Music Group
+Tenaris
+SolarEdge
+Chow Tai Fook
+AppLovin
+Siam Cement
+Newcrest Mining
+Bandai Namco
+Constellation Energy
+Omnicom
+PPD
+NTPC Limited
+W. R. Berkley
+Fortum
+Banque Saudi Fransi
+Wabtec
+Quest Diagnostics
+Toshiba
+Expeditors
+Rollins
+Telefonica Brasil
+3i Group
+Jacobs Engineering
+Take 2 Interactive
+Bio-Rad Laboratories
+CNP Assurances
+Siemens Energy
+Nippon Steel
+CK Infrastructure
+Hindalco Industries
+Entegris
+Formosa Chemicals &amp; Fibre
+Marathon Oil
+Tyler Technologies
+Trimble
+Nissan
+ZTE
+Exor
+Athene Holding
+International Paper
+Dollarama
+Shinhan Financial Group
+Suzuki Motor
+Incyte
+Yum China
+CarMax
+China Merchants Shekou Industrial Zone
+Yang Ming
+JBS
+Hapvida
+B3
+XP Inc.
+FMC
+Darden Restaurants
+JDE Peet's
+Suzano
+Icahn Enterprises
+Nitori Holdings
+Ajinomoto
+Clorox
+Terna
+Teleflex
+Pidilite
+Aluminum Corporation of China
+South32
+NVR
+Dish Network
+Symrise
+Crown Holdings
+Weichai Power
+Secom
+FactSet
+Chewy
+Caesars Entertainment
+Bio-Techne
+OMV
+Etsy
+Hydro One
+Westlake Chemical
+Loews Corporation
+Atmos Energy
+Bunge
+Deutsche Wohnen
+Inpex
+Qualtrics
+WSP Global
+Divis Laboratories
+AkzoNobel
+Ubiquiti
+American Homes 4 Rent
+Conagra Brands
+Carlyle Group
+W. P. Carey
+Huaneng Power
+Textron
+Alliant Energy
+Xylem
+ASE Group
+Celanese
+GBL
+Shaw Communications
+Sompo Holdings
+Hyundai Mobis
+Targa Resources
+Grupo Elektra
+ASM International
+Indian Oil
+American Campus Communities
+Carrefour
+WPP
+China Southern Airlines
+Evergy
+Wan Hai Lines
+Pinterest
+Siemens Gamesa
+Insulet
+Kakao Pay
+Telia Company
+Alcoa
+Bank Leumi
+China Railway Construction
+Publicis Groupe
+Cardinal Health
+Brookfield Property Partners
+Bank Jago
+Argenx
+AES
+DocuSign
+Sysmex
+Afterpay
+Stora Enso
+Atlantia
+Leidos
+IDEX
+Kimco Realty
+China Unicom
+Equity LifeStyle Properties
+James Hardie Industries
+Nexi
+Tsingtao
+Packaging Corporation of America
+Samsung Heavy Industries
+HDFC Life
+E.SUN Bank
+Bolloré
+NN Group
+Trip.com
+Howmet Aerospace
+BioMarin Pharmaceutical
+J.M. Smucker Company
+Shinkin Central Bank
+Eisai
+Coal India
+Iron Mountain
+Domino's Pizza
+Western Digital
+Poste Italiane
+Danske Bank
+Zendesk
+SBI Life Insurance
+Gold Fields
+Ally
+Shanghai Airport
+Smith & Nephew
+Israel Chemicals
+Swire Properties
+Toyota Tsusho
+Larsen &amp; Toubro Infotech
+Sasol
+Power Assets
+Eastman Chemical
+Steel Dynamics
+Chandra Asri Petrochemical
+Avery Dennison
+Roku
+Advantest
+Fidelity National Financial
+Moncler
+Metro
+KPN
+Apache Corporation
+Wharf REIC
+Franklin Resources
+Interpublic Group
+Continental
+Grasim Industries
+Qorvo
+New China Life Insurance
+Bouygues
+IHH Healthcare
+Sekisui House
+Kikkoman
+Erste Group Bank
+NICE
+Sofina
+Carl Zeiss Meditec
+Aéroports de Paris
+Cleveland-Cliffs
+Geely
+Jerónimo Martins
+Tourmaline Oil
+Uni-President Enterprises
+Lasertec
+Formula One Group
+Zalando
+OBIC
+GoDaddy
+Yonyou
+Jack Henry &amp; Associates
+Alfa Laval
+Taiwan Mobile
+Amundi
+Vivendi
+Burlington Stores
+Credicorp
+MarketAxess
+JD Health
+Plug Power
+Lyft
+Masco
+Bajaj Auto
+SK Innovation
+Freddie Mac
+Prada
+China Eastern Airlines
+Campbell Soup
+Charles River Laboratories
+UiPath
+Dabur
+LKQ Corporation
+kyowa Kirin
+Taiwan Cooperative Financial
+Almarai
+LPL Financial
+Host Hotels & Resorts
+Mowi
+Nomura Holdings
+Korea Electric Power
+Santander Consumer USA
+C. H. Robinson
+Bureau Veritas
+Ares Management
+Tenaga Nasional
+ESR
+CNA Financial
+Kirin Holdings
+Abiomed
+Omron
+Hua Xia Bank
+Citrix Systems
+Sumitomo Mitsui Trust Holdings
+EPAM Systems
+REA Group
+AerCap
+Knorr-Bremse
+Polyus
+News Corp
+Evonik Industries
+First Horizon National
+Nordson
+Emera
+Builders FirstSource
+Ono Pharmaceutical
+Swatch
+Sibanye-Stillwater
+Quanta Computer
+Mahindra &amp; Mahindra
+Shandong Gold Mining
+Liberty Global
+Enel Américas
+Worldline
+Robert Half
+FICO
+PUMA
+Barry Callebaut
+Entain
+Carlisle Companies
+Bank Hapoalim
+Advance Auto Parts
+ENEOS Holdings
+Gjensidige Forsikring
+Cboe
+Viatris
+Asahi Kasei
+Discovery
+Hasbro
+Suntory
+Dassault Aviation
+Westrock
+Wayfair
+TDK
+Yara International
+NiSource
+Subaru
+Thai Beverage
+Medical Properties Trust
+Darling Ingredients
+Adevinta
+SG Holdings
+Elanco
+Siam Commercial Bank
+Comerica
+Logitech
+Ocado
+PTC
+InterContinental Hotels Group
+Chailease Holding
+bioMérieux
+Sonic Healthcare
+Grupo Bimbo
+Essential Utilities
+Ovintiv
+Equitable Holdings
+Unimicron
+First Financial Holding
+Brenntag
+QBE Insurance
+MTU Aero Engines
+Amerco
+CyrusOne
+American Financial Group
+Henry Schein
+Boliden
+Reliance Steel &amp; Aluminum
+Lundbergföretagen
+Vifor Pharma
+HeidelbergCement
+First Citizens BancShares
+Mitsui O.S.K. Lines
+VEREIT
+Rakuten
+Bank Albilad
+Graco
+F5 Networks
+Industrivarden
+Samsung Electro-Mechanics
+Zillow
+Avis Budget Group
+AMEC
+Sodexo
+Rexford Industrial
+Fairfax Financial
+United Airlines Holdings
+Campari
+Lenovo
+Bath &amp; Body Works
+Doximity
+Grab Holdings
+CubeSmart
+Edenred
+Fortune Brands Home &amp; Security
+Cognex
+Regency Centers
+Cipla
+DLF
+Kasikornbank
+NEC Corp
+ASX
+Fastighets AB Balder
+Jones Lang LaSalle
+ICA Gruppen
+Hana Financial Group
+Morningstar
+Watsco
+Chongqing Changan
+Randstad
+OpenText
+Booz Allen Hamilton
+Country Garden
+Julius Bär
+Lufax
+PKO Bank Polski
+WiseTech Global
+Talanx
+Molson Coors
+Dynatrace
+Hotai Motor
+Lamar Advertising
+Gaming and Leisure Properties
+PulteGroup
+Singapore Airlines
+Hongkong Land
+Lumen
+Life Storage
+ABN AMRO
+Snap-on
+Universal Health Services
+Aker BP
+Whirlpool
+Arca Continental
+Swedish Match
+New Hope Liuhe
+KE Holdings
+Coca-Cola FEMSA
+Kesko
+Juniper Networks
+Lifco
+Siemens India
+East West Bancorp
+China Development Financial
+Wolfspeed
+Everest Re
+Lincoln National Corporation
+Bank Negara Indonesia
+Shree Cement
+Centrais Electricas Brasileiras
+Banco de Chile
+Arab National Bank
+AECOM
+Grifols
+Getinge
+Cochlear
+Fisher & Paykel Healthcare
+West Japan Railway
+SK Group
+Williams-Sonoma
+Dentsu
+Regal Rexnord
+Delivery Hero
+KION Group
+Yuanta Financial Holding
+Resona Holdings
+Krafton
+Nan Ya PCB
+Solvay
+Paylocity
+Monotaro
+DaVita
+Mitsubishi Heavy Industries
+Hua Nan Financial Holdings
+Synnex
+SK Telecom
+Yanbu National Petrochemical
+Dentsply Sirona
+CapitaLand Mall Trust
+A. O. Smith
+RPM International
+Hill-Rom
+Webster Financial
+Red Eléctrica
+Ramsay Health Care
+Taiwan Cement
+Kirkland Lake Gold
+Cameco
+Annaly Capital Management
+Qiagen
+Zynga
+LG Household &amp; Health Care
+Xero
+Exact Sciences
+Brambles
+Advantech
+Rolls-Royce Holdings
+OTP Bank
+Britannia Industries
+Lundin Energy
+AngloGold Ashanti
+Suncorp
+Azrieli Group
+Hong Kong Telecom
+Vistra
+Concentrix
+Magellan Midstream Partners
+SBI Card
+Tatneft
+Nitto Denko
+Recordati
+Hyatt Hotels
+Texas Pacific Land Trust
+Bharat Petroleum
+Service Corporation International
+Algonquin Power & Utilities
+INWIT
+Saputo
+ZIM Integrated Shipping Services
+Umicore
+Allegion
+Kingdom Holding
+MGM Growth Properties
+Zions Bancorporation
+Bentley Systems
+Euronext
+ANA Holdings
+Vail Resorts
+Sealed Air
+Amdocs
+RingCentral
+Clarivate
+Chesapeake Energy
+Hubbell
+Japan Exchange Group
+GFL Environmental
+Godrej
+Banco Santander-Chile
+Floor &amp; Decor
+Covestro
+Globe Life
+Megacable Holdings
+Lennox
+ASUS
+Novatek Microelectronics
+AVEVA
+Isuzu
+Maravai LifeSciences
+AGCO
+Galp Energia
+Hansoh Pharma
+Phillips 66 Partners
+Sage Group
+Severstal
+EQT Corporation
+Gerdau
+Eiffage
+Mondi
+Tata Power
+Jazz Pharmaceuticals
+Saudi International Petrochemical Company
+Sipchem
+Globant
+West Fraser Timber
+Traton
+Tele2
+Ares Capital
+Skanska
+Hainan Airlines
+Mitsubishi Chemical Holdings
+Assurant
+Lithia Motors
+Yaskawa
+Bayan Resources
+NRG Energy
+Acciona
+Invesco
+New World Development Company
+Western Midstream
+Vornado Realty Trust
+Bruker
+Rémy Cointreau
+SRF Limited
+Tenet Healthcare
+Unibail-Rodamco-Westfield
+GlobalWafers
+American Airlines
+AEGON
+Dick's Sporting Goods
+LEG Immobilien
+Novolipetsk Steel
+Sino Land
+Nemetschek
+Hertz
+Federal Realty Investment Trust
+InterGlobe Aviation
+Middleby
+Silergy
+Largan Precision
+Olaplex
+Elang Mahkota Teknologi
+Empire Company
+Chr. Hansen
+AspenTech
+Repligen
+Sino Biopharmaceutical
+Elbit Systems
+Mizrahi-Tefahot
+LG Corp
+ST Engineering
+Newell Brands
+Pan Pacific
+Aramark
+PGNiG
+Meridian Energy
+Tata Consumer Products
+FinecoBank
+Ceridian
+Bancolombia
+Elisa
+IndusInd Bank
+Ipsen
+Owens Corning
+Toast
+Sumitomo Denki Kōgyō
+Disco Corp.
+Cable One
+Nippon Building Fund
+Pentair
+Tapestry
+Apollo Hospitals
+Robinhood
+Getlink
+Oracle Corp Japan
+AGC
+Cullen/Frost Bankers
+Black Knight
+Demant
+Commerzbank
+Daiwa Securities Group
+Erie Indemnity
+Pure Storage
+Berger Paints
+Havells India
+Saudi Kayan Petrochemical Company
+Alleghany
+Aisin Seiki
+Gecina
+IMCD
+International Consolidated Airlines
+Nykaa
+Royal Gold
+Apartment Income REIT
+Western Alliance Bancorporation
+Teladoc Health
+Unilever Indonesia
+Sagax
+Lufthansa
+HK Electric Investments
+TFI International
+BorgWarner
+KEPCO
+Wharf Holdings
+Tōkyō Gas
+Samsung Life Insurance
+Dr. Reddy's
+Arkema
+Kilroy Realty
+Avast
+Commerce Bancshares
+Marico
+Five Below
+The Toro Company
+BJ's Wholesale Club
+Knight-Swift
+Ascendas Reit
+ICICI Prulife
+Neurocrine Biosciences
+Yakult
+Tetra Tech
+GAIL
+Axon Enterprise
+Teva Pharmaceutical Industries
+Mohawk Industries
+Prysmian Group
+Orkla
+Makita
+IAC/InterActiveCorp
+DiDi
+Far EasTone
+Huntsman Corporation
+Upstart
+Mindtree
+U.S. Steel
+Antero Resources
+Tokyu
+Biohaven Pharmaceutical
+RTL Group
+Hang Lung Properties
+Woori Financial Group
+Meiji Holdings
+QNB Finansbank
+Advanced Drainage Systems
+Korea Zinc
+NOV
+Pinnacle West Capital
+Trex
+Alstom
+Embracer Group
+ARC Resources
+Nielsen
+Confluent
+Organon
+Sensata Technologies
+Ciena
+Idemitsu Kosan
+Eicher Motors
+Trend Micro
+Lear Corporation
+Toray Industries
+Daifuku
+Huazhu Hotels
+Arrow Electronics
+Insurance Australia Group
+Uniper
+Nissan Chemical
+Huntington Ingalls Industries
+Manhattan Associates
+Olin
+Keppel
+Realtek
+Konami Holdings
+Churchill Downs
+MinebeaMitsumi
+Motherson Sumi Systems
+Wacker Chemie
+Bausch Health
+Pandora
+Zomato
+United Spirits
+OTE Group
+T&amp;D Holdings
+Localiza
+Nanya Technology
+XPO Logistics
+National Storage
+Indian Railway Catering & Tourism
+Erdemir
+Becle
+United Therapeutics
+Dutch Bros
+STORE Capital
+SentinelOne
+GrandVision
+Japan Airlines
+Berry Global
+Mphasis
+SEI Investments
+SIG Combibloc
+Syneos Health
+Mattel
+Amorepacific
+Rational AG
+Holmen
+EastGroup Properties
+Synaptics
+WillScot
+Ternium
+Penske Automotive
+SiteOne Landscape Supply
+Meggitt
+ICICI Lombard
+Jabil
+Old Republic International
+Dropbox
+Wynn Resorts
+Genpact
+Jefferies Financial Group
+UnipolSai
+Etihad Etisalat
+Mobily
+OGE Energy
+Woodward
+Canadian Utilities
+Nippon Prologis REIT
+Bangkok Bank
+US Foods
+KGHM Polska Miedź
+Cosan
+Ralph Lauren
+First Solar
+Osaka Gas
+Atacadão
+S-OIL
+Taishin Financial Holdings
+First Industrial Realty Trust
+Performance Food Group
+ZOZO
+Ambuja Cements
+Pearson
+GXO Logistics
+Korean Air Lines
+Masimo
+MKS Instruments
+Chubu Electric Power
+Nuvei
+Accor
+DiaSorin
+Info Edge
+Falabella
+Nissin Foods
+Kingfisher
+Bright Horizons
+Svenska Kullagerfabriken
+AptarGroup
+Kohl's
+Choice Hotels International
+KBR
+China Oilfield Services
+Renault
+CoreSite
+Wyndham Hotels &amp; Resorts
+Lincoln Electric
+DXC Technology
+Swire Pacific
+National Retail Properties
+Affirm
+Planet Fitness
+Plains All American Pipeline
+Sumitomo Chemical
+Coupa
+CAE
+Bâloise
+Singapore Exchange
+Grubhub
+UGI Corporation
+TPG Telecom
+Indus Towers
+Hamamatsu
+Fresnillo
+PLDT
+UPL
+Just Eat Takeaway
+Auckland Airport
+Flex
+GEA Group
+Pershing Square Holdings
+Française des Jeux
+Indorama Ventures
+Covivio
+Brixmor Property Group
+Norwegian Cruise Line
+Envista
+Groupe SEB
+Central Pattana
+Cholamandalam Investment and Finance
+Kinross Gold
+Capri Holdings
+Hankyu Hanshin Holdings
+First American
+New York Times
+Banco Santander México
+Levi Strauss
+Lamb Weston
+Agilon Health
+Shanghai Commercial and Savings Bank
+Penumbra
+Guidewire Software
+Netmarble
+Cemex
+Hitachi Metals
+Nexstar Media Group
+Brookfield Renewable
+PKN Orlen
+Mirvac Group
+NCsoft
+MP Materials
+Rheinmetall
+Pinnacle Financial Partners
+Hai Di Lao Hot Pot
+Endeavor Group
+Copenhagen Airport
+Starwood Property Trust
+WEX
+Muthoot Finance
+Yamaha
+Bajaj Holdings &amp; Investment
+Bank of Baroda
+WH Group
+RaiaDrogasil
+TopBuild
+Universal Display Corporation
+GCI Liberty
+Rohm
+Healthcare Trust of America
+STAG Industrial
+Chemed
+Dolby
+Rockwool
+Avalara
+Oshkosh Corporation
+Japan Real Estate Investment
+Klépierre
+Daito Trust Construction
+Kinnevik
+Great Eastern
+“K” Line
+Clearway Energy
+Braskem
+Under Armour
+DWS Group
+Lattice Semiconductor
+Kobe Bussan
+CPFL Energia
+Peloton
+Gland Pharma
+Japan Post Insurance
+Sampoerna
+Samsara
+Omega Healthcare
+Restoration Hardware
+Synovus
+Gildan
+Fosun
+BOK Financial
+Dun &amp; Bradstreet
+AMC Entertainment
+10x Genomics
+Macy's
+Surgutneftegas
+AutoNation
+CACI
+Aroundtown
+Husqvarna
+Western Union
+Magazine Luíza
+Boyd Gaming
+Companhia Siderúrgica Nacional
+dLocal
+GMO Payment Gateway
+Stifel
+Grupo ACS
+Deckers Brands
+Reinsurance Group of America
+MISC Berhad
+Yamaha Motor
+Dai Nippon Printing
+Yandex
+Penn National Gaming
+GLP J-REIT
+Otsuka
+AGNC Investment
+Rightmove
+Douglas Emmett
+Metso Outotec
+Mo Group
+Allegro.eu
+Hulic
+Merdeka Copper Gold
+Tomra
+Qantas Airways
+Magnolia Oil &amp; Gas
+Americold
+HelloFresh
+Elastic NV
+Procore
+Change Healthcare
+Temenos
+Telecom Italia
+Sinopac Financial Holdings
+Spring Airlines
+Lodha Group
+Range Resources
+HELLA
+Coty
+Casey's General Stores
+Bharat Electronics
+ADT
+NextEra Energy Partners
+Voya Financial
+II-VI Incorporated
+Grupo Aeroportuario del Pacífico
+UWM Holdings
+Credit Acceptance
+Sinopharm
+R1 RCM
+Genting Singapore
+Saia
+Komerční banka
+HealthSouth
+JSW Energy
+Jardine Cycle &amp; Carriage
+Gentex
+OCI
+Exelixis
+Brunswick Corporation
+Kanzhun
+Playtika
+First Financial Bankshares
+Autoliv
+Globus Medical
+CSN Mineração
+South State Corp
+Prosperity Bancshares
+Procter &amp; Gamble India
+Sekisui Chemical
+ITT
+Tandem Diabetes Care
+IronSource
+Charoen Pokphand Indonesia
+KOBAYASHI Pharmaceutical
+Santander Polska
+Sarepta Therapeutics
+Bilibili
+Novocure
+ENGIE Brasil
+Arabian Internet and Communications Services
+Piramal Group
+Inter Pipeline
+Houlihan Lokey
+Kajima
+Petro Rabigh
+TOTO
+Switch
+Toppan
+Banco Popular
+Nomura Real Estate Master Fund
+PDC Energy
+Jabal Omar Development
+Coherent
+Investec
+Acuity Brands
+Torrent Pharmaceuticals
+Anaplan
+KT Corporation
+SoFi
+Jarir
+FS KKR Capital
+MasTec
+Wärtsilä
+Ritchie Bros. Auctioneers
+Bank Pekao
+Bank Polska Kasa Opieki
+Sinch
+Asana
+DCP Midstream
+Marriott Vacations Worldwide
+Hualan Biological Engineering
+Donaldson
+United Tractors
+Rayonier
+Polaris
+China Gas
+Orion Corporation
+Alaska Airlines
+AltaGas
+DraftKings
+CCC Intelligent Solutions
+ScottsMiracle-Gro
+WESCO International
+RenaissanceRe
+Dino Polska
+Odakyu Electric Railway
+On Holding
+Arena Pharmaceuticals
+Adani Power
+Ibiden
+Mapletree Logistics Trust
+Virtu Financial
+Lumentum
+Endeavour Mining
+Frontier Communications
+Endava
+Sunrun
+Emcor
+People's United Bank
+Bechtle
+Descartes Systems
+Hikma Pharmaceuticals
+Adaro Energy
+Reynolds Consumer
+Indofood CBP
+POSCO Chemical
+Hero MotoCorp
+United Internet
+Lynas
+Proximus
+British Land
+Matador Resources
+Grupo Aval
+TIM S.A.
+Jindal Steel &amp; Power
+Chart Industries
+Treasury Wine Estates
+Page Industries
+CyberAgent
+Weibo
+QuantumScape
+Littelfuse
+Lechwerke
+Premier
+GameStop
+IDBI Bank
+Euronet Worldwide
+Hindustan Aeronautics
+Rexel
+Bank Mega
+Spirit Realty Capital
+Telus International
+HollyFrontier
+FirstService
+National Fuel Gas
+Thyssenkrupp
+Axfood
+New Fortress Energy
+HashiCorp
+Mapfre
+Spark New Zealand
+Pegasystems
+Graphic Packaging
+CTS Eventim
+Crane Co.
+Inspire Medical Systems
+Swedish Orphan Biovitrum
+Smartsheet
+TMX Group
+ABB India
+Bandhan Bank
+Hilton Grand Vacations
+FAW Car
+Ascendis Pharma
+Acadia Healthcare
+Cousins Properties
+Harley-Davidson
+ASR Nederland
+Commercial International Bank
+Omnicell
+Eurazeo
+Tencent Music
+Sabesp
+Clean Harbors
+Colfax Corporation
+Glacier Bancorp
+Adani Wilmar
+Grupo Aeroportuario del Sureste
+Wiwynn
+Schibsted
+Southwestern Energy
+Charoen Pokphand Foods
+MOL Group
+Koç Holding
+Thoughtworks
+Five9
+Dongfeng Motor
+Murphy Oil
+nVent Electric
+Air Canada
+Janus Henderson
+Reply
+Kojamo
+Azenta
+Banca Mediolanum
+Kosé
+Kintetsu GHD
+Beijer Ref
+CyberArk
+Toll Brothers
+Independence Realty Trust
+Owl Rock Capital
+GN Store Nord
+Signify
+Enagás
+TriNet
+National Mineral Development Corporation
+Valley Bank
+TIS
+Itochu Techno-Solutions
+PhosAgro
+IPG Photonics
+Aalberts
+Offcn Education
+ShockWave Medical
+Landstar System
+İsdemir
+Barito Pacific
+Pilgrim's Pride
+Skechers
+Leonardo
+Sharp Corporation
+Unum
+Columbia Sportswear
+Welcia Holdings
+ASGN
+Sonoco
+Louisiana-Pacific
+Curtiss-Wright
+BE Semiconductor
+McDonald's Japan
+Equatorial Energia
+Square Enix
+Cathay Pacific
+Natura&Co
+Guardant Health
+LOTTE Chemical
+Idacorp
+Televisa
+Ingredion
+Ubisoft
+Soitec
+CDK Global
+Voestalpine
+Stantec
+Sixt
+Obayashi
+Cadence Bancorp
+Tempur Sealy
+Intra-Cellular Therapies
+Novavax
+Adani Gas
+OneMain Financial
+Bank OZK
+Pan American Silver
+Texas Roadhouse
+Shell Midstream Partners
+Scientific Games
+GoodRx
+Colliers International
+SCSK Corporation
+Integra LifeSciences
+Rapid7
+Nippon Express
+Somfy
+Valvoline
+COSMOS Pharmaceutical
+Clariant
+Colgate-Palmolive India
+Univar Solutions
+RBC Bearings
+Sotera Health
+Bank AlJazira
+Godrej Properties
+BOSCH India
+Trent Limited
+Turquoise Hill Resources
+KnowBe4
+Genscript Biotech
+Hera Group
+LG Display
+EVA Air
+PacWest Bancorp
+Axalta
+Mimecast
+Hanesbrands
+CIT Group
+Tenable
+Hindustan Petroleum
+Eagle Materials
+Iida Group
+China Airlines
+Banco de Crédito e Inversiones
+Hitachi Construction Machinery
+Blackstone Mortgage Trust
+Hanwha Solutions
+Element Solutions
+Wintrust Financial
+Voltas
+Gelsenwasser
+ICU Medical
+Mainfreight
+Terreno Realty
+Alkem Laboratories
+Scor
+Varun Beverages
+Tobu Railway
+Fluidra
+Valmet
+PI Industries
+ENKA
+Flowers Foods
+DigitalOcean
+Mercury NZ
+A1 Telekom Austria
+Canara Bank
+MDU Resources
+Biocon
+Punjab National Bank
+Gap Inc.
+Old National Bank
+Bombardier Recreational Products
+Universal Forest Products
+SL Green Realty
+Cabot Microelectronics
+Tower Semiconductor
+Selective Insurance
+Stericycle
+Rogers Corporation
+Vonage Holdings Corp.
+New York Community Bank
+Wizz Air
+Amkor Technology
+Hikari Tsushin
+Medpace
+Silicon Labs
+K+S
+easyJet
+Mandiant
+Steel Authority of India
+Affiliated Managers Group
+Enviva
+Astral Poly Technik
+MSA Safety
+Yamana Gold
+monday.com
+Keyera
+American National Insurance
+Howard Hughes Corporation
+FTI Consulting
+Phillips-Van Heusen
+Paytm
+Cencosud
+Balkrishna Industries
+Sterling Bancorp
+COSCO SHIPPING Development
+Dillard's
+SAIC
+Full Truck Alliance
+Nutanix
+Hanover Insurance Group
+Simpson Manufacturing Company
+ACC
+Altice USA
+Ashland
+Asahi Intecc
+Aurubis
+Perrigo
+Hyundai Glovis
+ChampionX
+NCR Corporation
+Evoqua Water Technologies
+ChargePoint
+Exponent
+Commercial Metals Company
+Fraport
+Merlin Properties
+Mapletree Industrial Trust
+Helen of Troy
+Primerica
+Capcom
+Shin Kong Financial Holding
+Power Integrations
+ALD Automotive
+DT Midstream
+Italgas
+Jubilant FoodWorks
+Pirelli
+Tegna
+Olam
+Workiva
+ManpowerGroup
+Savola Group
+RLI Corp.
+Ryman Hospitality Properties
+United Breweries
+UMB Financial
+Topdanmarks
+United Bankshares
+Terminix Global
+McAfee
+IAA-Insurance Auto Auctions
+JCDecaux
+Leroy Seafood
+CarGurus
+Antero Midstream
+YETI Holdings
+Petco
+Silgan Holdings
+Freshworks
+Sallie Mae
+Kite Realty
+ServisFirst Bancshares
+National Instruments
+Enstar Group
+Bankinter
+Portland General Electric
+Altair Engineering
+ALTEN
+Aurobindo Pharma
+Blue Owl Capital
+Kinsale Capital Group
+Valmont Industries
+BWX Technologies
+GDS Holdings
+Abbott India
+Evotec
+Cemig
+GitLab
+Leggett &amp; Platt
+Iridium Communications
+New Residential Investment
+TUI
+SeaWorld Entertainment
+Allegro MicroSystems
+Halozyme Therapeutics
+Watts Water Technologies
+Electrolux
+AU Small Finance Bank
+Sweco
+Legend Biotech
+Ebos Group
+Viper Energy Partners
+CRISPR Therapeutics
+Oak Street Health
+Quiñenco
+City Developments
+Royal Mail
+ERG
+Raiffeisen Bank International
+Fomento de Construcciones y Contratas
+Innovative Industrial
+International Game Technology
+Highwoods Properties
+Matson
+Teradata
+Container Corporation of India
+Hancock Whitney
+Scout24
+Southwest Gas
+Saudi Investment Bank
+Informatica
+Civitas Resources
+Amedisys
+Mobile TeleSystems
+OVH Groupe
+Lundbeck
+AAK
+Honeywell Automation India
+W. R. Grace
+APi Group
+Inmobiliaria Colonial
+Ionis Pharmaceuticals
+Nippon Shinyaku
+Cadila Healthcare
+Tecan
+TFS Financial
+Polycab India
+Black Hills
+The Ensign Group
+ONE Gas
+Marqeta
+Royal Boskalis Westminster
+Gujarat Gas
+Alight
+Seaboard
+Intellia Therapeutics
+EnLink Midstream
+Bezeq
+Timken Company
+Travel + Leisure
+Maximus
+BAWAG Group
+Essent Group
+Qualys
+Gruma
+Maseca
+B2Gold
+Murphy USA
+Cirrus Logic
+Nordic Semiconductor
+Evercore
+Option Care Health
+Whitecap Resources
+F.N.B. Corporation
+Wendy’s Company
+Thor Industries
+Casella Waste Systems
+Icade
+Tokyo Century
+Hawaiian Electric Industries
+Hexcel
+SSR Mining
+Chiba Bank
+Agree Realty
+Surgery Partners
+Atkore
+Andritz
+Outfront Media
+Fielmann
+Schneider
+Mirati Therapeutics
+Walker &amp; Dunlop
+Gates Industrial Corp
+Indian Overseas Bank
+Grayscale Bitcoin Trust
+Hochtief
+AMN Healthcare Services
+Vipshop
+Nisshin Seifun Group
+Cerevel Therapeutics
+MSC Industrial Direct
+Spirit AeroSystems
+Avient
+AXIS Capital
+Kangwon Land
+Mapletree Commercial Trust
+Paycor
+Royal Unibrew
+Chemours
+Cushman &amp; Wakefield
+Novanta
+Ziff Davis
+Lexington Realty Trust
+SM Energy
+Fuchs Petrolub
+Herc Holdings
+Air Lease Corporation
+Fox Factory Holding
+Lupin Limited
+MGIC Investment
+Kansai Paint
+Empresas CMPC
+Santen Pharmaceutical
+Flowserve
+Tikehau Capital
+Banco Sabadell
+Persistent Systems
+Powszechny Zakład Ubezpieczeń
+Mazda
+HealthEquity
+PS Business Parks
+NexPoint Residential
+Umpqua Holdings
+Mister Car Wash
+Ultragenyx
+Storebrand
+Ryan Specialty Group
+Park Hotels &amp; Resorts
+Colas
+Lancaster Colony Corporation
+Boston Beer Company
+GATX
+Verbio
+Driven Brands
+Helmerich &amp; Payne
+BOC Aviation
+Tower Bersama Infrastructure
+EVN Group
+SPS Commerce
+Balchem
+Wix.com
+Quidel
+First Interstate BancSystem
+Grupo Simec
+Americanas
+Phillips Edison &amp; Company
+Apellis Pharmaceuticals
+Coca-Cola Consolidated
+Armstrong World Industries
+Atotech
+Beacon Roofing Supply
+Zurn Water Solutions
+Oberoi Realty
+AllianceBernstein
+Asbury Automotive Group
+Aurora Innovation
+Ginkgo Bioworks
+Victoria's Secret &amp; Co
+nCino
+Darktrace
+Ruchi Soya
+1&1
+Marks &amp; Spencer
+EXL Service
+H&amp;R Block
+World Wrestling Entertainment
+Carsales
+Vertiv Holdings
+Triton International
+New Jersey Resources
+Ashok Leyland
+Bank of East Asia
+UOL Group
+Arrowhead Pharmaceuticals
+Yes Bank
+Farfetch
+MicroStrategy
+Ryder
+Elm Company
+Ormat Technologies
+Wendel
+Kirby Corporation
+Crescent Point Energy
+Brighthouse Financial
+MEG Energy
+Alteryx
+Crocs
+Post Holdings
+Avnet
+Neoen
+Apple Hospitality REIT
+Contact Energy
+Lawson
+Japan Airport Terminal
+LHC Group
+Radian Group
+Ströer
+Marel
+Taisho Pharmaceutical
+Ambu
+DigitalBridge Group
+Curaleaf
+Hudson Pacific Properties
+Jetblue Airways
+PCCW
+Sumitomo Dainippon Pharma
+PB Fintech
+Sega Sammy Holdings
+MSG Sports
+Luminar Technologies
+Chegg
+Galapagos NV
+South Jersey Industries
+Aarti Industries
+Cyfrowy Polsat
+Stevanato
+Bloom Energy
+Gujarat Fluorochemicals
+Strabag
+Gudang Garam
+WNS
+Petronet LNG
+Hannon Armstrong
+Callaway Golf
+Yancoal
+Opendoor
+Toyo Suisan
+United Community Bank
+Fluor Corporation
+Healthcare Realty
+AppFolio
+CONMED
+Cabot Corporation
+Schaeffler
+Société Foncière Lyonnaise
+Envestnet
+Independent Bank
+Laurus Labs
+Freshpet
+Sanderson Farms
+Veoneer
+De' Longhi
+Investors Bancorp
+Pershing Square Tontine
+Global-e
+Bharat Forge
+LivaNova
+Acom
+First International Bank of Israel
+Semtech
+Eastern Bankshares
+MaxLinear
+Parkland Corp
+Petro Rio
+PagSeguro
+PNM Resources
+Deepak Nitrite
+Varonis
+Hamilton Lane
+Community Bank System
+Silvergate Capital
+Varta
+Coway
+Ameresco
+BlackLine
+Frasers Logistics &amp; Industrial Trust
+Applied Industrial Technologies
+Vale Indonesia
+ASM Pacific Technology
+Bumble
+Groupe Lagardère
+Formosa Sumco Technology
+EPR Properties
+Lanxess
+Physicians Realty Trust
+New Relic
+Shriram Transport Finance
+Allison Transmission
+SailPoint
+Nordstrom
+Faurecia
+BB Biotech
+TLG Immobilien
+Rocket Lab
+Sime Darby
+Element Fleet Management
+Cohen &amp; Steers
+Atlantica
+WeWork
+Inari Medical
+Arcadis
+Infratil
+Richter Gedeon
+Vodafone Idea
+Alkermes
+ATCO
+Assured Guaranty
+Power Finance Corp
+Franklin Electric
+Vopak
+PotlatchDeltic
+SPIE
+CD Projekt
+Indian Railway Finance
+The AZEK Company
+Futu Holdings
+Tube Investments of India
+Nexans
+Madras Rubber Factory
+MACOM
+Parsons
+Alfamart
+Home BancShares
+Signet Jewelers
+Jamf
+Box
+Aselsan
+Datto
+NHPC Limited
+Mercari
+Hayward
+Bakkafrost
+Denali Therapeutics
+Nikon
+Atul
+51job
+Relaxo Footwear
+Carter's
+American Equity Investment Life Holding
+Valeo
+Indofood
+Simply Good Foods
+Cummins India
+Methanex
+Onto Innovation
+SiTime
+Tsuruha Holdings
+Mercury Systems
+Beam Therapeutics
+Sportradar
+National Beverage
+Broadstone Net Lease
+Diodes Incorporated
+National Shipping Company of Saudi Arabia
+Bahri
+Easterly Government Properties
+Minda Industries
+AntarChile
+Zooplus
+Schaeffler India
+Entra
+TTEC
+Progyny
+Vontier
+Herbalife
+Makkah Construction &amp; Development
+Oberbank
+O2 Czech Republic
+TVS Motor
+Atlas Corp
+Sweetgreen
+Melisron
+Insight Enterprises
+Green Thumb Industries
+ACI Worldwide
+ALSOK
+Summit Materials
+JBG SMITH
+TAG Immobilien
+First Hawaiian Bank
+SPX FLOW
+Fletcher Building
+Goodyear
+Skyline Champion
+Natera
+Neogen
+DMG Mori
+TripAdvisor
+Buzzi Unicem
+Galaxy Digital Holdings
+ACADIA Pharmaceuticals
+Resideo Technologies
+Taylor Morrison
+Workman
+BankUnited
+Kerry Properties
+Fabrinet
+AmTrust Financial Services
+Meitetsu
+Metsä Board
+NantKwest
+Insperity
+CNX Resources
+Jackson Financial
+Union Bank of India
+Nomad Foods
+ManTech
+Max Financial Services
+Spectrum Brands
+Perfect World Entertainment
+Mr. Cooper Group
+Signify Health
+Spire Energy
+Lantheus Holdings
+VIAVI Solutions
+H.B. Fuller
+Pacific Premier Bancorp
+Strauss Group
+Kornit Digital
+Associated Banc-Corp
+ViaSat
+Hecla Mining
+Indraprastha Gas
+Sarana Menara Nusantara
+Grupo Catalana Occidente
+Papa John's Pizza
+Guoco
+Wingstop Restaurants
+Six Flags
+Wienerberger
+Roivant Sciences
+Merit Medical
+Allete
+Indian Hotels Company
+Jungheinrich
+NWS holdings
+Assaí Atacadista
+Squarespace
+Lion Corp
+Leslie's
+HUGO BOSS
+Sprouts Farmers Market
+Huhtamäki
+Appian
+ZhongAn Insurance
+Mayr-Melnhof
+Suntec REIT
+Safehold
+Kingsoft
+Dermapharm
+BlackBerry
+Focus Financial Partners
+CVB Financial
+Cathay General Bancorp
+Livent
+Top Glove
+Korn Ferry
+ams AG
+Welbilt
+Valaris
+Arvinas
+eXp World Holdings
+John Bean Technologies
+Harmonic Drive Systems
+Denbury
+Blueprint Medicines
+Callon Petroleum
+Mainova
+Kenon Holdings
+Zai Lab
+TechnipFMC
+Bank of Hawaii
+Sunoco
+Sembcorp
+Freenet
+SITE Centers
+Permata Bank
+GarantiBank
+BRF
+First Majestic Silver
+Perficient
+Amot Investment
+DoubleVerify
+Kulicke and Soffa Industries
+National Vision Holdings
+IDFC FIRST Bank
+WSFS Financial
+China Lesso Group
+California Resources Corporation
+Freedom Holding
+Ipca Laboratories
+Independent Bank Group
+Kemper
+Comgás
+UniFirst
+Dixon Technologies
+Patterson-UTI Energy
+Hatsun Agro Products
+Aditya Birla Capital
+Keppel REIT
+Adient
+Meritage Homes
+Allegheny Technologies
+Ameris Bancorp
+Vermilion Energy
+Coforge
+Shapir Civil and Marine Engineering
+ReNew Power
+PrairieSky Royalty
+Ballard Power Systems
+Comfort Systems
+Avista
+Grand Canyon Education
+NewMarket Corp
+Oil India
+Kuka
+Hankook Tire
+Supreme Industries
+Hillenbrand
+CoBank
+Trulieve Cannabis
+Lithium Americas
+Altarea
+FirstCash
+SunPower
+Sabra Health Care REIT
+Fonterra
+Nerolac Paints
+Nelnet
+Zee Entertainment
+Revolve
+Corporate Office Properties Trust
+Ryman Healthcare
+Verint Systems
+Sensient Technologies
+Lazard
+Select Medical Holdings
+NorthWestern Corporation
+Kennedy Wilson
+Zain Saudi Arabia
+CG Power and Industrial Solutions
+Rural Electrification Corp
+Pacira Biosciences
+Simmons First National
+Indoritel
+Blackbaud
+Sprout Social
+iRhythm
+Macerich
+Celsius Holdings
+Mueller Industries
+SATS
+Alamos Gold
+Romgaz
+Alarm.com
+Turkcell
+White Mountains Insurance Group
+Dairy Farm
+Group 1 Automotive
+Westports
+Tootsie Roll Industries
+KB Home
+Vienna Insurance Group
+Shutterstock
+Lightspeed POS
+Equitrans Midstream
+Escorts Limited
+Kadokawa
+Moelis &amp; Company
+St. Joe Company
+PIMCO
+Essential Properties Realty Trust
+Copa Holdings
+American States Water
+Texas Capital Bancshares
+BİM Birleşik Mağazalar
+Prospect Capital
+Star Bulk Carriers
+Cornerstone Building Brands
+Renewable Energy Group
+ABM Industries
+Atos
+Enable Midstream Partners
+Tohoku Electric Power
+Quaker Chemical Corporation
+Aerojet Rocketdyne
+Bata India
+TietoEVRY
+Whiting Petroleum
+Taiwan Business Bank
+Brink's
+UNITI
+Siltronic
+DAQO New Energy
+LifeStance Health Group
+California Water Service
+Metro AG
+Acushnet Holdings
+Immofinanz
+Acer
+Enerplus
+Fisker
+Digital Turbine
+Alabama Power
+Dorman Products
+Harmony Gold
+Tata Chemicals
+Equity Commonwealth
+Academy Sports
+Tata Teleservices
+CA Immo
+Ambarella
+Certara
+Steve Madden
+Vicor
+Cogent Communications
+GMR Group
+Patterson Companies
+Curevac
+Syngene International
+American Eagle Outfitters
+TaskUs
+PennyMac
+Pebblebrook Hotel Trust
+Cedar Fair
+Owens &amp; Minor
+Atlantic Union Bankshares
+Indah Kiat Pulp &amp; Paper
+Karuna Therapeutics
+Cactus Wellhead
+APL Apollo
+Clearwater Analytics
+CI Financial
+Dicerna Pharmaceuticals
+Coromandel
+secunet
+Federated Hermes
+Sonos
+Boise Cascade
+J&amp;J Snack Foods
+Mercury General
+Encavis
+Braze
+Thermax
+Newmark
+EnerSys
+HUTCHMED
+Tianjin FAW
+Installed Building Products
+Advanced Energy
+Polymetal
+Cytokinetics
+Indosat
+Paramount Resources
+Weber
+Sabre
+Q2
+EVgo
+Trupanion
+Tronox
+Worthington Industries
+FormFactor
+Vir Biotechnology
+Nordex
+Quilter
+BioCryst Pharmaceuticals
+Hain Celestial
+Viela Bio
+Xerox
+ProSiebenSat.1 Media
+Foot Locker
+Vishay Intertechnology
+3M India
+MDC Holdings
+Rubis
+LCI Industries
+John Wiley &amp; Sons
+Melco Resorts &amp; Entertainment
+Chimera Investment Corporation
+Gibson Energy
+Main Street Capital
+Rush Enterprises
+UNB Corp
+Fannie Mae
+EngageSmart
+Central Bancompany
+Wynn Macau
+Pretivm
+The a2 Milk Company
+Alony Hetz
+Dr Lal PathLabs
+Graham Holdings
+Greif
+InMode
+Fate Therapeutics
+Centerra Gold
+Nova Measuring Instruments
+Evertec
+Nikola
+Fulton Financial
+Ultrapar Participacoes
+Rambus
+Axos Financial
+Mapletree North Asia Commercial Trust
+Qt Group
+Hostess Brands
+Dycom Industries
+Hensoldt
+Instructure Holdings
+ANGI Homeservices
+Port of Tauranga
+Werner Enterprises
+Emami
+El Paso Electric
+Alliance Data
+CNO Financial Group
+Oatly
+Şişecam
+SpringWorks Therapeutics
+NetLink Trust
+Visteon
+Aaon
+American Assets Trust
+STAAR Surgical
+Arcosa
+Vocera Communications
+Central Bancompany
+Shake Shack
+Semen Indonesia
+CASIO
+PBF Energy
+CorVel Corporation
+LGI Homes
+Prestige Consumer Healthcare
+MGE Energy
+Badger Meter
+TeamViewer
+Plains GP Holdings
+Forward Air
+Hub Group
+Magnit
+nternational Bancshares Corp
+Sprinklr
+Cracker Barrel
+Transocean
+Electra
+National Aluminum &amp; Alloy
+Albany International
+Rajesh Exports
+Meredith Corp
+Ebro Foods
+Hysan Development
+Grocery Outlet
+Hang Lung Group
+Viscofan
+Champion REIT
+Trinity Industries
+Columbia Bank
+Houghton Mifflin Harcourt
+Türkiye Is Bankasi
+Commvault
+NexGen Energy
+Grindwell Norton
+Haemonetics
+Lenzing
+Peabody Energy
+CRISIL
+FIGS
+BancFirst
+General Insurance Corporation of India
+AtriCure
+Tofaş Türk Otomobil Fabrikası
+Calix
+Krones
+Warby Parker
+Vector Limited
+Arbor Realty Trust
+Terex
+Sunnova
+Indian Energy Exchange
+National Health Investors
+United Industrial Corporation
+TANLA
+Turkey İş Bank
+Telecom Argentina
+CompuGroup Medical
+Liberty Oilfield Services
+iHeartMedia
+TransAlta
+Bayer Crop Science
+Shift4 Payments
+Empire State Realty Trust
+Galicia Financial Group
+Kosmos Energy
+Buenaventura Mining Company
+Solaria Energía
+Arçelik
+Red Rock Resorts
+Playtech
+CIE Automotive
+Duolingo
+MillerKnoll
+StoneCo
+WD-40 Company
+PowerSchool
+U.S. Cellular
+Federal Bank
+Mayora
+Grupo Aeroportuario Centro Norte
+Whirlpool India
+Sumitomo Chemical
+
+ India
+Joby Aviation
+Aavas Financiers
+Razer
+Allegiant Air
+Boot Barn Holdings
+Axonics Modulation Tech
+Integer Holdings
+Konecranes
+Interparfums
+Air France-KLM
+LegalZoom
+AUTO1
+Fortis Healthcare
+RIB Software
+Bottomline Technologies
+Madison Square Garden
+Shangri-La
+Kyndryl
+Navient
+Evolent Health
+NovaGold Resources
+Otter Tail
+Bank of India
+Sanmina
+Insmed
+First Advantage
+GrafTech
+Toho Gas
+Altra Industrial Motion
+Verra Mobility
+Allscripts
+Ozon
+The Navigator Company
+Urban Outfitters
+Compañía Cervecerías Unidas
+Meritor
+LIC Housing Finance
+Orpea
+Magellan Health
+Harmony Biosciences
+Südzucker
+Akbank
+Arconic
+MVV Energie
+Tilray
+NuVasive
+Constellium
+Live Oak Bank
+Duck Creek Technologies
+Shikun &amp; Binui
+Software AG
+Sunstone Hotel Investors
+Vacasa
+New India Assurance
+Covivio Hotels
+Diagnosticos da America
+Black Stone Minerals
+Belden
+E2open
+Beyond Meat
+Relay Therapeutics
+Turkish Airlines
+First Midwest Bancorp
+Dana
+Golden Ocean Group
+Kontoor Brands
+Ingevity
+AEON REIT Investment
+Encore Wire
+Upwork
+Corcept Therapeutics
+JOYY
+Hilltop Holdings
+Chesapeake Utilities
+Kennametal
+Robertet
+Cavco Industries
+Artisan Partners
+PTC Therapeutics
+Nokian Tyres
+Indian Bank
+Amicus Therapeutics
+Canada Goose
+Ollie's Bargain Outlet
+Goosehead Insurance
+Devyani International
+OPC Energy
+Cargotec
+Mandarin Oriental
+Flywire
+Coursera
+Dave Inc.
+CVR Energy
+Canopy Growth
+ImmunityBio
+Millicom
+EverCommerce
+Cubic
+Equinox Gold
+Diversey
+Österreichische Post
+Helios Technologies
+The Beauty Health Company
+Swissquote
+Stagwell
+Atlas Air Worldwide Holdings
+Eutelsat
+Vienna Airport
+Weatherford International
+ZipRecruiter
+Ermenegildo Zegna
+Harel Group
+First Merchants Corporation
+Triumph Bancorp
+PriceSmart
+Frontdoor
+Claros Mortgage Trust
+Prestige Group
+Core Scientific
+Hypoport
+JK Cement
+Shufersal
+TRI Pointe Group
+PolyOne
+GCP Applied Technologies
+Sun TV Network
+Air Transport Services Group
+State Auto Financial
+Microvast
+Uniqa Insurance Group
+Cricut
+LiveRamp
+Digital World Acquisition
+Maxar Technologies
+Flagstar Bank
+Osisko Gold Royalties
+Paramount Group
+Innospec
+Glaukos
+PagerDuty
+RPC
+Central Garden &amp; Pet Company
+Centennial Resource Development
+Plexus
+Elkem
+Hanmi Pharmaceutical
+Central Garden &amp; Pet
+Brandywine Realty Trust
+Türk Telekom
+TowneBank
+Retail Opportunity Investments
+Silicon Motion
+Salzgitter
+Beijing Airport
+Kadant
+Kratos Defense &amp; Security Solutions
+Sanoma
+Gentherm
+NETSCOUT
+Privia Health Group
+Kindred Group
+Dürr
+Piper Sandler
+First Financial Bank
+Krispy Kreme
+Frontier Airlines
+Aixtron
+Orange Polska
+HPH Trust
+Maytronics
+Chorus
+Urban Edge Properties
+KWS
+WaFd Bank
+BIC
+Ramco Cements
+Cal-Maine Foods
+flatexDEGIRO AG
+Arcus Biosciences
+Phoenix Mills
+SPX Corporation
+Goodman Property Trust
+Fortress Transportation
+Columbia Property Trust
+Yelp
+Stepan Company
+Momentive Global
+RLJ Lodging Trust
+Marathon Digital Holdings
+Covetrus
+Chambal Fertilisers
+Sabancı Holding
+Sanofi India Limited
+Brady
+Park National Corp
+MakeMyTrip
+MultiPlan
+IonQ
+Primo Water
+Outokumpu
+Seacoast Banking
+GMS
+Korian
+Sheela Foam
+Open Lending
+WesBanco
+Happiest Minds Technologies
+Telephone and Data Systems
+Four Corners Property Trust
+Endurance Technologies
+Cancom
+Minerals Technologies
+Veritex Holdings
+Liberty Latin America
+Twist Bioscience
+Archaea Energy
+ComfortDelGro
+Olav Thon
+Paymentus
+TechTarget
+Fiverr
+Gray Television
+Nu Skin
+PQ Group
+McGrath RentCorp
+KAR Auction Services
+Laureate Education
+Heartland Financial USA
+Yapı Kredi
+Rackspace Technology
+Victory Capital
+FuelCell Energy
+SKF India
+Euronav
+Arch Resources
+EnPro Industries
+FB Financial
+Spirit Airlines
+Acadia Realty Trust
+Jinko Solar
+CDSL
+DCM Shriram
+SJM Holdings
+Washington Real Estate Investment Trust
+Xenia Hotels &amp; Resorts
+Office Depot
+Ingles Markets
+AbCellera
+Paradox Interactive
+Energizer Holdings
+Lakeland Financial Corp
+NexTier Oilfield
+Gerresheimer
+Jfrog
+Wallbox
+Nevro
+Mitra Keluarga
+Compañía de Acero del Pacífico
+Zeta Global
+Supermicro
+United Natural Foods
+Alfen
+Patria Investments
+ModivCare
+Custom Truck One Source
+TPG Capital
+OPKO Health
+Barnes Group
+Century Aluminum
+Iovance Biotherapeutics
+Banner Bank
+Compass Minerals
+Kajaria Ceramics
+Monmouth
+SES AI
+CBIZ
+Masonite
+Sandy Spring Bank
+Sterling Check
+Hornbach Holding
+Vertex
+AdaptHealth
+Jeld-Wen
+Mallplaza
+Itron
+CSG International
+Manchester United
+Embraer
+Hercules Capital
+Mednax
+Cannae Holdings
+EVO Payments
+Piedmont Office Realty Trust
+Energix Renewable Energies
+Federal Signal
+Enel Chile
+Voltalia
+CI&amp;T
+ArcBest
+TF1
+Borregaard
+Corbion
+Jumbo S.A.
+Vista Outdoor
+PeptiDream
+Hope Bancorp
+Pigeon
+Burford Capital
+Comstock Resources
+KPIT Technologies
+SJW Group
+EchoStar
+Guaranty Trust Bank
+Diamondrock Hospitality Company
+PostNL
+Natco Pharma
+CLEAR Secure
+Renasant Corp
+MINISO Group
+Genesis Energy
+Eldorado Gold
+Weis Markets
+Jubilant Life Sciences
+Hipgnosis Songs Fund
+Credo Technology
+XL Axiata
+PIERER Mobility
+Paysafe
+Carborundum Universal
+Edgewell Personal Care
+Olo
+Timken India
+Axcelis Technologies
+Century Communities
+TuSimple
+Philip Morris ČR
+TODA corp
+Nextdoor
+Evergrande
+Myriad Genetics
+Babylon Holdings
+NOS
+Trustmark
+Bachoco
+Spirent
+Kemira
+Hudbay Minerals
+Arrival
+Valneva SE
+Schrödinger
+Advantage Solutions
+Golar LNG
+Knowles
+Northern Oil and Gas
+Enovix
+Tokai Carbon
+Iveco Group
+Costamare
+Winnebago Industries
+Warrior Met Coal
+Shoals Technologies
+Veidekke
+RLX Technology
+C3 AI
+Blue Dart Express
+CenturyPly
+ACV Auctions
+Mueller Water Products
+Rattler Midstream
+Progress Software
+NV5 Global
+Kymera Therapeutics
+X5 Retail Group
+Eagle Bancorp
+Genworth Financial
+Olink Holding
+Zentalis Pharmaceuticals
+Toyo Tire
+Apollo Commercial Real Estate
+Medifast
+Tellurian
+Globalstar
+InterDigital
+StepStone Group
+MONETA Money Bank
+Banco de Brasília
+Wolverine World Wide
+Alembic Pharmaceuticals
+Everi Holdings
+Qurate Retail Group
+Fiskars
+Arqit Quantum
+Dave & Buster's
+Gogo Inflight Internet
+CSW Industrials
+Overstock.com
+Coca-Cola İçecek
+Emergent BioSolutions
+Jenoptik
+Pacific Biosciences
+InvenTrust Properties
+Customers Bancorp
+Noble Corporation
+GAG Immobilien
+The Cheesecake Factory
+Xponential Fitness
+Enterprise Financial Services Corp
+Casino Guichard-Perrachon
+Perimeter Solutions
+Ironwood Pharmaceuticals
+Bed Bath &amp; Beyond
+DeNA
+Hexaware Technologies
+Bloomin' Brands
+Itaú CorpBanca
+O-I Glass
+Global Blood Therapeutics
+Sally Beauty Holdings
+Himax
+AeroVironment
+Cinemark Theatres
+Pfeiffer Vacuum
+Plus500
+Verano Holdings
+Outset Medical
+Marcus &amp; Millichap
+Sonic Automotive
+Provident Financial Services
+360 DigiTech
+Ferro
+Minera Valparaíso
+Sage Therapeutics
+Wüstenrot &amp; Württembergische
+NMI Holdings
+ESCO Technologies
+Xometry
+KIOCL
+Northwest Bank
+Cazoo
+Jasa Marga
+Corsair Gaming
+SolarWinds
+Definitive Healthcare
+Realogy
+Two Harbors Investment
+Alliance Resource Partners
+Prometheus Biosciences
+Bank of N. T. Butterfield & Son
+MFA Financial
+PRA Group
+Virgin Orbit
+IIFL Wealth Management
+Sinclair Broadcast
+Buckle
+SpareBank 1
+Türkiye Kalkınma
+Tanger Factory Outlet Centers
+HighPeak Energy
+Yacimientos Petrolíferos Fiscales
+Redfin
+Stewart Information Services
+Summerset Holdings
+NeoGenomics
+B&amp;G Foods
+WABCO India
+Exclusive Networks
+Kronos Worldwide
+Volaris
+B. Riley Financial
+Virgin Galactic
+Sixth Street Specialty Lending
+TreeHouse Foods
+GreenSky
+3D Systems
+BayWa
+Veritiv
+Fortune REIT
+Delek Logistics Partners
+AMC Networks
+Expro Group
+Trinseo
+IndiaMART
+Exscientia
+Taro Pharmaceutical
+Carpenter Technology
+Matterport
+Middlesex Water Company
+Materion
+Jack in the Box
+Shimao Property
+LSB Industries
+N-Able
+Canadian Solar
+Franchise Group
+BSE
+Ligand Pharmaceuticals
+Horace Mann Educators
+Tamarack Valley Energy
+Great Western Bank
+CareTrust REIT
+Vimeo
+Holly Energy Partners
+NW Natural
+NuStar Energy
+Amplitude
+Exide Industries
+Biotest
+Kadmon Corp
+Embark Technology
+Xperi
+Aareal Bank
+Banco Macro
+New Oriental
+Hornbach Baumarkt
+USA Compression Partners
+Frontline
+Alexander &amp; Baldwin
+Ranpak
+ChemoCentryx
+Pactiv Evergreen
+Westamerica Bancorporation
+E. W. Scripps Company
+ICF
+NBT Bancorp
+Fastly
+Latham Group
+Mack-Cali
+Shinpoong Pharm
+World Fuel Services
+iQIYI
+Wacker Neuson
+Amphastar Pharmaceuticals
+Ping Identity Holding
+Infinera
+Vaisala
+Formosa Taffeta
+Precinct Properties
+Riot Blockchain
+Glenmark Pharmaceuticals
+Clear Channel Outdoor
+Coface
+Vtech
+Zuora
+Sparkassen Immobilien
+MAG Silver
+iStar
+Fulgent Genetics
+The Greenbrier Companies
+Fine Organics
+Apollo Medical Holdings
+BGC Partners
+Rush Street Interactive
+Mirion Technologies
+HNI Corporation
+Patrizia Immobilien
+BASF India
+The Bancorp
+Marten Transport
+VakıfBank
+Great Eagle
+Evraz
+Micro Focus
+Clean Energy Fuels
+Virtus Investment Partners
+Supernus Pharmaceuticals
+Amber Enterprises India
+Hongkong and Shanghai Hotels
+Forterra
+Xencor
+Newegg
+MYR Group
+Cimpress
+Yanlord
+AST SpaceMobile
+USANA
+Global Net Lease
+Green Plains
+Bank of Maharashtra
+Holley
+AAR
+Proterra
+Lindsay Corporation
+Bank Danamon
+Agios Pharmaceuticals
+Criteo
+Vector Group
+Stock Yards Bancorp
+PennyMac Mortgage Investment Trust
+Meta Financial Group
+Radico Khaitan
+RHI Magnesita
+CS Disco
+Veracyte
+First Bancorp
+WideOpenWest
+Prothena
+Methode Electronics
+Abercrombie &amp; Fitch
+Veris Residential
+Adaptive Biotechnologies
+Shop Apotheke Europe
+Madrigal Pharmaceuticals
+VIZIO
+AssetMark
+Capitol Federal Savings Bank
+LivePerson
+Arcos Dorados Holdings
+Bajaj Electricals
+Udemy
+Vericel
+Alignment Healthcare
+Krystal Biotech
+Monarch Casino &amp; Resort
+Grendene
+Halkbank
+Compass Diversified Holdings
+Tennant Company
+Uponor
+Delek US
+Golden Entertainment
+Array Technologies
+Montrose Environmental
+Russel Metals
+Apollo Tyres
+Cresco Labs
+Rent-A-Center
+Brinker International
+Bilfinger
+Oceaneering International
+First Busey
+Heska Corporation
+Travere Therapeutics
+First National of Nebraska
+Redington India
+Tenneco
+ProPetro
+Palomar Holdings
+Iamgold
+US Ecology
+Avanos Medical
+Zogenix
+Kraton
+XPEL
+Monro
+Revolution Medicines
+CareDx
+Community Health Systems
+Formula Systems
+Patrick Industries
+First Commonwealth Financial Corp
+YTL Corporation Berhad
+Tivity Health
+Triumph Group
+The Andersons
+STRATEC
+H&amp;E Equipment Services
+Ladder Cap
+Sandstorm Gold
+Gibraltar Industries
+Oscar Health
+Brigham Minerals
+Sylvamo
+Unisys
+Kforce
+Core Laboratories
+Atoss
+Blend Labs
+23andMe
+Asseco
+Clover Health Investments
+PJT Partners
+iRobot
+Bally's Corporation
+IIFL Finance
+SJVN
+Granite Construction
+First Foundation
+Skycity Entertainment Group
+Impinj
+StoneX Group
+CommScope
+Bank Islam Malaysia
+Vertical Aerospace
+Berkshire Hills Bancorp
+Xenon Pharmaceuticals
+Albioma
+Cardlytics
+LTC Properties
+Scholastic
+Strategic Education
+Trustpower
+Invitae
+TDCX
+Hindustan Copper
+Archrock
+OSI Systems
+Chindata
+Primoris Services Corporation
+Stratasys
+Aurinia Pharmaceuticals
+AMAG Austria Metall
+BRP Group
+Kahoot!
+Argo Group
+Colbún
+Arhaus
+SMA Solar Technology
+Preferred Apartment Communities
+Lion Electric
+Genesis Energy  L.P.
+Koza Gold
+CSI
+Oxford Industries
+Celestica
+Amylyx Pharmaceuticals
+Remitly
+Partner Communications
+Hamburger Hafen
+Ferroglobe
+ePlus
+Sleep Number
+Magnite
+One Medical
+Kaiser Aluminum
+New York Mortgage Trust
+Extreme Networks
+Green Dot
+KEC International
+AdvanSix
+Membership Collective
+Federal Agricultural Mortgage
+SFL Corp
+GungHo Online Entertainment
+Seabridge Gold
+Snap One
+LendingClub
+Playa Hotels &amp; Resorts
+Momo
+Veeco
+Atrion
+K12
+Radware
+Vaxcyte
+P10
+ProAssurance
+Morphic Therapeutic
+Intapp
+Sapiens
+Semrush
+VIB Vermögen
+Southside Bancshares
+Phreesia
+Fnac Darty
+Lyell Immunopharma
+Payoneer
+Braves Group
+M/I Homes
+Construction Partners
+Universal Corporation
+Dime Community Bancshares
+Protolabs
+TriMas
+Service Properties Trust
+CryoPort
+ForgeRock
+I-Mab Biopharma
+Ratnamani Metals &amp; Tubes
+OFG Bancorp
+Li-Cycle
+Apria
+The Shyft Group
+PVR Cinemas
+Erasca
+Cohu
+PC Connection
+KKR Real Estate Finance Trust
+Asahi India Glass
+Mesa Laboratories
+Eckert &amp; Ziegler
+Energy Fuels
+Deluxe
+Enanta Pharmaceuticals
+Banco Inter
+BigCommerce
+Dril-Quip
+BrightView
+Bpost
+Eventbrite
+Innoviva
+Mixi
+ConnectOne Bancorp
+TTM Technologies
+Schnitzer Steel
+Nicolet Bankshares
+Galaxy Surfactants
+Steelcase
+Camping World
+Vivint Smart Home
+Cassava Sciences
+Elgi Equipments
+Armada Hoffler Properties
+Z Energy
+OceanFirst Financial
+Domo
+Cyient
+Gree
+Solid Power
+TAL Education Group
+Getty Realty
+Everbridge
+Citycon
+Earthstone Energy
+Healthcare Services Group
+Standex
+Expensify
+Redwood Trust
+Ready Capital
+Azul
+Brookdale Senior Living
+Dynavax Technologies
+Velo3D
+National Bank Holdings
+Dole PLC
+PROS
+Janus International Group
+Zydus Wellness
+Amyris
+NanoString Technologies
+Radius Global Infrastructure
+Freightways
+Safety Insurance
+iTeos Therapeutics
+Adtalem Global Education
+SkyWest
+Brookline Bancorp
+TriCo Bancshares
+Omega Flex
+Ace Hardware Indonesia
+Secure Energy Services
+BridgeBio Pharma
+Grenke
+Amara Raja Batteries
+Docebo
+New Gold
+Hyzon Motors
+Establishment Labs
+Axsome Therapeutics
+Sturm, Ruger &amp; Co
+Diversified Energy
+Finolex Industries
+UMH Properties
+Camtek
+Telia Lietuva
+stem
+Nexters
+Aston Martin
+Avid Technology
+Graphite India
+Desktop Metal
+Wemade
+LendingTree
+Amneal Pharmaceuticals
+Canoo
+Ryerson
+Instil Bio
+Bharat Dynamics
+Gladstone Land
+Blue Star
+V-Guard Industries
+La-Z-Boy
+tuya
+e.l.f. Cosmetics
+Adecoagro
+Accel Entertainment
+SilverCrest Metals
+Turning Point
+Tata Steel BSL
+Bright Health
+Talos Energy
+Nabors Industries
+1st Source
+SMART Global Holdings
+GPA
+Griffon Corporation
+8x8
+Mastek
+Malibu Boats
+PGT Innovations
+BrainChip
+ContextLogic
+wish.com
+U.S. Physical Therapy
+City Holding Company
+Revenio
+Banc of California
+Protagonist Therapeutics
+Pampa Energía
+GoPro
+Asiana Airlines
+Alpha &amp; Omega Semiconductor
+AZZ
+Azure Power
+Planet Labs
+Denison Mines
+Columbus McKinnon
+Enova International
+FibroGen
+Office Properties Income Trust
+OdontoPrev
+Addus HomeCare
+Cerence
+Fresh Del Monte Produce
+Codexis
+City Union Bank
+Reata Pharmaceuticals
+Indian Telephone Industries
+F45 Training
+Nuvation Bio
+Kinetik
+Cue Health
+Global Industrial Company
+Suzlon
+Laredo Petroleum
+U.S. Silica
+Restaurant Brands New Zealand
+Silk Road Medical
+Jindal Stainless
+Avid Bioservices
+Fortuna Silver Mines
+RadNet
+Dah Sing Bank
+SmartRent
+Enerpac Tool Group
+G-III Apparel Group
+VIP Industries
+Afya
+Nexa Resources
+Kaman
+Keros Therapeutics
+Loma Negra
+Bonheur
+Kiwi Property
+VTEX
+Cronos Group
+IDFC
+S&amp;T Bancorp
+Ottogi
+Repay Holdings
+Utz Brands
+Enerjisa Enerji
+UserTesting
+Verve Therapeutics
+NOW Inc.
+Alkami Technology
+Lakeland Bancorp
+Tecnoglass
+Rosseti
+Prosegur
+CTS Corporation
+RPT Realty
+Intrepid Potash
+Uranium Energy
+Employers Holdings
+Sovos Brands
+Amarin Corporation
+NLC India
+Guess
+loanDepot
+Cellebrite
+BrightSpire Capital
+Heartland Express
+Air New Zealand
+World Acceptance Corporation
+Merus
+REGENXBIO
+Flex Lng
+TG Therapeutics
+Secureworks
+Coeur Mining
+SiriusPoint
+Alector
+Gateway Real Estate
+ACM Research
+Health Catalyst
+Navios Maritime Partners
+VEON
+Com2uS
+Rhön-Klinikum
+Quess
+CropEnergies
+SpartanNash
+Essel Propack
+Network18
+Green Brick Partners
+Palfinger
+Allogene Therapeutics
+Taboola.com
+Revance Therapeutics
+Harsco
+Amerant Bancorp
+Meridian Bioscience
+Broadmark Realty Capital
+GreenLight Biosciences
+CONSOL Energy
+Materialise NV
+Myovant Sciences
+PROCEPT BioRobotics
+Tauron Polska
+Deutsche EuroShop
+PureCycle Technologies
+Bristow Group
+Jindal Stainless
+Hisar
+Zensar
+Knr Constructions
+ImmunoGen
+Lemonade
+Aimco
+CoreCivic
+Calumet Specialty Products Partners
+Shentel
+Orla Mining
+Matthews International Corporation
+New Work
+Metrovacesa
+BrightSphere Investment Group
+TerrAscend
+The Chefs' Warehouse
+Anterix
+Tremor International
+Tokmanni
+Summit Hotel Properties
+National Healthcare
+Sigma Lithium
+Avaya Holdings
+Energy Recovery
+Origin Bancorp
+Global Medical REIT
+Kayne Anderson Capital Advisors
+Recursion Pharmaceuticals
+ADC Therapeutics
+Miramar Hotel and Investment
+C4 Therapeutics
+Editas Medicine
+Norwegian Air Shuttle
+Hippo
+Netstreit
+Columbia Care
+Sumo Logic
+FREYR Battery
+Donnelley Financial Solutions
+TriState Capital Holdings
+S&amp;T AG
+Community Healthcare Trust
+Allcargo Logistics
+MapmyIndia
+Team17
+Altus Midstream
+Ellington Financial
+RBL Bank
+Bird Global
+EIH Limited
+Borosil
+Plantronics
+Piedmont Lithium
+Photronics
+MTY Food Group
+Imax Corp
+Ebix
+Mensch und Maschine
+The Necessity Retail REIT
+Sana Biotechnology
+Stitch Fix
+GOL Airlines
+Via S.A.
+Cosmo Pharmaceuticals
+Pearl Abyss
+Drägerwerk
+A10 Networks
+Ponsse
+OrthoPediatrics
+Thryv
+Scorpio Tankers
+Great Lakes Dredge &amp; Dock Corp.
+Melco International Development
+Plymouth Industrial REIT
+Orion Engineered Carbons
+Forrester Research
+HomeStreet Bank
+Traeger
+Kearny Financial
+East India Distilleries Parry
+Bakhu Holdings
+Kura Oncology
+Big Lots
+Nürnberger Versicherung
+Mahanagar Gas
+Navitas Semiconductor
+TomTom
+Arco Platform
+PDF Solutions
+BellRing Brands
+PubMatic
+Astec Industries
+MoneyGram
+CAI International
+Norma Group
+Cars.com
+WalkMe
+Orion Office REIT
+Huron Consulting
+Sundial Growers
+Delta Corp
+Locaweb
+Sterlite Technologies
+Cano Health
+Genesco
+Prince Pipes And Fittings
+MRC Global
+TrueBlue
+Al Moammar Information Systems
+Ichor Systems
+Accolade
+Symphony Limited
+fuboTV
+Celularity
+Mercer International
+Norway Royal Salmon
+MarineMax
+New Found Gold
+CorePoint Lodging
+Indiabulls Housing Finance
+PAR Technology
+MMTC
+Telesat
+Organogenesis
+ADTRAN
+Agilysys
+SPARC
+PAE
+MYT Netherlands Parent
+Mytheresa
+Varex Imaging
+Washington Trust Bancorp
+Dah Sing Financial
+Conduent
+American Woodmark
+Coherus BioSciences
+Riskified
+Intersect ENT
+Offerpad
+ReconAfrica
+Select Energy Services
+AMERISAFE
+Syndax Pharmaceuticals
+Schweitzer-Mauduit International
+Savencia Fromage &amp; Dairy
+American Axle &amp; Manufacturing
+LeMaitre Vascular
+Juventus Turin
+Gorman-Rupp
+Karooooo
+AvePoint
+Republic Bank
+Aveanna Healthcare
+Delegat
+Property For Industry
+Similarweb
+Allegiance Bancshares
+Efes Beverage Group
+Astra Space
+Multi Commodity Exchange
+Harmonic
+Designer Brands
+Aris Water Solutions
+Mahindra CIE
+Faro Technologies
+RE/MAX Holdings
+Benchmark Electronics
+Blink Charging
+NBCC India
+HireRight
+Hudco
+Bluerock Residential
+Indus Holding
+Heritage Financial
+Transportadora de Gas del Sur
+Perion Network
+Blucora
+TPG Real Estate Finance Trust
+Corporación América Airports
+IES Holdings
+Sunteck Realty
+Morphosys
+Orient Electric
+Perella Weinberg Partners
+Standard Lithium
+Horizon Bancorp
+AngioDynamics
+Endeavour Silver
+CBL Properties
+Skillz
+Zeal Network
+TimkenSteel
+DHT Holdings
+OneSpaWorld
+Tidewater
+Brooge Energy
+Vaibhav Global
+Tupperware Brands
+Clarus
+Biolife Solutions
+Praj Industries
+Magic Software
+Zhihu
+QCR Holdings
+Origin Materials
+Quanterix
+AudioCodes
+Triple-S Management
+Greenpanel Industries
+Denny's
+Pushpay Holdings
+Heliogen
+WM Technology
+ScanSource
+1-800-Flowers
+Jeju Air
+Global Blue Group
+Steel Partners
+Shoe Carnival
+Model N
+Rocket Pharmaceuticals
+Polyplex
+Precision Drilling Corporation
+Tattooed Chef
+Poshmark
+Sterling Construction
+CEVA
+Eurowag
+Hawaiian Airlines
+Vivid Seats
+Cadre
+Univest
+National Energy Services Reunited
+Independence Holding Company
+Vinci Partners
+Butterfly Network
+Mission Produce
+Adler Real Estate
+Forestar Group
+YIT
+Bombay Burmah
+REV Group
+Anavex Life Sciences
+Enfusion
+Rover
+Punjab &amp; Sind Bank
+AirAsia
+Hollysys Automation Technologie
+Kelly Services
+First Mid-Illinois Bancshares
+Nano Dimension
+BEML
+PBF Logistics
+TAV Airports Holding
+Genius Sports
+PureTech Health
+ARMOUR Residential REIT
+Geopark
+IDT Corporation
+Genco Shipping &amp; Trading
+DRDGOLD
+Gladstone Commercial
+Chase Corporation
+Phibro Animal Health
+RR Donnelley
+Lightwave Logic
+Universal Health Realty Income Trust
+Iris Energy
+Winmark
+Atai Life Sciences
+Unitil Corporation
+MannKind Corp
+Zumiez
+2U
+International Seaways
+Aktia Bank
+Carriage Services
+American Well
+Portillo's
+CEWE
+Pulmonx
+Huya
+Caverion
+PMV Pharmaceuticals
+CinCor Pharma
+sterling &amp; wilson solar
+Kezar Life Sciences
+Hims &amp; Hers Health
+Torrid
+MediaAlpha
+Valhi
+Olvi plc
+Bluelinx
+CION Investment
+SmileDirectClub
+MBIA
+NeoPhotonics
+Simulations Plus
+TeraWulf
+Sunlight REIT
+Johnson Outdoors
+Jindal Worldwide
+Eagle Bulk Shipping
+Clearfield
+Arcutis Biotherapeutics
+Acco Brands
+HarborOne Bancorp
+Titan International
+Boston Omaha
+RITES
+AdTheorent
+James River Group
+Enento Group
+Inhibrx
+AnaptysBio
+Pacific Century Regional Developments
+Skillsoft
+Verso Corporation
+Douglas Dynamics
+Rain Industries
+UB Properties
+Aeva Technologies
+Nektar Therapeutics
+Despegar
+Arlo Technologies
+Hut 8 Mining
+Youdao
+Movado
+Wabash National
+Infibeam Avenues
+Par Pacific Holdings
+Quanex Building Products
+Cera Sanitaryware
+Avidity Biosciences
+Finolex Cables
+Molecular Partners
+Sangamo Therapeutics
+Yext
+SLR Investment
+WisdomTree Investments
+Hanmi Financial
+Allbirds
+Cathay Real Estate Development
+TCG BDC
+Heidrick &amp; Struggles
+Perdoceo Education
+Interface
+Community Trust Bancorp
+Wheels Up
+National Western Life
+Cardiovascular Systems
+Cutera
+Northfield Bancorp
+Ayr Wellness
+City Office REIT
+Sierra Oncology
+Ruth's Hospitality Group
+Jin Air
+Largo
+AerSale
+Caleres
+The Children's Place
+Israel Discount Bank
+Theravance Biopharma
+Doma
+Seer
+The First Bancshares
+Kalpataru Power Transmission
+INDUS Realty Trust
+Replimune
+Cross Country Healthcare
+Helix Energy Solutions
+Hingham Institution for Savings
+Smith &amp; Wesson
+Maverix Metals
+Gevo
+Camden National Bank
+Burning Rock Biotech
+JBM Auto
+Insteel Industries
+Rigetti Computing
+SGOCO Group
+Ramaco Resources
+Daseke
+Flushing Financial Corp
+Olectra Greentech
+Senseonics Holdings
+Chalet Hotels
+Luther Burbank
+Brookfield Property REIT
+Cowen
+NAPCO Security Technologies
+United Fire Group
+SP Plus Corporation
+Cognyte Software
+Finnair
+Vista Oil &amp; Gas
+CryoLife
+Ares Commercial Real Estate
+Slam Corp
+Badger Infrastructure Solutions
+Magnachip
+HCI Group
+AEye
+Lilium
+PetIQ
+Janux Therapeutics
+trivago
+Heritage Commerce
+Archer Aviation
+Mirum Pharmaceuticals
+International Money Express
+Couchbase
+DICE Therapeutics
+Altimeter Growth
+Sorrento Therapeutics
+Electrica
+Viad
+SI-BONE
+Gujarat Mineral Development
+Digi International
+CareMax
+NETGEAR
+SunCoke Energy
+Centessa Pharmaceuticals
+Gujarat Alkalies and Chemicals
+Aurora Cannabis
+Chinook Therapeutics
+American Software
+COLOPL
+uniQure
+NerdWallet
+Aaron's
+Gossamer Bio
+HIVE Blockchain Technologies
+Agenus
+Porch Group
+Babcock &amp; Wilcox
+ESAB India
+Jindal Poly Films
+ViewRay
+Atlanticus
+Sierra Wireless
+Heritage-Crystal Clean
+Ethan Allen
+The Hackett Group
+Day One Biopharmaceuticals
+Weight Watchers
+Newtek
+Inogen
+Myers Industries
+OYAK Çimento
+Godawari Power &amp; Ispat
+Bandwidth
+BBVA Argentina
+AirSculpt Technologies
+Atlantic Capital Bancshares
+Blue Bird Corporation
+Silvercorp Metals
+Inovio Pharmaceuticals
+Jumia
+Volta
+Telos
+HEG
+Brasil Agro
+ESS Tech
+JCI Hitachi India
+Eagle Pharmaceuticals
+W&amp;T Offshore
+TrustCo Bank
+Contango Oil &amp; Gas Company
+Antares Pharma
+Cara Therapeutics
+Bluegreen Vacations
+Penn Virginia
+TCNS Clothing
+Varroc
+Paya
+Farmland Partners
+Geo Group
+TORM
+Sema4
+Kiniksa Pharmaceuticals
+Dynamic Materials Corporation
+RAPT Therapeutics
+NIU
+RADA Electronic Industries
+Argan
+Old Second Bancorp
+CRA International
+Barbeque Nation Hospitality
+Ingersoll Rand India
+Whitestone REIT
+Titan Machinery
+nLIGHT
+Sight Sciences
+QuinStreet
+Orthofix Medical
+Funko
+MeiraGTx
+Frontier Developments
+Hinduja Global Solutions
+Pegasus Airlines
+Vera Therapeutics
+Calavo Growers
+Seritage Growth Properties
+Microvision
+Argonaut Gold
+DoubleDown Interactive
+Kingsoft Cloud
+Vanda Pharmaceuticals
+OneWater Marine
+BJ's Restaurants
+Vicarious Surgical
+Grid Dynamics
+Hyliion
+Neenah
+Mechel PAO
+Hikal
+Mitek Systems
+Orchid Island Capital
+Cellcom Israel
+Gannett
+Ducommun
+Reliance Power
+ThredUp
+The Beachbody Company
+Hibbett Sports
+Banco Latinoamericano de Comercio Exterior
+Greenlam Industries
+Consolidated Communications
+ZimVie
+Pzena Investment Management
+Solo Brands
+Obsidian Energy
+ANI Pharmaceuticals
+Bitfarms
+Bioceres Crop Solutions
+Mahindra Lifespaces
+BELLUS Health
+HealthStream
+Target Hospitality
+TravelCenters of America
+Central Puerto
+Koppers
+Liquidity Services
+Cerberus Cyber Sentinel
+Franklin Street Properties
+Immunovant
+The RealReal
+Hydrofarm
+Collegium Pharmaceutical
+Vertex Energy
+JSW Holdings
+FDC India
+PLBY Group
+Playboy
+DXP Enterprises
+Granite Point Mortgage Trust
+Bangkok Airways
+SOPHiA GENETICS
+First Financial
+Glatfelter
+Aura Biosciences
+Dynex Capital
+Heidelbergcement India
+LoveSac
+PDS Multinational
+MetroCity Bankshares
+Canaan
+Universal Logistics Holdings
+Transport Corporation of India
+ON24
+Pharvaris
+SurModics
+Amalgamated Financial
+York Water
+Tejas Networks
+Rashtriya Chemicals and Fertilizers
+Centrus Energy
+Mesoblast
+Webzen
+ATN International
+Arcellx
+National Presto Industries
+Conn's
+Renren
+Bank of Marin Bancorp
+Nuvalent
+Humacyte
+Ambac
+Turning Point Brands
+Valens Semiconductor
+GAMCO Investors
+Barrett Business Services
+Suprajit Engineering
+a.k.a. Brands
+HBT Financial
+Taseko Mines
+1-800-PetMeds
+Diebold Nixdorf
+Fluence Energy
+Phillips Carbon Black
+RCI Hospitality Holdings
+Markforged
+REX American Resources
+Hyster-Yale Materials Handling
+GasLog
+VSE Corporation
+SandRidge Energy
+Arrow Financial
+Safe Bulkers
+QNB Finansleasing
+The Manitowoc Company
+Opera
+Vaxart
+Marcus Corporation
+Aarti Drugs
+Oppenheimer Holdings
+Dorian LPG
+Quantum-Si
+Rockley Photonics
+Cass Information Systems
+Groupon
+Equity BancShares
+Yalla Group
+FRP Holdings
+Evolus
+CEAT
+Quotient Technology
+Ocugen
+Tutor Perini
+Samyang Foods
+Zealand Pharma
+Riley Permian
+PlayWay
+Mail.ru Group
+Ouster
+Entravision Communications
+Science 37
+Gold Royalty Corp
+Gran Tierra Energy
+Workhorse Group
+Financial Institutions
+Bionano Genomics
+KSB ltd
+Maxeon Solar Technologies
+PennantPark Investment
+UP Fintech
+Tiger Brokers
+PennantPark Floating Rate
+Chuy's
+New Pacific Metals
+MidWestOne Financial Group
+Veritone
+AMMO
+Chico's
+Rigel Pharmaceuticals
+SilverBow Resources
+Itamar Medical
+Lands' End
+Gladstone Investment
+Haynes International
+Endo International
+Arizona Metals
+Affimed
+Eagle Point Credit Company
+GreenTree Hospitality
+Havertys
+Upland Software
+Karyopharm Therapeutics
+VRL Logistics
+Stoneridge
+JOANN
+Praxis Precision Medicines
+Simona
+Beazer Homes USA
+HomeTrust Bancshares
+The RMR Group
+The Tinplate Company Of India
+Sify
+Computer Programs and Systems
+Sudarshan Chemical
+Amryt Pharma
+Soliton
+Tata Coffee
+CapStar Financial
+Sportsman's Warehouse
+Latch
+Bridgewater Bancshares
+Rupa Company
+Bank Mayapada Internasional
+RumbleON
+Adicet Bio
+CSB Bank
+OraSure Technologies
+Rite Aid
+CIRCOR International
+ChannelAdvisor
+AppHarvest
+Religare
+Karur Vysya Bank
+Tricida
+The Vita Coco Company
+IGM Biosciences
+Borr Drilling
+MasterCraft Boat
+Heron Therapeutics
+Graphite Bio
+The Original BARK Company
+Inotiv
+GrowGeneration
+Synlait Milk
+Capital City Bank Group
+PORR
+B Communications
+COMPASS Pathways
+Enterprise Bancorp
+Gateway Distriparks
+Arcturus Therapeutics
+SpiceJet
+Trinity Capital
+Tejon Ranch
+Vaxxinity
+TPI Composites
+Rimini Street
+Akero Therapeutics
+Kimball Electronics
+Vital Farms
+Icelandair
+Engineers India
+Atea Pharmaceuticals
+Baozun
+Global Cord Blood
+Nacon
+EHang Holdings
+CNB Financial Corp
+Del Taco
+Ituran
+Allied Motion Technologies
+MOIL
+Southern Missouri Bancorp
+Modine Manufacturing
+Rubius Therapeutics
+IFB Industries
+Borussia Dortmund
+Indoco Remedies
+Farmers &amp; Merchants Bancorp
+OneConnect
+Dhampur Sugar Mills
+Nautilus Biotechnology
+Immatics
+Artesian Resources
+First Internet Bancorp
+Regional Management
+Guaranty Bancshares
+Gilat Telecom
+Scholar Rock Holding
+Howard Bancorp
+Lumber Liquidators
+Revlon
+Vishay Precision Group
+Teekay Tankers
+Bar Harbor Bankshares
+REE Automotive
+UFP Technologies
+Seneca Foods
+Akebia Therapeutics
+The Joint Corp.
+Hathway
+Purple Innovation
+Deciphera Pharmaceuticals
+Intercept Pharmaceuticals
+Duluth Holdings
+Garrett Motion
+Donegal Group
+Tata Steel Long Products
+DouYu
+Oil States International
+Mishra Dhatu Nigam
+Tiptree
+Nilkamal
+Arbutus Biopharma
+Sequent Scientific
+Innoviz
+EyePoint Pharmaceuticals
+Focus Universal
+RattanIndia Power
+Cassiopea
+Audacy
+Digimarc
+Mind Medicine
+Mahindra Logistics
+Neowiz Games
+Comtech Telecommunications
+Shore Bancshares
+Astec Lifesciences
+Astronics Corporation
+Ideanomics
+Priority Technology Holdings
+Reliance Infrastructure
+Tetra Technologies
+OPTiM
+Loop Industries
+American National Bank &amp; Trust Company
+Velodyne Lidar
+OrganiGram Holdings
+CTI BioPharma
+Daily Journal
+Clipper Realty
+Lordstown Motors
+Inseego
+EverQuote
+Meta Materials
+Outlook Therapeutics
+AGC Networks
+LexinFintech Holdings
+Sierra Bancorp
+CatchMark Timber Trust
+Akoya Biosciences
+North American Construction Group
+Newpark Resources
+Village Farms International
+Rayonier Advanced Materials
+Willdan Group
+The Container Store
+Nano-X Imaging
+CleanSpark
+Tallink Grupp
+Precigen
+Caesarstone
+Braemar Hotels &amp; Resorts
+Tredegar
+Arvind
+Gaotu Techedu
+El Pollo Loco
+Citizens &amp; Northern Corp
+Planet13
+Gladstone Capital
+Aemetis
+Marine Products Corporation
+Kaveri Seed
+Zymeworks
+Ramkrishna Forgings
+Pollux Properti Indonesia
+Ocular Therapeutix
+Yatsen Holding
+Phathom Pharmaceuticals
+ReneSola
+Hyderabad Industries Limited
+Avadel Pharmaceuticals
+Veru
+Party City
+Cosmo Films
+India Tourism Development Corp
+Y-mAbs Therapeutics
+Pexip
+Arteris
+Investors Title Company
+Strides Pharma
+Air Busan
+Mister Spex
+Nordic American Tankers
+Jounce Therapeutics
+FTS International
+Hindustan Oil Exploration Company
+Covenant Logistics
+Marvelous
+NI Holdings
+Graña y Montero
+Kodiak Sciences
+Somany Ceramics
+Greene County Bancorp
+Orient Cement
+Waterdrop Inc.
+Yellow Corporation
+Angel Oak REIT
+Hailiang Education
+Ten Square Games
+Civista Bancshares
+Xeris Pharmaceuticals
+PolyMet
+Cato Fashion
+G1 Therapeutics
+People Can Fly
+Dish TV
+eGain
+CarParts.com
+Digital Bros
+Hersha Hospitality Trust
+Kirloskar Ferrous Industries
+Vuzix
+IronNet
+Nerdy
+PREOS Real Estate
+Root Insurance
+Sunlight Financial
+22nd Century Group
+Hovnanian Enterprises
+KORE
+Qiwi
+Filatex India
+India Glycols
+Casa Systems
+Penseco Financial Services
+Weave Communications
+Bushiroad
+Tufin
+Big 5 Sporting Goods
+Arbe Robotics
+SkyWater Technology
+Vapotherm
+GoHealth
+Paisalo Digital
+Redwire
+Lightning eMotors
+Ooma
+Civeo
+Puravankara
+Action Construction Equipment
+UBM Development
+Axogen
+Vigil Neuroscience
+HF Foods Group
+Schneider Electric Infrastructure
+Castlight Health
+Identiv
+Landec
+Prime Focus
+Aeroporto G. Marconi Bologna
+Nature's Sunshine Products
+Miller Industries
+Home Bancorp
+SelectQuote
+First Bancorp
+TrueCar
+IRSA Propiedades Comerciales
+Transcontinental Realty Investors
+Ellomay Capital
+Macquarie Infrastructure
+VBI Vaccines
+Stratus Properties
+Geron
+Eastman Kodak Company
+National Fertilizers
+Ashoka Buildcon
+Ring Energy
+Vaalco Energy
+ADMA Biologics
+Summit Financial Group
+Kimball International
+Tactile Medical
+Benefitfocus
+Motorcar Parts of America
+Unifi
+ShotSpotter
+Grupo Supervielle
+Olympic Steel
+Talaris Therapeutics
+Information Services Group
+LianBio
+Mersana Therapeutics
+Missfresh
+Jain Irrigation Systems
+Inox Wind
+Vroom
+Macatawa Bank
+Cenntro Electric Group
+PTC India
+Future Retail
+EZCorp
+Wejo Group
+Spandana Sphoorty Financial
+Quad
+ATI Physical Therapy
+Century Casinos
+Baytex Energy
+Turtle Beach Corp
+Chicago Atlantic Real Estate Finance
+Republic First Bancorp
+Teekay
+BCB Bancorp
+Green Plains Partners
+Rent the Runway
+Gatos Silver
+SciPlay
+Méliuz
+Allakos
+Radiant Logistics
+Accuray
+Gravity Co.
+Jaypee Group
+Hindustan Construction Company
+Third Coast Bancshares
+Gulf Oil Lubricants
+Electrosteel Castings
+Surya Roshni
+Kyokuyo
+Full House Resorts
+Esperion Therapeutics
+Resonant
+GTL Infrastructure
+T’way Air
+Greenidge Generation Holdings
+SOC Telemed
+Greenhill
+Sono
+Automotive Axles
+Lifetime Brands
+SRA Holdings
+Unity Bancorp
+Whole Earth Brands
+PCSB Financial
+Akoustis Technologies
+Lexicon Pharmaceuticals
+BLS International
+Ashford Hospitality Trust
+Immunic
+Preformed Line Products
+bluebird bio
+DHI Group
+Oriental Aromatics
+Greenply
+MSTC Limited
+Marinus Pharmaceuticals
+Focus Home Interactive
+Brightcove
+Zevia
+UpHealth
+Subros
+Bafang Yunji
+Zomedica Pharmaceuticals
+Adaptimmune Therapeutics
+Oyster Point Pharma
+Backblaze
+ACNB Corporation
+Tillys
+Indian Metals &amp; Ferro Alloys
+Marlin Business Services
+Casper Sleep
+Allot
+Spire Global
+NGL Energy Partners
+Western Copper and Gold
+ORIC Pharmaceuticals
+Northwest Pipe Company
+I.g. Petrochemicals
+Camber Energy
+Vinco Ventures
+XL Fleet
+INNOVATE Corp.
+Altimmune
+Park Aerospace
+Parke Bancorp
+Excel Industries
+Northeast Bank
+Provident Bancorp
+CompX International
+XBiotech
+AXT Inc
+Tide Water Oil
+Safari Industries India
+Summit Therapeutics
+Red Robin
+Alembic Limited
+Falcon Minerals
+Central Valley Community Bancorp
+Bankwell Financial Group
+Hester Biosciences
+11 bit studios
+Atlantic Power Corporation
+First Business Financial Services
+Vst Tillers Tractors
+Stellus Capital
+High Tide
+Commercial Vehicle Group
+CVG
+Northrim BanCorp
+Siyaram Silk Mills
+Compugen
+GTPL Hathway
+Genius Brands
+Orrstown Financial Services
+Bakkt Holdings
+eHealth
+Build-A-Bear
+NVE Corporation
+Vesuvius India
+AC Immune
+Owlet
+Arcimoto
+Verastem Oncology
+Generation Bio
+Marksans Pharma
+CyberOptics
+Innate Pharma
+Mirza International
+Voltamp Transformers
+Alico
+Entrada Therapeutics
+Anant Raj
+Confidence Petroleum
+Destination XL
+PlayAGS
+Kamada
+CymaBay Therapeutics
+MM Forgings
+Maruzen
+Lulu's Fashion Lounge
+Vidhi Specialty Food
+Viking Therapeutics
+Silicom
+Huttig Building Products
+Vera Bradley
+Petropavlovsk
+Golar LNG Partners
+West Coast Paper Mills
+Addiko Bank
+Apollo Pipes
+Powell Industries
+CalAmp
+Emerald Holding
+Aehr Test Systems
+Hooker Furniture
+Luna Innovations
+Hindustan Sanitaryware &amp; Industries
+Voxx International
+Astra Microwave
+Curis
+Chennai Petroleum
+Nam Tai Property
+EMX Royalty
+Westport Fuel Systems
+Voyager Therapeutics
+Portman Ridge
+VA Tech Wabag
+VistaGen Therapeutics
+Eneti
+Timberland Bancorp
+Cian
+Sangoma Technologies
+Karnataka Bank
+Amplify Energy
+Territorial Bancorp
+JTEKT India
+Greenlight Reinsurance
+HBL Power Systems
+Weyco Group
+First Guaranty Bancshares
+Ovid Therapeutics
+Limoneira
+Community Financial Corporation
+Urban One
+Phunware
+Fiesta Restaurant Group
+Hurco Companies
+GasLog Partners
+Sierra Metals
+Bel Fuse
+Citius Pharmaceuticals
+Lantronix
+Express
+First Northwest Bancorp
+Comscore
+Indorama Synthetics
+Gati
+HEXO
+Matrix Service
+Jagran Prakashan
+Immutep
+FinWise Bancorp
+Ocwen
+Gabriel India
+INEOS Styrolution
+South Indian Bank
+Aldeyra Therapeutics
+GEOX
+Thai Airways International
+Trecora Resources
+Shankara Building
+NACCO Industries
+Allied Tecnologia
+AG Mortgage Investment Trust
+Precision BioSciences
+Pieris Pharmaceuticals
+County Bancorp
+Lineage Cell Therapeutics
+Citizens Inc
+Evans Bancorp
+U.S. Xpress Enterprises
+NRx Pharmaceuticals
+KULR Technology
+Platinum Group Metals
+Time Technoplast
+Codorus Valley Bancorp
+Himatsingka Seide
+GAN
+Kitex Garments
+NACL Industries
+Shriram Pistons &amp; Rings
+Western New England Bancorp
+LCNB
+Zynex
+Exterran
+Sonida Senior Living
+Northern Dynasty Minerals
+Selecta Biosciences
+Talkspace
+CytomX Therapeutics
+Seanergy Maritime
+Hemisphere Media Group
+Oil-Dri Corporation Of America
+Ashiana Housing
+Investar Holding
+Barnes &amp; Noble Education
+LATAM Airlines
+Maiden Holdings
+Twin Disc
+Cellectis
+BBX Capital Corporation
+Epizyme
+Electra Meccanica
+A.S. Roma
+Neuland Laboratories
+CARE's Ratings
+Oxford Square Capital
+CSI Compressco
+Bassett Furniture
+Bit Digital
+Geojit Financial Services
+Omaxe
+Xilio Therapeutics
+Progenity
+ESSA Bancorp
+Kopin Corporation
+KCP Limited
+MISTRAS Group
+Federal-Mogul Goetze
+Mahanagar Telephone Nigam
+Nelco
+Delta Apparel
+Overseas Shipholding Group
+Venator Materials
+Aptinyx
+CECO Environmental
+Sylogist
+Just Energy
+Ziopharm Oncology
+Accelya
+Gallantt Ispat
+Silvercrest Asset Management Group
+Cormedix
+BIT Mining
+500.com
+Mainz Biomed
+RGC Resources
+Genie Energy
+C&amp;F Financial Corporation
+Wheels India
+Cigniti Technologies
+Shalby
+Sasken Technologies
+Romeo Power
+Trean Insurance Group
+Indonesia Energy
+BlackSky Technology
+Aptech
+Daktronics
+Athersys
+Kingfa Science & Technology
+Stronghold Digital Mining
+Cel-Sci
+Potbelly Corporation
+Force Motors
+Avita Medical
+Power Mech Projects
+KVH Industries
+Heritage Insurance
+Liberty TripAdvisor Holdings
+Spok Holdings
+Exela Technologies
+Humanigen
+Escalade Sports
+Bodal Chemicals
+Rekor Systems
+Hinduja Ventures
+Cantabil Retail India
+Mynaric
+Americas Gold and Silver Corp
+Riverview Bancorp
+Velan
+Lee Enterprises
+Kewal Kiran Clothing
+Lument Finance Trust
+Sandhar
+Sachem Capital
+Acacia Research
+Compleo Charging Solutions
+Nymox Pharmaceutical
+LSI Industries
+Smith Micro Software
+IEC Electronics
+Immersion Corporation
+L.B. Foster
+Paratek Pharmaceuticals
+Peoples Bancorp of North Carolina
+ARC Document Solutions
+Honda Siel Power Products
+Hexindai
+Sundaram Finance
+Qudian
+Prakash Industries
+AVEO Oncology
+Coffee Day Enterprises
+Blue Apron Holdings
+Texmaco Rail &amp; Engineering
+Ceragon Networks
+Nucleus Software Exports
+StarTek
+The Arena Group
+Consolidated Water
+USD Partners
+Leap Therapeutics
+Repco Home Finance
+Gencor Industries
+Retractable Technologies
+United Insurance Holdings
+Benessere Capital Acquisition
+Huhtamaki India
+Southern Petrochemical Industries Corp
+Altisource Portfolio
+Mesa Air
+Synlogic
+Advent Technologies
+Igarashi Motors India
+Cooper Standard
+Martin Midstream Partners
+Middlefield Banc
+Co-Diagnostics
+Sanghi Industries
+Minerva Surgical
+Enzo Biochem
+Mogo
+Marrone Bio Innovations
+Milestone Pharmaceuticals
+Quantum
+PDS Biotechnology
+Cortexyme
+Trilogy Metals
+BG Staffing
+J.Jill
+Ohio Valley Banc Corp
+SOS Limited
+Fluent
+Forum Energy Technologies
+BankFinancial
+Atossa Therapeutics
+So-Young International
+SEACOR Marine
+Lakeland Industries
+Blueknight Energy Partners
+MPS Limited
+Quick Heal
+Union Bankshares
+Triterras
+Ardmore Shipping
+PTC Financial Services
+Oconee Federal Financial
+Great Panther Mining
+GE Power India
+EMCORE Corporation
+Lipocine
+Kirkland's
+Tamil Nadu Newsprint and Papers Limited
+Asure Software
+gumi
+Pixelworks
+DIRTT Environmental Solutions
+Mangalam Cement
+Asensus Surgical
+aTyr Pharma
+Prudential Bancorp
+India Nippon Electricals
+Aterian
+Pulse Biosciences
+Dover Motorsports
+Prabhat Dairy
+DPW Holdings
+Old Point Financial
+Wendt India
+ServiceSource
+Eargo
+Harpoon Therapeutics
+Sientra
+Smart Sand
+Modiv
+Jakks Pacific
+ContraFect
+Vadilal Industries
+Nautilus
+Surface Oncology
+Xchanging Solution
+Agrify
+Matinas BioPharma
+Ellington Residential Mortgage REIT
+Spectrum Pharmaceuticals
+Horizon Global
+MDxHealth
+India Motor Parts and Accessories
+Malvern Bancorp
+Cytosorbents
+Parag Milk Foods
+TherapeuticsMD
+NCS Multistage
+Clearside Biomedical
+Longeveron
+KLab
+Fortress Biotech
+3i Infotech
+Srikalahasthi Pipes
+NN, Inc.
+Reading International
+Kala Pharmaceuticals
+Conformis
+Nusantara Pelabuhan Handal
+Intevac
+Westwood Holdings Group
+GreenPower Motor Company
+Provident Financial Holdings
+Ardelyx
+Adverum Biotechnologies
+Frank's International
+Flexsteel Industries
+Flotek Industries
+Savara Pharmaceuticals
+Sesen Bio
+Tabula Rasa HealthCare
+OncoCyte
+Iteris
+PEDEVCO
+Accelerate Diagnostics
+Onion Global
+Nok Air
+FingerMotion
+Nuvectis Pharma
+Synchronoss
+Lumax Industries
+Drive Shack
+Fonar Corporation
+RPG Life Sciences
+Apex Frozen Foods
+Farmer Brothers
+IO Biotech
+PAVmed
+BrainStorm Cell Therapeutics
+Reliance Communications
+Superior Industries International
+Rane Holdings
+MediciNova
+Dare Bioscience
+Mangalore Chemicals and Fertilizers
+Carrols Restaurant Group
+Advanced Emissions Solutions
+Foseco India
+Comstock Mining
+Recro Pharma
+Metromile
+Park City Group
+Solid Biosciences
+Anup Engineering
+Gaia
+Capacit'e Infraprojects
+Arlington Asset Investment
+Paysign
+Mammoth Energy Services
+AgroFresh
+Hour Loop
+Summit Midstream
+ACRES Commercial Realty
+Lifeway Foods
+Vista Gold
+Radio City
+AquaBounty
+PowerFleet
+Hallador Energy Company
+Hill International
+IMV
+Tonix Pharmaceuticals
+Nine Energy Service
+XpresSpa
+Galectin Therapeutics
+Quotient
+geechs
+Sphere 3D
+Bliss GVS Pharma
+Drecom
+Assertio Therapeutics
+Kuantum Papers
+Balaji Telefilms
+Golden Minerals
+Aquestive Therapeutics
+Concert Pharmaceuticals
+Cheetah Mobile
+İşbir Holding
+Tanzanian Gold Corporation
+Ampio Pharmaceuticals
+SCYNEXIS
+Elevate Credit
+Genprex
+InflaRx
+Spencer's Retail
+CBAK Energy
+NantHealth
+SML Isuzu
+Capricor Therapeutics
+Athenex
+Avino Silver &amp; Gold Mines
+Salem Media Group
+KLX Energy Services
+Brooklyn ImmunoTherapeutics
+Aptose Biosciences
+180 Life Sciences
+Redhill Biopharma
+Seelos Therapeutics
+Yatra
+Orchard Therapeutics
+Alkaline Water Company
+Sonendo
+Document Security Systems
+Orion Energy Systems
+Hepion Pharmaceuticals
+Oncolytics Biotech
+Orient Paper Mills
+Luby's
+Palatin Technologies
+Navios Maritime Holdings
+Augmedix
+O2Micro
+Jay Bharat Maruti
+Skipper Limited
+Zynerba Pharmaceuticals
+Hycroft Mining
+Net Element
+Sellas Life Sciences
+NewAge
+Nectar Lifesciences
+IMTE
+Ebixcash India
+Graham Corporation
+Farmmi
+Unitech Group
+Kokuyo Camlin
+Natural Health Trends
+Merrimack Pharmaceuticals
+Geospace Technologies
+Xunlei
+eMagin
+Regis Corporation
+Asian Granito India
+Energous
+Verb Technology
+Anixa Biosciences
+Cadiz
+AgEagle Aerial Systems
+S.S. Lazio
+Sterling Tools
+Sotherly Hotels
+Sunworks
+Silver One Resources
+iBio
+Ocean Power Technologies
+Lumos Pharma
+Starbreeze
+orion-group-holdings
+SPI Energy
+N.B.I. Industrial Finance
+Remark Holdings
+Navkar Corp
+Wrap Technologies
+Hallmark Financial Services
+Boxlight
+MICT
+Trevena
+DAVIDsTEA
+Corvus Pharmaceuticals
+Great Elm Capital
+PREIT
+ProQR
+Genesis HealthCare
+Journey Medical
+Iterum Therapeutics
+Manhattan Bridge Capital
+Syros Pharmaceuticals
+Logan Ridge Finance
+Trinity Place Holdings
+Super League Gaming
+Houston American Energy
+BeyondSpring
+Allied Esports
+Cryo-Cell
+FreightCar America
+Genocea Biosciences
+Sidus Space
+Gulf Island Fabrication
+Bionomics
+American Virtual Cloud
+ATARI
+T2 Biosystems
+Rane Brake Lining
+Rico Auto Industries
+ReWalk Robotics
+Foresight Autonomous Holdings
+X4 Pharmaceuticals
+BioLargo
+Hindustan Media Ventures
+Mullen Automotive
+Evofem Biosciences
+U.S. Gold Corp
+CI Games
+AVROBIO
+Achieve Life Sciences
+IZEA Worldwide
+Frequency Therapeutics
+U.S. Well Services
+LightPath Technologies
+Quicklogic
+Westwater Resources
+Capstone Green Energy
+Harte Hanks
+GVK Power & Infrastructure
+Zee Learn
+Society Pass
+Titan Medical
+Avalon GloboCare
+Pioneer Power Solutions
+Digital Ally
+Corbus Pharmaceuticals
+SeaChange
+Kingstone Companies
+Inuvo
+GlycoMimetics
+PhaseBio Pharmaceuticals
+AeroClean Technologies
+SigmaTron International
+Tiziana Life Sciences
+The9
+cbdMD
+Tyme Technologies
+Beasley Broadcast Group
+Biolase
+MEP Infrastructure
+Solitario Zinc
+Zion Oil &amp; Gas
+Polar Power
+AcelRx Pharmaceuticals
+Neptune Wellness Solutions
+Cocrystal Pharma
+Calyxt
+HyreCar
+Biomerica
+Marin Software
+Winc
+Aptorum Group
+Rafael Holdings
+Almaden Minerals
+Isoray
+Unity Biotechnology
+India Globalization Capital
+Waitr Holdings
+Cyclerion Therapeutics
+Team Inc
+LMP Automotive Holdings
+CorEnergy Infrastructure Trust
+Adial Pharmaceuticals
+Acasti Pharma
+Abeona Therapeutics
+Top Ships
+Greenlane
+Vislink Technologies
+Intellicheck
+Aeterna Zentaris
+OpGen
+NuCana
+Protalix BioTherapeutics
+Oragenics
+ATA Creativity Global
+BioSig Technologies
+Allena Pharmaceuticals
+NuZee
+Regulus Therapeutics
+Real Good Food plc
+Psychemedics
+Inpixon
+Srei Infrastructure Finance
+Broadwind
+Fresh Vine Wine
+Aytu BioScience
+electroCore
+AIM ImmunoTech
+Calithera Biosciences
+vTv Therapeutics
+Aprea Therapeutics
+Future Supply Chain Solutions
+Marpai
+Zovio
+enish
+Ontrak
+VivoPower
+Microbot Medical
+Cyngn
+Astrotech
+Biofrontera
+Arcadia Biosciences
+Ekso Bionics
+Aileron Therapeutics
+Onconova Therapeutics
+Stealth BioTherapeutics
+Organovo
+Lannett Company
+Galmed Pharmaceuticals
+iSpecimen
+Quintana Energy Services
+Rockwell Medical
+Akerna
+Biocept
+ION Geophysical
+Minerva Neurosciences
+Armstrong Flooring
+ZK International Group
+Appirits
+VYNE Therapeutics
+Soligenix
+Precipio
+Context Therapeutics
+Esports Entertainment
+AgeX Therapeutics
+Agile Therapeutics
+Dolphin Entertainment
+Celsion Corporation
+FGI Industries
+Genetic Technologies
+Neovasc
+Yield10 Bioscience
+Stryve Foods
+Air Industries Group
+Zosano Pharma
+Can Fite Biopharma
+FC Porto
+Advanced Human Imaging
+RealNetworks
+Versus Systems
+Carver Bancorp
+Blackboxstocks
+Pintec Technology
+Nabriva Therapeutics
+BiondVax
+Petros Pharmaceuticals
+Diffusion Pharmaceuticals
+Orphazyme
+ShiftPixy
+ToughBuilt Industries
+Pulmatrix
+FedNat Holding Company
+SandRidge Permian Trust
+AppTech Payments
+Acorda Therapeutics
+SG Blocks
+Chembio Diagnostics
+NanoViricides
+Trinity Biotech
+WonderPlanet
+Wheeler Real Estate Investment Trust
+Rave Restaurant Group
+OLB Group
+Aethlon Medical
+Bellerophon Therapeutics
+BIO-key International
+Advaxis
+Summer Infant
+Avinger
+Applied DNA Sciences
+HTG Molecular Diagnostics
+Benitec Biopharma
+Evoke Pharma
+Tempest Therapeutics
+Eastside Distilling
+Performance Shipping
+Tivic Health Systems
+Impac Mortgage Holdings
+Cingulate
+Blue Hat
+Hillstream BioPharma
+Cemtrex
+Altamira Therapeutics
+Avianca
+Seadrill
+Grom Social Enterprises
+Helius Medical Technologies
+Staffing 360 Solutions
+Kidpik
+Ra Medical Systems
+Jump Networks
+SINTX Technologies
+Allied Healthcare Products
+Titan Pharmaceuticals
+Mallinckrodt Pharmaceuticals
+Sonim Technologies
+PainReform
+Liquid Media Group
+Viveve Medical
+JanOne
+Energy Focus
+Direct Digital Holdings
+Baudax Bio
+Youngevity International
+Pareteum Corporation
+iFresh
+Trulite
+Delimobil
+Flex Energy Solutions
+KinderCare Learning Companies
+Austin Gold
+Intensity Therapeutics
+Justworks
+Rhodium Enterprises
+Samsara Vision
+Verdant Earth Technologies
