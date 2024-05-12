@@ -110,6 +110,7 @@ class MyCRFTagger(TaggerI):
 			self._names = open("data/names_esp.txt", encoding="utf-8").readlines()
 			self._surnames = open("data/surnames_esp.txt", encoding="utf-8").readlines()
 		self._cities = open("data/cities.txt", encoding="utf-8").readlines()
+		self._companies = open("data/companies.txt", encoding="utf-8").readlines()
 		self._celebrities = open("data/celebrities.txt", encoding="utf-8").readlines()
 		self._research_organizations = open("data/research_organizations.txt", encoding="utf-8").readlines()
 
@@ -146,6 +147,10 @@ class MyCRFTagger(TaggerI):
 		return token in self._cities
 	
 	@cache
+	def _in_companies(self, token):
+		return token in self._companies
+	
+	@cache
 	def _in_celebrities(self, token):
 		return token in self._celebrities
 	
@@ -177,7 +182,9 @@ class MyCRFTagger(TaggerI):
 		# Capitalization
 		if token[0].isupper():
 			feature_list.append("CAPITALIZATION")
-
+		
+		if any(map(str.isupper, token)):
+			feature_list.append("HAS_UPPER")
 		# Number
 		if re.search(self._pattern, token) is not None:
 			feature_list.append("HAS_NUM")
@@ -273,16 +280,6 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("PREV_CELEBRITY")
 			if idx < len(tokens) - 1 and self._in_celebrities(tokens[idx + 1]):
 				feature_list.append("NEXT_CELEBRITY")
-
-		# Research organizations
-		if self._in_research_organizations(token):
-			feature_list.append("RESEARCH_ORGANIZATION")
-
-			# Previous and next research organization
-			if idx > 0 and self._in_research_organizations(tokens[idx - 1]):
-				feature_list.append("PREV_RESEARCH_ORGANIZATION")
-			if idx < len(tokens) - 1 and self._in_research_organizations(tokens[idx + 1]):
-				feature_list.append("NEXT_RESEARCH_ORGANIZATION")
 
 		# # Previous tag prediction
 		# if idx > 0:
