@@ -242,7 +242,7 @@ class MyCRFTagger(TaggerI):
 			feature_list.append("PLURAL")
 
 		# Gazetteer
-		# Names and surnames
+		# Names
 		if self._in_names(token):
 			feature_list.append("NAME")
 
@@ -252,6 +252,7 @@ class MyCRFTagger(TaggerI):
 			if idx < len(tokens) - 1 and self._in_names(tokens[idx + 1]):
 				feature_list.append("NEXT_NAME")
 
+		# Surnames
 		if self._in_surnames(token):
 			feature_list.append("SURNAME")
 
@@ -280,6 +281,26 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("PREV_CELEBRITY")
 			if idx < len(tokens) - 1 and self._in_celebrities(tokens[idx + 1]):
 				feature_list.append("NEXT_CELEBRITY")
+
+		# Companies
+		if self._in_companies(token):
+			feature_list.append("COMPANY")
+
+			# Previous and next company
+			if idx > 0 and self._in_companies(tokens[idx - 1]):
+				feature_list.append("PREV_COMPANY")
+			if idx < len(tokens) - 1 and self._in_companies(tokens[idx + 1]):
+				feature_list.append("NEXT_COMPANY")
+
+		# Research organizations
+		if self._in_research_organizations(token):
+			feature_list.append("RESEARCH_ORGANIZATION")
+
+			# Previous and next research organization
+			if idx > 0 and self._in_research_organizations(tokens[idx - 1]):
+				feature_list.append("PREV_RESEARCH_ORGANIZATION")
+			if idx < len(tokens) - 1 and self._in_research_organizations(tokens[idx + 1]):
+				feature_list.append("NEXT_RESEARCH_ORGANIZATION")
 
 		# # Previous tag prediction
 		# if idx > 0:
