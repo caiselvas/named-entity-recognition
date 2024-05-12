@@ -241,7 +241,7 @@ class MyCRFTagger(TaggerI):
 		feature_list.append("LEMMA_" + lemma)
 
 		# Morphological features
-		morph = self.get_morph(tokens)
+		morph = self.get_morph(tuple(tokens))
 		
 		# Plural or singular
 		if morph[idx][1].get("Number", None):
