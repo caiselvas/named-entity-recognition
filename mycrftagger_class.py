@@ -110,6 +110,7 @@ class MyCRFTagger(TaggerI):
 			self._names = open("data/names_esp.txt", encoding="utf-8").readlines()
 			self._surnames = open("data/surnames_esp.txt", encoding="utf-8").readlines()
 		self._cities = open("data/cities.txt", encoding="utf-8").readlines()
+		self._companies = open("data/companies.txt", encoding="utf-8").readlines()
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -142,6 +143,10 @@ class MyCRFTagger(TaggerI):
 	@cache
 	def _in_cities(self, token):
 		return token in self._cities
+	
+	@cache
+	def _in_companies(self, token):
+		return token in self._companies
 
 	def _get_features(self, tokens, idx):
 		"""
@@ -167,7 +172,9 @@ class MyCRFTagger(TaggerI):
 		# Capitalization
 		if token[0].isupper():
 			feature_list.append("CAPITALIZATION")
-
+		
+		if any(map(str.isupper, token)):
+			feature_list.append("HAS_UPPER")
 		# Number
 		if re.search(self._pattern, token) is not None:
 			feature_list.append("HAS_NUM")
@@ -254,6 +261,14 @@ class MyCRFTagger(TaggerI):
 			if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
 				feature_list.append("NEXT_CITY")
 
+		if self._in_cities(token):
+			feature_list.append("COMPANY")
+
+			# Previous and next city
+			if idx > 0 and self._in_cities(tokens[idx - 1]):
+				feature_list.append("PREV_COMPANY")
+			if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
+				feature_list.append("NEXT_COMPANY")		
 		# # Previous tag prediction
 		# if idx > 0:
 		# 	feature_list.append("PREV_TAG_" + self._tagger.tag([self._get_features(tokens, idx - 1)])[0])
