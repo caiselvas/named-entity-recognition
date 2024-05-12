@@ -104,15 +104,15 @@ class MyCRFTagger(TaggerI):
 		self._language = language
 		
 		if self._language == "ned":
-			self._names = open("data/names_ned.txt", encoding="utf-8").readlines()
-			self._surnames = open("data/surnames_ned.txt", encoding="utf-8").readlines()
+			self._names = set(open("data/names_ned.txt", encoding="utf-8").readlines())
+			self._surnames = set(open("data/surnames_ned.txt", encoding="utf-8").readlines())
 		elif self._language == "esp":
-			self._names = open("data/names_esp.txt", encoding="utf-8").readlines()
-			self._surnames = open("data/surnames_esp.txt", encoding="utf-8").readlines()
-		self._cities = open("data/cities.txt", encoding="utf-8").readlines()
-		self._companies = open("data/companies.txt", encoding="utf-8").readlines()
-		self._celebrities = open("data/celebrities.txt", encoding="utf-8").readlines()
-		self._research_organizations = open("data/research_organizations.txt", encoding="utf-8").readlines()
+			self._names = set(open("data/names_esp.txt", encoding="utf-8").readlines())
+			self._surnames = set(open("data/surnames_esp.txt", encoding="utf-8").readlines())
+		self._cities = set(open("data/cities.txt", encoding="utf-8").readlines())
+		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
+		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
+		self._research_organizations = set(open("data/research_organizations.txt", encoding="utf-8").readlines())
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
