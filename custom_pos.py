@@ -6,3 +6,11 @@ class CustomPOSTagger:
     def get_postag(self, tokens):
         doc = self.nlp(" ".join(tokens))
         return [(token.text, token.pos_) for token in doc]
+    
+    def get_morph(self, tokens):
+        doc = self.nlp(" ".join(tokens))
+        return [(token.text, token.morph) for token in doc]
+    
+    def get_dep(self, tokens):
+        doc = self.nlp(" ".join(tokens))
+        return [(token.text, token.dep_) for token in doc]
