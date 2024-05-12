@@ -16,12 +16,13 @@ from typing import Any
 from nltk.tag.api import TaggerI
 from nltk.tag import pos_tag
 from nltk.stem import WordNetLemmatizer
+from custom_pos import CustomPOSTagger
 
 try:
 	import pycrfsuite
 except ImportError:
 	pass
-
+from functools import cache
 
 class MyCRFTagger(TaggerI):
 	"""
@@ -92,20 +93,23 @@ class MyCRFTagger(TaggerI):
 		self._training_options = training_opt
 		self._pattern = re.compile(r"\d")
 		
-		self._pos_tagger = pos_tag
+
 		self._lemmatizer = WordNetLemmatizer()
 
 		assert language in ["ned", "esp"], "Language should be either 'ned' or 'esp'"
+		if language == "ned":
+			self._pos_tagger = CustomPOSTagger("nl_core_news_sm")
+		else:
+			self._pos_tagger = CustomPOSTagger("es_core_news_sm")
 		self._language = language
 		
 		if self._language == "ned":
-			self._names = open("data/names_ned.txt").readlines()
-			self._surnames = open("data/surnames_ned.txt").readlines()
+			self._names = open("data/names_ned.txt", encoding="utf-8").readlines()
+			self._surnames = open("data/surnames_ned.txt", encoding="utf-8").readlines()
 		elif self._language == "esp":
-			self._names = open("data/names_esp.txt").readlines()
-			self._surnames = open("data/surnames_esp.txt").readlines()
-
-		self._cities = open("data/cities.txt").readlines()
+			self._names = open("data/names_esp.txt", encoding="utf-8").readlines()
+			self._surnames = open("data/surnames_esp.txt", encoding="utf-8").readlines()
+		self._cities = open("data/cities.txt", encoding="utf-8").readlines()
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -122,7 +126,22 @@ class MyCRFTagger(TaggerI):
 
 	def get_feature_getter_params(self) -> list:
 		return self.__params
-
+	
+	@cache
+	def get_postag(self, tokens) -> list:
+		return self._pos_tagger.get_postag(tokens)
+	
+	@cache
+	def _in_names(self, token):
+		return token in self._names
+	
+	@cache
+	def _in_surnames(self, token):
+		return token in self._surnames
+	
+	@cache
+	def _in_cities(self, token):
+		return token in self._cities
 
 	def _get_features(self, tokens, idx):
 		"""
@@ -188,49 +207,51 @@ class MyCRFTagger(TaggerI):
 		if idx < len(tokens) - 1:
 			feature_list.append("NEXT_" + tokens[idx + 1])
 
+		pos_tags = self.get_postag(tuple(tokens))
 		# POS tag the sentence
-		pos_tags = self._pos_tagger(tokens)
 		feature_list.append("POS_" + pos_tags[idx][1])
-
-		# Previous POS tag
 		if idx > 0:
-			feature_list.append("PREV_POS_" + pos_tags[idx - 1][1])
+			feature_list.append("PREVPOS_" + pos_tags[idx-1][1])
 
-		# Next POS tag
 		if idx < len(tokens) - 1:
-			feature_list.append("NEXT_POS_" + pos_tags[idx + 1][1])
-
+			feature_list.append("POSTPOS_" + pos_tags[idx+1][1])
 		# Lemma
-		feature_list.append("LEMMA_" + self._lemmatizer.lemmatize(token))
+
+		lemma = self._lemmatizer.lemmatize(token)
+		feature_list.append("LEMMA_" + lemma)
+		if lemma == token:
+			feature_list.append("SINGULAR")
+		else:
+			feature_list.append("PLURAL")
 
 		# Gazetteer
 		# Names and surnames
-		if token in self._names:
+		if self._in_names(token):
 			feature_list.append("NAME")
 
 			# Previous and next name
-			if idx > 0 and tokens[idx - 1] in self._names:
+			if idx > 0 and self._in_names(tokens[idx - 1]):
 				feature_list.append("PREV_NAME")
-			if idx < len(tokens) - 1 and tokens[idx + 1] in self._names:
+			if idx < len(tokens) - 1 and self._in_names(tokens[idx + 1]):
 				feature_list.append("NEXT_NAME")
 
-		if token in self._surnames:
+		if self._in_surnames(token):
 			feature_list.append("SURNAME")
 
 			# Previous and next surname
-			if idx > 0 and tokens[idx - 1] in self._surnames:
+			if idx > 0 and self._in_surnames(tokens[idx - 1]):
 				feature_list.append("PREV_SURNAME")
-			if idx < len(tokens) - 1 and tokens[idx + 1] in self._surnames:
+			if idx < len(tokens) - 1 and self._in_surnames(tokens[idx + 1]):
 				feature_list.append("NEXT_SURNAME")
 
 		# Cities
-		if token in self._cities:
+		if self._in_cities(token):
 			feature_list.append("CITY")
 
 			# Previous and next city
-			if idx > 0 and tokens[idx - 1] in self._cities:
+			if idx > 0 and self._in_cities(tokens[idx - 1]):
 				feature_list.append("PREV_CITY")
-			if idx < len(tokens) - 1 and tokens[idx + 1] in self._cities:
+			if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
 				feature_list.append("NEXT_CITY")
 
 		# # Previous tag prediction
