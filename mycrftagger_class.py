@@ -135,6 +135,10 @@ class MyCRFTagger(TaggerI):
 		return self._pos_tagger.get_postag(tokens)
 	
 	@cache
+	def get_morph(self, tokens) -> list:
+		return self._pos_tagger.get_morph(tokens)
+	
+	@cache
 	def _in_names(self, token):
 		return token in self._names
 	
@@ -224,22 +228,72 @@ class MyCRFTagger(TaggerI):
 		if idx < len(tokens) - 1:
 			feature_list.append("NEXT_" + tokens[idx + 1])
 
-		pos_tags = self.get_postag(tuple(tokens))
 		# POS tag the sentence
+		pos_tags = self.get_postag(tuple(tokens))
 		feature_list.append("POS_" + pos_tags[idx][1])
 		if idx > 0:
 			feature_list.append("PREVPOS_" + pos_tags[idx-1][1])
-
 		if idx < len(tokens) - 1:
 			feature_list.append("POSTPOS_" + pos_tags[idx+1][1])
+		
 		# Lemma
-
 		lemma = self._lemmatizer.lemmatize(token)
 		feature_list.append("LEMMA_" + lemma)
-		if lemma == token:
-			feature_list.append("SINGULAR")
-		else:
-			feature_list.append("PLURAL")
+
+		# Morphological features
+		morph = self.get_morph(tokens)
+		
+		# Plural or singular
+		if "Number" in morph[idx][1]:
+			if morph[idx][1].get("Number"):
+				feature_list.append("NUMBER_" + morph[idx][1].get("Number"))
+		if idx > 0:
+			if "Number" in morph[idx-1][1]:
+				if morph[idx-1][1].get("Number"):
+					feature_list.append("PREV_NUMBER_" + morph[idx-1][1].get("Number"))
+		if idx < len(tokens) - 1:
+			if "Number" in morph[idx+1][1]:
+				if morph[idx+1][1].get("Number"):
+					feature_list.append("NEXT_NUMBER_" + morph[idx+1][1].get("Number"))
+
+		# Gender
+		if "Gender" in morph[idx][1]:
+			if morph[idx][1].get("Gender"):
+				feature_list.append("GENDER_" + morph[idx][1].get("Gender"))	
+		if idx > 0:
+			if "Gender" in morph[idx-1][1]:
+				if morph[idx-1][1].get("Gender"):
+					feature_list.append("PREV_GENDER_" + morph[idx-1][1].get("Gender"))
+		if idx < len(tokens) - 1:
+			if "Gender" in morph[idx+1][1]:
+				if morph[idx+1][1].get("Gender"):
+					feature_list.append("NEXT_GENDER_" + morph[idx+1][1].get("Gender"))
+
+		# Person
+		if "Person" in morph[idx][1]:
+			if morph[idx][1].get("Person"):
+				feature_list.append("PERSON_" + morph[idx][1].get("Person"))
+		if idx > 0:
+			if "Person" in morph[idx-1][1]:
+				if morph[idx-1][1].get("Person"):
+					feature_list.append("PREV_PERSON_" + morph[idx-1][1].get("Person"))
+		if idx < len(tokens) - 1:
+			if "Person" in morph[idx+1][1]:
+				if morph[idx+1][1].get("Person"):
+					feature_list.append("NEXT_PERSON_" + morph[idx+1][1].get("Person"))
+		
+		# PronType
+		if "PronType" in morph[idx][1]:
+			if morph[idx][1].get("PronType"):
+				feature_list.append("PRONTYPE_" + morph[idx][1].get("PronType"))
+		if idx > 0:
+			if "PronType" in morph[idx-1][1]:
+				if morph[idx-1][1].get("PronType"):
+					feature_list.append("PREV_PRONTYPE_" + morph[idx-1][1].get("PronType"))
+		if idx < len(tokens) - 1:
+			if "PronType" in morph[idx+1][1]:
+				if morph[idx+1][1].get("PronType"):
+					feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType"))	
 
 		# Gazetteer
 		# Names
