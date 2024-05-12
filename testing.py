@@ -8,13 +8,9 @@ texto = "Ellos saltan la cuerda."
 doc = nlp(texto)
 
 morph = tuple((token.text, token.morph) for token in doc)
-print(morph)
-    
-feature_list = []
-
-for idx, token in enumerate(doc):
-	pass
-	# Plural or singular
+dep = tuple((token.text, token.dep_) for token in doc)
+head = tuple((token.text, token.head.text) for token in doc)
+child = tuple((token.text, [child.text for child in token.children]) for token in doc)
+print(child)
 	
 
-print(feature_list)

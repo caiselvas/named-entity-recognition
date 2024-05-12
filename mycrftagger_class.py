@@ -139,6 +139,10 @@ class MyCRFTagger(TaggerI):
 		return self._pos_tagger.get_morph(tokens)
 	
 	@cache
+	def get_dep(self, tokens) -> tuple:
+		return self._pos_tagger.get_dep(tokens)
+	
+	@cache
 	def _in_names(self, token) -> bool:
 		return token in self._names
 	
@@ -241,7 +245,7 @@ class MyCRFTagger(TaggerI):
 		feature_list.append("LEMMA_" + lemma)
 
 		# Morphological features
-		morph = self.get_morph(tokens)
+		morph = self.get_morph(tuple(tokens))
 		
 		# Plural or singular
 		if morph[idx][1].get("Number", None):
@@ -281,8 +285,26 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("PREV_PRONTYPE_" + morph[idx-1][1].get("PronType")[0])
 		if idx < len(tokens) - 1:
 			if morph[idx+1][1].get("PronType", None):
-				feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])	
+				feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])
 
+		# Dependencies
+		dep = self.get_dep(tuple(tokens))
+		feature_list.append("DEP_" + dep[idx][1])
+		if idx > 0:
+			feature_list.append("PREV_DEP_" + dep[idx-1][1])
+		if idx < len(tokens) - 1:
+			feature_list.append("NEXT_DEP_" + dep[idx+1][1])
+
+		# Title
+		if token.istitle():
+			feature_list.append("TITLE")
+		if idx > 0:
+			if tokens[idx - 1].istitle():
+				feature_list.append("PREV_TITLE")
+		if idx < len(tokens) - 1:
+			if tokens[idx + 1].istitle():
+				feature_list.append("NEXT_TITLE")
+		
 		# Gazetteer
 		# Names
 		if self._in_names(token):
