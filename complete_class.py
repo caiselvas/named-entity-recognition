@@ -90,7 +90,7 @@ class CompleteNER():
         for idx, (gold_sentence, predicted_sentence) in enumerate(zip(data, predicted)):
             gold_entities = self.decode_entities(gold_sentence)
             predicted_entities = self.decode_entities(predicted_sentence)
-            tp += len(gold_entities.itersection(predicted_entities))
+            tp += len(gold_entities.intersection(predicted_entities))
             fn += len(gold_entities.difference(predicted_entities))
             fp += len(predicted_entities.difference(gold_entities))
             if gold_entities != predicted_entities:
