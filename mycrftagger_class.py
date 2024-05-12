@@ -104,14 +104,15 @@ class MyCRFTagger(TaggerI):
 		self._language = language
 		
 		if self._language == "ned":
-			self._names = open("data/names_ned.txt", encoding="utf-8").readlines()
-			self._surnames = open("data/surnames_ned.txt", encoding="utf-8").readlines()
+			self._names = set(open("data/names_ned.txt", encoding="utf-8").readlines())
+			self._surnames = set(open("data/surnames_ned.txt", encoding="utf-8").readlines())
 		elif self._language == "esp":
-			self._names = open("data/names_esp.txt", encoding="utf-8").readlines()
-			self._surnames = open("data/surnames_esp.txt", encoding="utf-8").readlines()
-		self._cities = open("data/cities.txt", encoding="utf-8").readlines()
-		self._companies = open("data/companies.txt", encoding="utf-8").readlines()
-		self._celebrities = open("data/celebrities.txt", encoding="utf-8").readlines()
+			self._names = set(open("data/names_esp.txt", encoding="utf-8").readlines())
+			self._surnames = set(open("data/surnames_esp.txt", encoding="utf-8").readlines())
+		self._cities = set(open("data/cities.txt", encoding="utf-8").readlines())
+		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
+		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
+		self._research_organizations = set(open("data/research_organizations.txt", encoding="utf-8").readlines())
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -152,6 +153,10 @@ class MyCRFTagger(TaggerI):
 	@cache
 	def _in_celebrities(self, token):
 		return token in self._celebrities
+	
+	@cache
+	def _in_research_organizations(self, token):
+		return token in self._research_organizations
 
 	def _get_features(self, tokens, idx):
 		"""
@@ -237,7 +242,7 @@ class MyCRFTagger(TaggerI):
 			feature_list.append("PLURAL")
 
 		# Gazetteer
-		# Names and surnames
+		# Names
 		if self._in_names(token):
 			feature_list.append("NAME")
 
@@ -247,6 +252,7 @@ class MyCRFTagger(TaggerI):
 			if idx < len(tokens) - 1 and self._in_names(tokens[idx + 1]):
 				feature_list.append("NEXT_NAME")
 
+		# Surnames
 		if self._in_surnames(token):
 			feature_list.append("SURNAME")
 
@@ -276,14 +282,26 @@ class MyCRFTagger(TaggerI):
 			if idx < len(tokens) - 1 and self._in_celebrities(tokens[idx + 1]):
 				feature_list.append("NEXT_CELEBRITY")
 
-		if self._in_cities(token):
+		# Companies
+		if self._in_companies(token):
 			feature_list.append("COMPANY")
 
-			# Previous and next city
-			if idx > 0 and self._in_cities(tokens[idx - 1]):
+			# Previous and next company
+			if idx > 0 and self._in_companies(tokens[idx - 1]):
 				feature_list.append("PREV_COMPANY")
-			if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
-				feature_list.append("NEXT_COMPANY")		
+			if idx < len(tokens) - 1 and self._in_companies(tokens[idx + 1]):
+				feature_list.append("NEXT_COMPANY")
+
+		# Research organizations
+		if self._in_research_organizations(token):
+			feature_list.append("RESEARCH_ORGANIZATION")
+
+			# Previous and next research organization
+			if idx > 0 and self._in_research_organizations(tokens[idx - 1]):
+				feature_list.append("PREV_RESEARCH_ORGANIZATION")
+			if idx < len(tokens) - 1 and self._in_research_organizations(tokens[idx + 1]):
+				feature_list.append("NEXT_RESEARCH_ORGANIZATION")
+
 		# # Previous tag prediction
 		# if idx > 0:
 		# 	feature_list.append("PREV_TAG_" + self._tagger.tag([self._get_features(tokens, idx - 1)])[0])
