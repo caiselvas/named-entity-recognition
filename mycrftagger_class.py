@@ -49,7 +49,7 @@ class MyCRFTagger(TaggerI):
 	1.0
 	"""
 
-	def __init__(self, language: str, feature_func=None, verbose=False, training_opt={}):
+	def __init__(self, language: str, feature_func=None, verbose=False, training_opt={}, feature_opt = {}):
 		"""
 		Initialize the CRFSuite tagger
 
@@ -166,7 +166,7 @@ class MyCRFTagger(TaggerI):
 	def _in_research_organizations(self, token) -> bool:
 		return token in self._research_organizations
 
-	def _get_features(self, tokens, idx):
+	def _get_features(self, tokens, idx, config=None):
 		"""
 		Extract basic features about this word including
 			- Current word
@@ -177,9 +177,38 @@ class MyCRFTagger(TaggerI):
 
 		Note that : we might include feature over previous word, next word etc.
 
+		:param feature_config: Dictionary specifying which features to include
+		:type feature_config: dict, optional
 		:return: a list which contains the features
 		:rtype: list(str)
 		"""
+		feature_config = {
+				"capitalization": True,
+				"has_upper": True,
+				"has_num": True,
+				"punctuation": True,
+				"suffix": True,
+				"word": True,
+				"length": True,
+				"prefix": True,
+				"prev_word": True,
+				"next_word": True,
+				"pos_tag": True,
+				"lemma": True,
+				"morph": True,
+				"title": True,
+				"names": True,
+				"surnames": True,
+				"cities": True,
+				"celebrities": True,
+				"companies": True,
+				"research": True,
+				"comilles": True
+			}
+		if config != None:
+			for key in config.keys():
+				feature_config[key] = config[key]
+
 		token = tokens[idx]
 
 		feature_list = []
@@ -188,184 +217,199 @@ class MyCRFTagger(TaggerI):
 			return feature_list
 
 		# Capitalization
-		if token[0].isupper():
-			feature_list.append("CAPITALIZATION")
-		
-		if any(map(str.isupper, token)):
-			feature_list.append("HAS_UPPER")
+		if feature_config.get("capitalization", True):
+			if token[0].isupper():
+				feature_list.append("CAPITALIZATION")
+
+		if feature_config.get("has_upper", True):
+			if any(map(str.isupper, token)):
+				feature_list.append("HAS_UPPER")
 		# Number
-		if re.search(self._pattern, token) is not None:
-			feature_list.append("HAS_NUM")
+		if feature_config.get("has_num", True):
+			if re.search(self._pattern, token) is not None:
+				feature_list.append("HAS_NUM")
 
 		# Punctuation
-		punc_cat = {"Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po"}
-		if all(unicodedata.category(x) in punc_cat for x in token):
-			feature_list.append("PUNCTUATION")
+		if feature_config.get("punctuation", True):
+			punc_cat = {"Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po"}
+			if all(unicodedata.category(x) in punc_cat for x in token):
+				feature_list.append("PUNCTUATION")
 
 		# Suffix up to length 3
-		if len(token) > 1:
-			feature_list.append("SUF_" + token[-1:])
-		if len(token) > 2:
-			feature_list.append("SUF_" + token[-2:])
-		if len(token) > 3:
-			feature_list.append("SUF_" + token[-3:])
+		if feature_config.get("suffix", True):
+			for i in range(1, min(len(token), 4)):
+				feature_list.append("SUF_" + token[-i:])
 
 		# Word
-		feature_list.append("WORD_" + token)
+		if feature_config.get("word", True):
+			feature_list.append("WORD_" + token)
 
 		# Length of the word
-		feature_list.append("LEN_" + str(len(token)))
+		if feature_config.get("length", True):
+			feature_list.append("LEN_" + str(len(token)))
 
 		# Prefix up to length 3
-		if len(token) > 1:
-			feature_list.append("PRE_" + token[:1])
-		if len(token) > 2:
-			feature_list.append("PRE_" + token[:2])
-		if len(token) > 3:
-			feature_list.append("PRE_" + token[:3])
+		if feature_config.get("prefix", True):
+			for i in range(1, min(len(token), 4)):
+				feature_list.append("PRE_" + token[:i])
 
 		# Previous word
-		if idx > 0:
-			feature_list.append("PREV_" + tokens[idx - 1])
+		if feature_config.get("prev_word", True):
+			if idx > 0:
+				feature_list.append("PREV_" + tokens[idx - 1])
 
 		# Next word
-		if idx < len(tokens) - 1:
-			feature_list.append("NEXT_" + tokens[idx + 1])
+		if feature_config.get("next_word", True):
+			if idx < len(tokens) - 1:
+				feature_list.append("NEXT_" + tokens[idx + 1])
 
 		# POS tag the sentence
-		pos_tags = self.get_postag(tuple(tokens))
-		feature_list.append("POS_" + pos_tags[idx][1])
-		if idx > 0:
-			feature_list.append("PREVPOS_" + pos_tags[idx-1][1])
-		if idx < len(tokens) - 1:
-			feature_list.append("POSTPOS_" + pos_tags[idx+1][1])
-		
+		if feature_config.get("pos_tag", True):
+			pos_tags = self.get_postag(tuple(tokens))
+			feature_list.append("POS_" + pos_tags[idx][1])
+			if idx > 0:
+				feature_list.append("PREVPOS_" + pos_tags[idx - 1][1])
+			if idx < len(tokens) - 1:
+				feature_list.append("POSTPOS_" + pos_tags[idx + 1][1])
+
 		# Lemma
-		lemma = self._lemmatizer.lemmatize(token)
-		feature_list.append("LEMMA_" + lemma)
+		if feature_config.get("lemma", True):
+			lemma = self._lemmatizer.lemmatize(token)
+			feature_list.append("LEMMA_" + lemma)
 
 		# Morphological features
-		morph = self.get_morph(tuple(tokens))
-		
-		# Plural or singular
-		if morph[idx][1].get("Number", None):
-			feature_list.append("NUMBER_" + morph[idx][1].get("Number")[0])
-		if idx > 0:
-			if morph[idx-1][1].get("Number", None):
-				feature_list.append("PREV_NUMBER_" + morph[idx-1][1].get("Number")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("Number", None):
-				feature_list.append("NEXT_NUMBER_" + morph[idx+1][1].get("Number")[0])
+		if feature_config.get("morph", True):
+			morph = self.get_morph(tuple(tokens))			
+			# Plural or singular
+			if morph[idx][1].get("Number", None):
+				feature_list.append("NUMBER_" + morph[idx][1].get("Number")[0])
+			if idx > 0:
+				if morph[idx-1][1].get("Number", None):
+					feature_list.append("PREV_NUMBER_" + morph[idx-1][1].get("Number")[0])
+			if idx < len(tokens) - 1:
+				if morph[idx+1][1].get("Number", None):
+					feature_list.append("NEXT_NUMBER_" + morph[idx+1][1].get("Number")[0])
 
-		# Gender
-		if morph[idx][1].get("Gender", None):
-				feature_list.append("GENDER_" + morph[idx][1].get("Gender")[0])	
-		if idx > 0:
-			if morph[idx-1][1].get("Gender", None):
-				feature_list.append("PREV_GENDER_" + morph[idx-1][1].get("Gender")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("Gender", None):
-				feature_list.append("NEXT_GENDER_" + morph[idx+1][1].get("Gender")[0])
+			# Gender
+			if morph[idx][1].get("Gender", None):
+					feature_list.append("GENDER_" + morph[idx][1].get("Gender")[0])	
+			if idx > 0:
+				if morph[idx-1][1].get("Gender", None):
+					feature_list.append("PREV_GENDER_" + morph[idx-1][1].get("Gender")[0])
+			if idx < len(tokens) - 1:
+				if morph[idx+1][1].get("Gender", None):
+					feature_list.append("NEXT_GENDER_" + morph[idx+1][1].get("Gender")[0])
 
-		# Person
-		if morph[idx][1].get("Person", None):
-			feature_list.append("PERSON_" + morph[idx][1].get("Person")[0])
-		if idx > 0:
-			if morph[idx-1][1].get("Person", None):
-				feature_list.append("PREV_PERSON_" + morph[idx-1][1].get("Person")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("Person", None):
-				feature_list.append("NEXT_PERSON_" + morph[idx+1][1].get("Person")[0])
-		
-		# PronType
-		if morph[idx][1].get("PronType", None):
-			feature_list.append("PRONTYPE_" + morph[idx][1].get("PronType")[0])
-		if idx > 0:
-			if morph[idx-1][1].get("PronType", None):
-				feature_list.append("PREV_PRONTYPE_" + morph[idx-1][1].get("PronType")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("PronType", None):
-				feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])
+			# Person
+			if morph[idx][1].get("Person", None):
+				feature_list.append("PERSON_" + morph[idx][1].get("Person")[0])
+			if idx > 0:
+				if morph[idx-1][1].get("Person", None):
+					feature_list.append("PREV_PERSON_" + morph[idx-1][1].get("Person")[0])
+			if idx < len(tokens) - 1:
+				if morph[idx+1][1].get("Person", None):
+					feature_list.append("NEXT_PERSON_" + morph[idx+1][1].get("Person")[0])
+			
+			# PronType
+			if morph[idx][1].get("PronType", None):
+				feature_list.append("PRONTYPE_" + morph[idx][1].get("PronType")[0])
+			if idx > 0:
+				if morph[idx-1][1].get("PronType", None):
+					feature_list.append("PREV_PRONTYPE_" + morph[idx-1][1].get("PronType")[0])
+			if idx < len(tokens) - 1:
+				if morph[idx+1][1].get("PronType", None):
+					feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])
 
 		# Dependencies
-		dep = self.get_dep(tuple(tokens))
-		feature_list.append("DEP_" + dep[idx][1])
-		if idx > 0:
-			feature_list.append("PREV_DEP_" + dep[idx-1][1])
-		if idx < len(tokens) - 1:
-			feature_list.append("NEXT_DEP_" + dep[idx+1][1])
+		if feature_config.get("dependencies", True):
+			dep = self.get_dep(tuple(tokens))
+			feature_list.append("DEP_" + dep[idx][1])
+			if idx > 0:
+				feature_list.append("PREV_DEP_" + dep[idx-1][1])
+			if idx < len(tokens) - 1:
+				feature_list.append("NEXT_DEP_" + dep[idx+1][1])
 
 		# Title
-		if token.istitle():
-			feature_list.append("TITLE")
-		if idx > 0:
-			if tokens[idx - 1].istitle():
-				feature_list.append("PREV_TITLE")
-		if idx < len(tokens) - 1:
-			if tokens[idx + 1].istitle():
-				feature_list.append("NEXT_TITLE")
+		if feature_config.get("title", True):
+			if token.istitle():
+				feature_list.append("TITLE")
+			if idx > 0:
+				if tokens[idx - 1].istitle():
+					feature_list.append("PREV_TITLE")
+			if idx < len(tokens) - 1:
+				if tokens[idx + 1].istitle():
+					feature_list.append("NEXT_TITLE")
 		
 		# Gazetteer
 		# Names
-		if self._in_names(token):
-			feature_list.append("NAME")
+		if feature_config.get("names", True):
+			if self._in_names(token):
+				feature_list.append("NAME")
 
-			# Previous and next name
-			if idx > 0 and self._in_names(tokens[idx - 1]):
-				feature_list.append("PREV_NAME")
-			if idx < len(tokens) - 1 and self._in_names(tokens[idx + 1]):
-				feature_list.append("NEXT_NAME")
+				# Previous and next name
+				if idx > 0 and self._in_names(tokens[idx - 1]):
+					feature_list.append("PREV_NAME")
+				if idx < len(tokens) - 1 and self._in_names(tokens[idx + 1]):
+					feature_list.append("NEXT_NAME")
 
 		# Surnames
-		if self._in_surnames(token):
-			feature_list.append("SURNAME")
+		if feature_config.get("surnames", True):
+			if self._in_surnames(token):
+				feature_list.append("SURNAME")
 
-			# Previous and next surname
-			if idx > 0 and self._in_surnames(tokens[idx - 1]):
-				feature_list.append("PREV_SURNAME")
-			if idx < len(tokens) - 1 and self._in_surnames(tokens[idx + 1]):
-				feature_list.append("NEXT_SURNAME")
+				# Previous and next surname
+				if idx > 0 and self._in_surnames(tokens[idx - 1]):
+					feature_list.append("PREV_SURNAME")
+				if idx < len(tokens) - 1 and self._in_surnames(tokens[idx + 1]):
+					feature_list.append("NEXT_SURNAME")
 
 		# Cities
-		if self._in_cities(token):
-			feature_list.append("CITY")
+		if feature_config.get("cities", True):
+			if self._in_cities(token):
+				feature_list.append("CITY")
 
-			# Previous and next city
-			if idx > 0 and self._in_cities(tokens[idx - 1]):
-				feature_list.append("PREV_CITY")
-			if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
-				feature_list.append("NEXT_CITY")
+				# Previous and next city
+				if idx > 0 and self._in_cities(tokens[idx - 1]):
+					feature_list.append("PREV_CITY")
+				if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
+					feature_list.append("NEXT_CITY")
 
 		# Celebrities
-		if self._in_celebrities(token):
-			feature_list.append("CELEBRITY")
+		if feature_config.get("celebrities", True):
+			if self._in_celebrities(token):
+				feature_list.append("CELEBRITY")
 
-			# Previous and next celebrity
-			if idx > 0 and self._in_celebrities(tokens[idx - 1]):
-				feature_list.append("PREV_CELEBRITY")
-			if idx < len(tokens) - 1 and self._in_celebrities(tokens[idx + 1]):
-				feature_list.append("NEXT_CELEBRITY")
+				# Previous and next celebrity
+				if idx > 0 and self._in_celebrities(tokens[idx - 1]):
+					feature_list.append("PREV_CELEBRITY")
+				if idx < len(tokens) - 1 and self._in_celebrities(tokens[idx + 1]):
+					feature_list.append("NEXT_CELEBRITY")
 
 		# Companies
-		if self._in_companies(token):
-			feature_list.append("COMPANY")
+		if feature_config.get("companies", True):
+			if self._in_companies(token):
+				feature_list.append("COMPANY")
 
-			# Previous and next company
-			if idx > 0 and self._in_companies(tokens[idx - 1]):
-				feature_list.append("PREV_COMPANY")
-			if idx < len(tokens) - 1 and self._in_companies(tokens[idx + 1]):
-				feature_list.append("NEXT_COMPANY")
+				# Previous and next company
+				if idx > 0 and self._in_companies(tokens[idx - 1]):
+					feature_list.append("PREV_COMPANY")
+				if idx < len(tokens) - 1 and self._in_companies(tokens[idx + 1]):
+					feature_list.append("NEXT_COMPANY")
 
 		# Research organizations
-		if self._in_research_organizations(token):
-			feature_list.append("RESEARCH_ORGANIZATION")
+		if feature_config.get("research", True):
+			if self._in_research_organizations(token):
+				feature_list.append("RESEARCH_ORGANIZATION")
 
-			# Previous and next research organization
-			if idx > 0 and self._in_research_organizations(tokens[idx - 1]):
-				feature_list.append("PREV_RESEARCH_ORGANIZATION")
-			if idx < len(tokens) - 1 and self._in_research_organizations(tokens[idx + 1]):
-				feature_list.append("NEXT_RESEARCH_ORGANIZATION")
+				# Previous and next research organization
+				if idx > 0 and self._in_research_organizations(tokens[idx - 1]):
+					feature_list.append("PREV_RESEARCH_ORGANIZATION")
+				if idx < len(tokens) - 1 and self._in_research_organizations(tokens[idx + 1]):
+					feature_list.append("NEXT_RESEARCH_ORGANIZATION")
 
+		if feature_config.get("comilles", True):
+			if token == '"':
+				feature_list.append("COMILLES")
 		# # Previous tag prediction
 		# if idx > 0:
 		# 	feature_list.append("PREV_TAG_" + self._tagger.tag([self._get_features(tokens, idx - 1)])[0])
