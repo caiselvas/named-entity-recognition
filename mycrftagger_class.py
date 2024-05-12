@@ -110,6 +110,7 @@ class MyCRFTagger(TaggerI):
 			self._names = open("data/names_esp.txt", encoding="utf-8").readlines()
 			self._surnames = open("data/surnames_esp.txt", encoding="utf-8").readlines()
 		self._cities = open("data/cities.txt", encoding="utf-8").readlines()
+		self._celebrities = open("data/celebrities.txt", encoding="utf-8").readlines()
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -142,6 +143,10 @@ class MyCRFTagger(TaggerI):
 	@cache
 	def _in_cities(self, token):
 		return token in self._cities
+	
+	@cache
+	def _in_celebrities(self, token):
+		return token in self._celebrities
 
 	def _get_features(self, tokens, idx):
 		"""
@@ -253,6 +258,16 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("PREV_CITY")
 			if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
 				feature_list.append("NEXT_CITY")
+
+		# Celebrities
+		if self._in_celebrities(token):
+			feature_list.append("CELEBRITY")
+
+			# Previous and next celebrity
+			if idx > 0 and self._in_celebrities(tokens[idx - 1]):
+				feature_list.append("PREV_CELEBRITY")
+			if idx < len(tokens) - 1 and self._in_celebrities(tokens[idx + 1]):
+				feature_list.append("NEXT_CELEBRITY")
 
 		# # Previous tag prediction
 		# if idx > 0:
