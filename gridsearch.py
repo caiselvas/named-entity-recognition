@@ -55,26 +55,13 @@ feature_configs = {
 			'HEAD_DISTANCE': [True, False],
 			'HEAD': [True, False],
 		}
-# Define combinations to avoid (you can adjust this based on your domain knowledge)
-avoid_combinations = [
-    {"CAPITALIZATION": False, "HAS_UPPER": True},  # Capitalization usually implies having uppercase letters
-    # HERE ADD A LOT OF THE COMBINATIONS 
-    
-]
 
-# Filter out combinations to avoid
-valid_configs = []
-for config_values in product(*feature_configs.values()):
-    feature_config = dict(zip(feature_configs.keys(), config_values))
-    if feature_config not in avoid_combinations:
-        valid_configs.append(feature_config)
 
 # Define function to evaluate a feature configuration
 def evaluate_feature_config(feature_config):
     # Train model with given feature configuration
     model_name = "_".join([f"{key}_{str(value)}" for key, value in feature_config.items()])
-    spanish.set_feature_config(feature_config)
-    spanish.train(file=f"{model_name}.mdl")
+    spanish.train(file=f"{model_name}.mdl", feature_opt=feature_config)
     
     # Evaluate performance using validation data
     precision, recall, f1, err, default_acc, matrix = spanish.validation()
@@ -82,6 +69,7 @@ def evaluate_feature_config(feature_config):
     # Return F1 score as the metric to optimize
     return precision, recall, f1, err, default_acc, matrix,  model_name
     
+
 from multiprocessing import Pool
 
 # Define function to evaluate a single feature configuration
@@ -89,15 +77,31 @@ def evaluate_single_feature_config(feature_config):
     precision, recall, f1, err, default_acc, matrix, model_name = evaluate_feature_config(feature_config)
     return [precision, recall, f1, err, default_acc, matrix, model_name]
 
-# Define function to evaluate all feature configurations in parallel
-def evaluate_all_feature_configs(feature_configs):
-    with Pool() as pool:
-        results = pool.map(evaluate_single_feature_config, feature_configs)
-    return results
+def generate_feature_configs(feature_groups):
+    feature_configs = []
+    for config in product(*[[True, False] for _ in range(len(feature_groups))]):
+        feature_config = {}
+        for i, group in enumerate(feature_groups):
+            for feature in group:
+                feature_config[feature] = config[i]
+        feature_configs.append(feature_config)
+    return feature_configs
 
-# Perform grid search in parallel
-results = evaluate_all_feature_configs(valid_configs)
+feature_groups = [
+        ['CAPITALIZATION', 'HAS_UPPER', 'HAS_NUM', 'PUNCTUATION','SUF', 'PRE', 'WORD', 'LEN'],
+        ['PREV', 'NEXT', '2PREV', '2NEXT', 'POS', 'LEMMA'],
+        ['CITY', 'COMPANY', 'CELEBRITY', 'RESEARCH_ORGANIZATION', 'NAME', 'SURNAME'],
+        ['NUMBER','GENDER', 'PERSON', 'PRONTYPE', ],
+        ['DEP', 'HEAD', 'HEAD_DISTANCE']
+    ]
 
+all_feature_configs = generate_feature_configs(feature_groups)
+
+# Evaluate each feature configuration
+results = []
+for feature_config in all_feature_configs:
+    results.append(evaluate_feature_config(feature_config))
+    print(f"Iteration {len(results)/64} done")
 # Convert results to a DataFrame
 results_df = pd.DataFrame(results, columns=["Precision", "Recall", "F1", "Error", "Default Accuracy", "Confusion Matrix", "Model Name"])
 
