@@ -55,8 +55,8 @@ class CompleteNER():
     def load_from_file(self, file):
         self.tagger = MyCRFTagger(language=self.language)
         self.tagger.set_model_file(file)
-    def train(self, verbose = False, training_opt = {}, file = "model.mdl"):
-        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt)
+    def train(self, verbose = False, training_opt = {},  features_opt = {}, file = "model.mdl"):
+        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt, feature_opt=features_opt)
         self.tagger.train(self.train_data, file)
     def validation(self):
         precision, recall, f1, err, default_acc, matrix = self.test(self.validation_data)
