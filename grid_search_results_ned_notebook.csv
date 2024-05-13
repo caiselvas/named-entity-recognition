@@ -1,0 +1,81 @@
+Precision,Recall,F1,Error,Default Accuracy,Confusion Matrix,Model Name
+0.7546184738955823,0.7182721712538226,0.735996866431649,1062,0.9718205216652958,"[[  0.   0.   0.   0.   0.]
+ [ 18. 383.  26.  30.  86.]
+ [100.  43. 698.  33.  89.]
+ [ 86.  50. 105. 674. 167.]
+ [ 43.  22.  47.  16. 998.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.7546184738955823,0.7182721712538226,0.735996866431649,1062,0.9718205216652958,"[[  0.   0.   0.   0.   0.]
+ [ 18. 383.  26.  30.  86.]
+ [100.  43. 698.  33.  89.]
+ [ 86.  50. 105. 674. 167.]
+ [ 43.  22.  47.  16. 998.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.7546184738955823,0.7182721712538226,0.735996866431649,1062,0.9718205216652958,"[[  0.   0.   0.   0.   0.]
+ [ 18. 383.  26.  30.  86.]
+ [100.  43. 698.  33.  89.]
+ [ 86.  50. 105. 674. 167.]
+ [ 43.  22.  47.  16. 998.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.7546184738955823,0.7182721712538226,0.735996866431649,1062,0.9718205216652958,"[[  0.   0.   0.   0.   0.]
+ [ 18. 383.  26.  30.  86.]
+ [100.  43. 698.  33.  89.]
+ [ 86.  50. 105. 674. 167.]
+ [ 43.  22.  47.  16. 998.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.6723300970873787,0.6353211009174312,0.6533018867924529,1540,0.9591371029798074,"[[  0.   0.   0.   0.   0.]
+ [ 28. 325.  45.  20. 125.]
+ [109.  69. 646.  43.  96.]
+ [ 99.  66. 107. 668. 142.]
+ [ 70.  29.  78.  16. 933.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.6723300970873787,0.6353211009174312,0.6533018867924529,1540,0.9591371029798074,"[[  0.   0.   0.   0.   0.]
+ [ 28. 325.  45.  20. 125.]
+ [109.  69. 646.  43.  96.]
+ [ 99.  66. 107. 668. 142.]
+ [ 70.  29.  78.  16. 933.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.6723300970873787,0.6353211009174312,0.6533018867924529,1540,0.9591371029798074,"[[  0.   0.   0.   0.   0.]
+ [ 28. 325.  45.  20. 125.]
+ [109.  69. 646.  43.  96.]
+ [ 99.  66. 107. 668. 142.]
+ [ 70.  29.  78.  16. 933.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.6723300970873787,0.6353211009174312,0.6533018867924529,1540,0.9591371029798074,"[[  0.   0.   0.   0.   0.]
+ [ 28. 325.  45.  20. 125.]
+ [109.  69. 646.  43.  96.]
+ [ 99.  66. 107. 668. 142.]
+ [ 70.  29.  78.  16. 933.]]",CAPITALIZATION_True_ned_HAS_UPPER_True_ned_HAS_NUM_True_ned_PUNCTUATION_True_ned_SUF_True_ned_PRE_True_ned_WORD_True_ned_LEN_True_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.7038834951456311,0.5542813455657493,0.6201881950384944,1662,0.9558999124366493,"[[  0.   0.   0.   0.   0.]
+ [ 54. 374.  14.   8.  93.]
+ [409.  40. 397.  17. 100.]
+ [253.  85.  56. 466. 222.]
+ [108.  26.  11.  13. 968.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.7038834951456311,0.5542813455657493,0.6201881950384944,1662,0.9558999124366493,"[[  0.   0.   0.   0.   0.]
+ [ 54. 374.  14.   8.  93.]
+ [409.  40. 397.  17. 100.]
+ [253.  85.  56. 466. 222.]
+ [108.  26.  11.  13. 968.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.7038834951456311,0.5542813455657493,0.6201881950384944,1662,0.9558999124366493,"[[  0.   0.   0.   0.   0.]
+ [ 54. 374.  14.   8.  93.]
+ [409.  40. 397.  17. 100.]
+ [253.  85.  56. 466. 222.]
+ [108.  26.  11.  13. 968.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.7038834951456311,0.5542813455657493,0.6201881950384944,1662,0.9558999124366493,"[[  0.   0.   0.   0.   0.]
+ [ 54. 374.  14.   8.  93.]
+ [409.  40. 397.  17. 100.]
+ [253.  85.  56. 466. 222.]
+ [108.  26.  11.  13. 968.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_True_ned_NEXT_True_ned_2PREV_True_ned_2NEXT_True_ned_POS_True_ned_LEMMA_True_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.741514360313316,0.21712538226299694,0.33589591957421644,3023,0.9195478546979065,"[[  0.   0.   0.   0.   0.]
+ [394. 142.   6.   0.   1.]
+ [683.  11. 253.   0.  16.]
+ [781.   8.  30. 251.  12.]
+ [810.   0.  11.   0. 305.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.741514360313316,0.21712538226299694,0.33589591957421644,3023,0.9195478546979065,"[[  0.   0.   0.   0.   0.]
+ [394. 142.   6.   0.   1.]
+ [683.  11. 253.   0.  16.]
+ [781.   8.  30. 251.  12.]
+ [810.   0.  11.   0. 305.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_True_ned_COMPANY_True_ned_CELEBRITY_True_ned_RESEARCH_ORGANIZATION_True_ned_NAME_True_ned_SURNAME_True_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.741514360313316,0.21712538226299694,0.33589591957421644,3023,0.9195478546979065,"[[  0.   0.   0.   0.   0.]
+ [394. 142.   6.   0.   1.]
+ [683.  11. 253.   0.  16.]
+ [781.   8.  30. 251.  12.]
+ [810.   0.  11.   0. 305.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned
+0.741514360313316,0.21712538226299694,0.33589591957421644,3023,0.9195478546979065,"[[  0.   0.   0.   0.   0.]
+ [394. 142.   6.   0.   1.]
+ [683.  11. 253.   0.  16.]
+ [781.   8.  30. 251.  12.]
+ [810.   0.  11.   0. 305.]]",CAPITALIZATION_False_ned_HAS_UPPER_False_ned_HAS_NUM_False_ned_PUNCTUATION_False_ned_SUF_False_ned_PRE_False_ned_WORD_True_ned_LEN_False_ned_PREV_False_ned_NEXT_False_ned_2PREV_False_ned_2NEXT_False_ned_POS_False_ned_LEMMA_False_ned_CITY_False_ned_COMPANY_False_ned_CELEBRITY_False_ned_RESEARCH_ORGANIZATION_False_ned_NAME_False_ned_SURNAME_False_ned_DEP_False_ned_HEAD_False_ned_HEAD_DISTANCE_False_ned_NUMBER_False_ned_GENDER_False_ned_PERSON_False_ned_PRONTYPE_False_ned

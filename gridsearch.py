@@ -66,15 +66,17 @@ def evaluate_feature_config(feature_config):
 
 	# Evaluate performance using validation data
 	precision_esp, recall_esp, f1_esp, err_esp, default_acc_esp, matrix_esp = spanish.validation()
-
+     
+	"""
 	model_name_ned = "_".join([f"{key}_{str(value)}_ned" for key, value in feature_config.items()])
 	nederlands.train(file=f"nederlands.mdl", feature_opt=feature_config)
 
 	# Evaluate performance using validation data
 	precision_ned, recall_ned, f1_ned, err_ned, default_acc_ned, matrix_ned = nederlands.validation()
+	"""
 
 	# Return F1 score as the metric to optimize
-	return (precision_esp, recall_esp, f1_esp, err_esp, default_acc_esp, matrix_esp, model_name_esp),(precision_ned, recall_ned, f1_ned, err_ned, default_acc_ned, matrix_ned, model_name_ned)
+	return (precision_esp, recall_esp, f1_esp, err_esp, default_acc_esp, matrix_esp, model_name_esp)
     
 
 from multiprocessing import Pool
@@ -94,23 +96,20 @@ feature_groups = [
         ['CAPITALIZATION', 'HAS_UPPER', 'HAS_NUM', 'PUNCTUATION','SUF', 'PRE', 'WORD', 'LEN'],
         ['PREV', 'NEXT', '2PREV', '2NEXT', 'POS', 'LEMMA'],
         ['CITY', 'COMPANY', 'CELEBRITY', 'RESEARCH_ORGANIZATION', 'NAME', 'SURNAME'],
-        ['NUMBER','GENDER', 'PERSON', 'PRONTYPE', ],
-        ['DEP', 'HEAD', 'HEAD_DISTANCE']
+        ['NUMBER','GENDER', 'PERSON', 'PRONTYPE','DEP', 'HEAD', 'HEAD_DISTANCE' ],
     ]
 
 all_feature_configs = generate_feature_configs(feature_groups)
 
 # Evaluate each feature configuration
 results_esp = []
-results_ned = []
 for feature_config in all_feature_configs:
-    esp, ned = evaluate_feature_config(feature_config)
+    esp= evaluate_feature_config(feature_config)
     results_esp.append(list(esp))
-    results_ned.append(list(ned))
     print(f"Iteration {len(results_esp)/64} done")
     
 
-	
+
 # Convert results to a DataFrame
 results_df_esp = pd.DataFrame(results_esp, columns=["Precision", "Recall", "F1", "Error", "Default Accuracy", "Confusion Matrix", "Model Name"])
 # Sort results by F1 score
@@ -125,6 +124,7 @@ print("Best F1 Score:", best_score)
 results_df.to_csv("grid_search_results_esp.csv", index=False)
 
 
+"""
 results_df_ned = pd.DataFrame(results_ned, columns=["Precision", "Recall", "F1", "Error", "Default Accuracy", "Confusion Matrix", "Model Name"])
 # Sort results by F1 score
 results_df = results_df_ned.sort_values(by="F1", ascending=False)
@@ -136,3 +136,4 @@ print("Best F1 Score:", best_score)
 
 # Save results to a CSV file
 results_df.to_csv("grid_search_results_ned.csv", index=False)
+"""
