@@ -49,7 +49,12 @@ class MyCRFTagger(TaggerI):
 	1.0
 	"""
 
-	def __init__(self, language: str, feature_func=None, verbose=False, training_opt={}):
+	def __init__(self, 
+		language: str, 
+		feature_func=None, 
+		verbose=False, 
+		training_opt={},
+		):
 		"""
 		Initialize the CRFSuite tagger
 
@@ -116,8 +121,6 @@ class MyCRFTagger(TaggerI):
 		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
 		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
 
-		print('Readed all files')
-
 		# Create regex pattern for names, surnames, cities, companies, celebrities, and research organizations
 		companies_pattern = r'\b(?:' + '|'.join(re.escape(company) for company in self._companies) + r')\b'
 		self._companies_regex = re.compile(companies_pattern, re.IGNORECASE)
@@ -137,7 +140,33 @@ class MyCRFTagger(TaggerI):
 		surnames_pattern = r'\b(?:' + '|'.join(re.escape(surname) for surname in self._surnames) + r')\b'
 		self._surnames_regex = re.compile(surnames_pattern, re.IGNORECASE)
 
-		print('Compiled all regexes')
+		self._feature_getter_params = {
+			'CAPITALIZATION': True,
+			'HAS_UPPER': True,
+			'HAS_NUM': True,
+			'PUNCTUATION': True,
+			'SUF': True,
+			'WORD': True,
+			'LEN': True,
+			'NEXT': True,
+			'POS': True,
+			'LEMMA': True,
+			'CITY': True,
+			'COMPANY': True,
+			'CELEBRITY': True,
+			'RESEARCH_ORGANIZATION': True,
+			'NAME': True,
+			'SURNAME': True,
+			'PREV': True,
+			'NEXT': True,
+			'NUMBER': True,
+			'GENDER': True,
+			'PERSON': True,
+			'PRONTYPE': True,
+			'DEP': True,
+			'HEAD_DISTANCE': True,
+			'HEAD': True
+		}
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -148,12 +177,47 @@ class MyCRFTagger(TaggerI):
 		return self._get_features(tokens, idx)
 
 
-	def update_feature_getter_params(self, params: list) -> None:
-		self.__params = params
+	def update_feature_getter_params(self, params: dict) -> None:
+		"""
+		Update the feature getter parameters.
+
+		Parameters
+		----------
+		params : dict
+			The parameters to update.
+
+		Possible parameters:
+		- CAPITALIZATION: bool
+		- HAS_UPPER: bool
+		- HAS_NUM: bool
+		- PUNCTUATION: bool
+		- SUF: bool
+		- WORD: bool
+		- LEN: bool
+		- NEXT: bool
+		- POS: bool
+		- LEMMA: bool
+		- CITY: bool
+		- COMPANY: bool
+		- CELEBRITY: bool
+		- RESEARCH_ORGANIZATION: bool
+		- NAME: bool
+		- SURNAME: bool
+		- PREV: bool
+		- NEXT: bool
+		- NUMBER: bool
+		- GENDER: bool
+		- PERSON: bool
+		- PRONTYPE: bool
+		- DEP: bool
+		- HEAD_DISTANCE: bool
+		- HEAD: bool
+		"""
+		self._feature_getter_params = params
 
 
-	def get_feature_getter_params(self) -> list:
-		return self.__params
+	def get_feature_getter_params(self) -> dict:
+		return self._feature_getter_params
 	
 	@cache
 	def get_postag(self, tokens) -> tuple:
@@ -322,9 +386,13 @@ class MyCRFTagger(TaggerI):
 		:rtype: list(str)
 		"""
 		self._iterations_count += 1
-		print(f'Iteration {self._iterations_count}/{self._total_iterations}', end='\r')
+		print(f'Getting features for token {self._iterations_count}/{self._total_iterations}', end='\r')
+		
 		tokens = tuple(tokens)
 		token = tokens[idx]
+
+		consider_prev = self._feature_getter_params['PREV'] and idx > 0
+		consider_next = self._feature_getter_params['NEXT'] and idx < len(tokens) - 1
 
 		feature_list = []
 
@@ -332,112 +400,148 @@ class MyCRFTagger(TaggerI):
 			return feature_list
 
 		# Capitalization
-		if token[0].isupper():
+		if self._feature_getter_params['CAPITALIZATION'] and \
+		token[0].isupper():
 			feature_list.append("CAPITALIZATION")
 		
-		if any(map(str.isupper, token)):
+		# Uppercase
+		if self._feature_getter_params['HAS_UPPER'] and \
+		any(map(str.isupper, token)):
 			feature_list.append("HAS_UPPER")
+
 		# Number
-		if re.search(self._pattern, token) is not None:
+		if self._feature_getter_params['HAS_NUM'] and \
+		re.search(self._pattern, token) is not None:
 			feature_list.append("HAS_NUM")
 
 		# Punctuation
-		punc_cat = {"Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po"}
-		if all(unicodedata.category(x) in punc_cat for x in token):
-			feature_list.append("PUNCTUATION")
+		if self._feature_getter_params['PUNCTUATION']:
+			punc_cat = {"Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po"}
+			if all(unicodedata.category(x) in punc_cat for x in token):
+				feature_list.append("PUNCTUATION")
 
 		# Suffix up to length 3
-		if len(token) > 1:
-			feature_list.append("SUF_" + token[-1:])
-		if len(token) > 2:
-			feature_list.append("SUF_" + token[-2:])
-		if len(token) > 3:
-			feature_list.append("SUF_" + token[-3:])
+		if self._feature_getter_params['SUF']:
+			if len(token) > 1:
+				feature_list.append("SUF_" + token[-1:])
+			if len(token) > 2:
+				feature_list.append("SUF_" + token[-2:])
+			if len(token) > 3:
+				feature_list.append("SUF_" + token[-3:])
 
 		# Word
-		feature_list.append("WORD_" + token)
+		if self._feature_getter_params['WORD']:
+			feature_list.append("WORD_" + token)
 
 		# Length of the word
-		feature_list.append("LEN_" + str(len(token)))
+		if self._feature_getter_params['LEN']:
+			feature_list.append("LEN_" + str(len(token)))
 
 		# Prefix up to length 3
-		if len(token) > 1:
-			feature_list.append("PRE_" + token[:1])
-		if len(token) > 2:
-			feature_list.append("PRE_" + token[:2])
-		if len(token) > 3:
-			feature_list.append("PRE_" + token[:3])
+		if self._feature_getter_params['PRE']:
+			if len(token) > 1:
+				feature_list.append("PRE_" + token[:1])
+			if len(token) > 2:
+				feature_list.append("PRE_" + token[:2])
+			if len(token) > 3:
+				feature_list.append("PRE_" + token[:3])
 
 		# Previous word
-		if idx > 0:
+		if consider_prev:
 			feature_list.append("PREV_" + tokens[idx - 1])
 
 		# Next word
-		if idx < len(tokens) - 1:
+		if consider_next:
 			feature_list.append("NEXT_" + tokens[idx + 1])
 
 		# POS tag the sentence
-		pos_tags = self.get_postag(tokens)
-		feature_list.append("POS_" + pos_tags[idx][1])
-		if idx > 0:
-			feature_list.append("PREVPOS_" + pos_tags[idx-1][1])
-		if idx < len(tokens) - 1:
-			feature_list.append("POSTPOS_" + pos_tags[idx+1][1])
+		if self._feature_getter_params['POS']:
+			pos_tags = self.get_postag(tokens)
+			feature_list.append("POS_" + pos_tags[idx][1])
+			if consider_prev:
+				feature_list.append("PREVPOS_" + pos_tags[idx-1][1])
+			if consider_next:
+				feature_list.append("POSTPOS_" + pos_tags[idx+1][1])
 		
 		# Lemma
-		lemma = self._lemmatizer.lemmatize(token)
-		feature_list.append("LEMMA_" + lemma)
+		if self._feature_getter_params['LEMMA']:
+			lemma = self._lemmatizer.lemmatize(token)
+			feature_list.append("LEMMA_" + lemma)
+
+		# Head
+		if self._feature_getter_params['HEAD']:
+			head = self.get_head(tokens)
+			feature_list.append("HEAD_" + head[idx][0])
+			if consider_prev:
+				feature_list.append("PREV_HEAD_" + head[idx-1][0])
+			if consider_next:
+				feature_list.append("NEXT_HEAD_" + head[idx+1][0])
+
+		# Head distance
+		if self._feature_getter_params['HEAD_DISTANCE']:
+			distances = self.get_head_distance(tokens)
+			feature_list.append("HEAD_DISTANCE_" + str(distances[idx]))
+			if consider_prev:
+				feature_list.append("PREV_HEAD_DISTANCE_" + str(distances[idx-1]))
+			if consider_next:
+				feature_list.append("NEXT_HEAD_DISTANCE_" + str(distances[idx+1]))
 
 		# Morphological features
-		morph = self.get_morph(tokens)
+		if any([self._feature_getter_params[param] for param in ['NUMBER', 'GENDER', 'PERSON', 'PRONTYPE']]):
+			morph = self.get_morph(tokens)
 		
-		# Plural or singular
-		if morph[idx][1].get("Number", None):
-			feature_list.append("NUMBER_" + morph[idx][1].get("Number")[0])
-		if idx > 0:
-			if morph[idx-1][1].get("Number", None):
-				feature_list.append("PREV_NUMBER_" + morph[idx-1][1].get("Number")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("Number", None):
-				feature_list.append("NEXT_NUMBER_" + morph[idx+1][1].get("Number")[0])
+			# Plural or singular
+			if self._feature_getter_params['NUMBER']:
+				if morph[idx][1].get("Number", None):
+					feature_list.append("NUMBER_" + morph[idx][1].get("Number")[0])
+				if consider_prev:
+					if morph[idx-1][1].get("Number", None):
+						feature_list.append("PREV_NUMBER_" + morph[idx-1][1].get("Number")[0])
+				if consider_next:
+					if morph[idx+1][1].get("Number", None):
+						feature_list.append("NEXT_NUMBER_" + morph[idx+1][1].get("Number")[0])
 
-		# Gender
-		if morph[idx][1].get("Gender", None):
-				feature_list.append("GENDER_" + morph[idx][1].get("Gender")[0])	
-		if idx > 0:
-			if morph[idx-1][1].get("Gender", None):
-				feature_list.append("PREV_GENDER_" + morph[idx-1][1].get("Gender")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("Gender", None):
-				feature_list.append("NEXT_GENDER_" + morph[idx+1][1].get("Gender")[0])
+			# Gender
+			if self._feature_getter_params['GENDER']:
+				if morph[idx][1].get("Gender", None):
+						feature_list.append("GENDER_" + morph[idx][1].get("Gender")[0])	
+				if consider_prev:
+					if morph[idx-1][1].get("Gender", None):
+						feature_list.append("PREV_GENDER_" + morph[idx-1][1].get("Gender")[0])
+				if consider_next:
+					if morph[idx+1][1].get("Gender", None):
+						feature_list.append("NEXT_GENDER_" + morph[idx+1][1].get("Gender")[0])
 
-		# Person
-		if morph[idx][1].get("Person", None):
-			feature_list.append("PERSON_" + morph[idx][1].get("Person")[0])
-		if idx > 0:
-			if morph[idx-1][1].get("Person", None):
-				feature_list.append("PREV_PERSON_" + morph[idx-1][1].get("Person")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("Person", None):
-				feature_list.append("NEXT_PERSON_" + morph[idx+1][1].get("Person")[0])
-		
-		# PronType
-		if morph[idx][1].get("PronType", None):
-			feature_list.append("PRONTYPE_" + morph[idx][1].get("PronType")[0])
-		if idx > 0:
-			if morph[idx-1][1].get("PronType", None):
-				feature_list.append("PREV_PRONTYPE_" + morph[idx-1][1].get("PronType")[0])
-		if idx < len(tokens) - 1:
-			if morph[idx+1][1].get("PronType", None):
-				feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])
+			# Person
+			if self._feature_getter_params['PERSON']:
+				if morph[idx][1].get("Person", None):
+					feature_list.append("PERSON_" + morph[idx][1].get("Person")[0])
+				if consider_prev:
+					if morph[idx-1][1].get("Person", None):
+						feature_list.append("PREV_PERSON_" + morph[idx-1][1].get("Person")[0])
+				if consider_next:
+					if morph[idx+1][1].get("Person", None):
+						feature_list.append("NEXT_PERSON_" + morph[idx+1][1].get("Person")[0])
+			
+			# PronType
+			if self._feature_getter_params['PRONTYPE']:
+				if morph[idx][1].get("PronType", None):
+					feature_list.append("PRONTYPE_" + morph[idx][1].get("PronType")[0])
+				if consider_prev:
+					if morph[idx-1][1].get("PronType", None):
+						feature_list.append("PREV_PRONTYPE_" + morph[idx-1][1].get("PronType")[0])
+				if consider_next:
+					if morph[idx+1][1].get("PronType", None):
+						feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])
 
 		# Dependencies
-		dep = self.get_dep(tokens)
-		feature_list.append("DEP_" + dep[idx][1])
-		if idx > 0:
-			feature_list.append("PREV_DEP_" + dep[idx-1][1])
-		if idx < len(tokens) - 1:
-			feature_list.append("NEXT_DEP_" + dep[idx+1][1])
+		if self._feature_getter_params['DEP']:
+			dep = self.get_dep(tokens)
+			feature_list.append("DEP_" + dep[idx][1])
+			if consider_prev:
+				feature_list.append("PREV_DEP_" + dep[idx-1][1])
+			if consider_next:
+				feature_list.append("NEXT_DEP_" + dep[idx+1][1])
 
 		# # Distance to head
 		# distances = self.get_head_distance(tokens)
@@ -516,106 +620,112 @@ class MyCRFTagger(TaggerI):
 		# New gazetteers
 		
 		# Names
-		name_indices = self._get_name_indices(tokens)
-		for name, indices in name_indices:
-			if idx in indices:
-				feature_list.append("NAME")
-				break
-		if idx > 0:
+		if self._feature_getter_params['NAME']:
+			name_indices = self._get_name_indices(tokens)
 			for name, indices in name_indices:
-				if idx - 1 in indices:
-					feature_list.append("PREV_NAME")
+				if idx in indices:
+					feature_list.append("NAME")
 					break
-		if idx < len(tokens) - 1:
-			for name, indices in name_indices:
-				if idx + 1 in indices:
-					feature_list.append("NEXT_NAME")
-					break
+			if consider_prev:
+				for name, indices in name_indices:
+					if idx - 1 in indices:
+						feature_list.append("PREV_NAME")
+						break
+			if consider_next:
+				for name, indices in name_indices:
+					if idx + 1 in indices:
+						feature_list.append("NEXT_NAME")
+						break
 
 		# Surnames
-		surname_indices = self._get_surname_indices(tokens)
-		for surname, indices in surname_indices:
-			if idx in indices:
-				feature_list.append("SURNAME")
-				break
-		if idx > 0:
+		if self._feature_getter_params['SURNAME']:
+			surname_indices = self._get_surname_indices(tokens)
 			for surname, indices in surname_indices:
-				if idx - 1 in indices:
-					feature_list.append("PREV_SURNAME")
+				if idx in indices:
+					feature_list.append("SURNAME")
 					break
-		if idx < len(tokens) - 1:
-			for surname, indices in surname_indices:
-				if idx + 1 in indices:
-					feature_list.append("NEXT_SURNAME")
-					break
+			if consider_prev:
+				for surname, indices in surname_indices:
+					if idx - 1 in indices:
+						feature_list.append("PREV_SURNAME")
+						break
+			if consider_next:
+				for surname, indices in surname_indices:
+					if idx + 1 in indices:
+						feature_list.append("NEXT_SURNAME")
+						break
 
 		# Cities
-		city_indices = self._get_city_indices(tokens)
-		for city, indices in city_indices:
-			if idx in indices:
-				feature_list.append("CITY")
-				break
-		if idx > 0:
+		if self._feature_getter_params['CITY']:
+			city_indices = self._get_city_indices(tokens)
 			for city, indices in city_indices:
-				if idx - 1 in indices:
-					feature_list.append("PREV_CITY")
+				if idx in indices:
+					feature_list.append("CITY")
 					break
-		if idx < len(tokens) - 1:
-			for city, indices in city_indices:
-				if idx + 1 in indices:
-					feature_list.append("NEXT_CITY")
-					break
+			if consider_prev:
+				for city, indices in city_indices:
+					if idx - 1 in indices:
+						feature_list.append("PREV_CITY")
+						break
+			if consider_next:
+				for city, indices in city_indices:
+					if idx + 1 in indices:
+						feature_list.append("NEXT_CITY")
+						break
 
 		# Companies
-		company_indices = self._get_company_indices(tokens)
-		for company, indices in company_indices:
-			if idx in indices:
-				feature_list.append("COMPANY")
-				break
-		if idx > 0:
+		if self._feature_getter_params['COMPANY']:
+			company_indices = self._get_company_indices(tokens)
 			for company, indices in company_indices:
-				if idx - 1 in indices:
-					feature_list.append("PREV_COMPANY")
+				if idx in indices:
+					feature_list.append("COMPANY")
 					break
-		if idx < len(tokens) - 1:
-			for company, indices in company_indices:
-				if idx + 1 in indices:
-					feature_list.append("NEXT_COMPANY")
-					break
+			if consider_prev:
+				for company, indices in company_indices:
+					if idx - 1 in indices:
+						feature_list.append("PREV_COMPANY")
+						break
+			if consider_next:
+				for company, indices in company_indices:
+					if idx + 1 in indices:
+						feature_list.append("NEXT_COMPANY")
+						break
 
 		# Celebrities
-		celebrity_indices = self._get_celebrity_indices(tokens)
-		for celebrity, indices in celebrity_indices:
-			if idx in indices:
-				feature_list.append("CELEBRITY")
-				break
-		if idx > 0:
+		if self._feature_getter_params['CELEBRITY']:
+			celebrity_indices = self._get_celebrity_indices(tokens)
 			for celebrity, indices in celebrity_indices:
-				if idx - 1 in indices:
-					feature_list.append("PREV_CELEBRITY")
+				if idx in indices:
+					feature_list.append("CELEBRITY")
 					break
-		if idx < len(tokens) - 1:
-			for celebrity, indices in celebrity_indices:
-				if idx + 1 in indices:
-					feature_list.append("NEXT_CELEBRITY")
-					break
+			if consider_prev:
+				for celebrity, indices in celebrity_indices:
+					if idx - 1 in indices:
+						feature_list.append("PREV_CELEBRITY")
+						break
+			if consider_next:
+				for celebrity, indices in celebrity_indices:
+					if idx + 1 in indices:
+						feature_list.append("NEXT_CELEBRITY")
+						break
 
 		# Research organizations
-		research_organization_indices = self._get_research_organization_indices(tokens)
-		for research_organization, indices in research_organization_indices:
-			if idx in indices:
-				feature_list.append("RESEARCH_ORGANIZATION")
-				break
-		if idx > 0:
+		if self._feature_getter_params['RESEARCH_ORGANIZATION']:
+			research_organization_indices = self._get_research_organization_indices(tokens)
 			for research_organization, indices in research_organization_indices:
-				if idx - 1 in indices:
-					feature_list.append("PREV_RESEARCH_ORGANIZATION")
+				if idx in indices:
+					feature_list.append("RESEARCH_ORGANIZATION")
 					break
-		if idx < len(tokens) - 1:
-			for research_organization, indices in research_organization_indices:
-				if idx + 1 in indices:
-					feature_list.append("NEXT_RESEARCH_ORGANIZATION")
-					break
+			if consider_prev:
+				for research_organization, indices in research_organization_indices:
+					if idx - 1 in indices:
+						feature_list.append("PREV_RESEARCH_ORGANIZATION")
+						break
+			if consider_next:
+				for research_organization, indices in research_organization_indices:
+					if idx + 1 in indices:
+						feature_list.append("NEXT_RESEARCH_ORGANIZATION")
+						break
 
 		return feature_list
 	
@@ -631,6 +741,11 @@ class MyCRFTagger(TaggerI):
 		:return: list of tagged sentences.
 		:rtype: list(list(tuple(str,str)))
 		"""
+		self._iterations_count = 0
+		self._total_iterations = 0
+		for sent in sents:
+			self._total_iterations += len(sent)
+	
 		if self._model_file == "":
 			raise Exception(
 				" No model file is found !! Please use train or set_model_file function"
@@ -663,6 +778,7 @@ class MyCRFTagger(TaggerI):
 		self._total_iterations = 0
 		for sent in train_data:
 			self._total_iterations += len(sent)
+
 		trainer = pycrfsuite.Trainer(verbose=self._verbose)
 		trainer.set_params(self._training_options)
 
