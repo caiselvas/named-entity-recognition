@@ -55,7 +55,8 @@ class MyCRFTagger(TaggerI):
 		verbose=False, 
 		training_opt={},
 		feature_opt={},
-		custom_postag = False
+		custom_postag = False,
+		use_regex = False
 		):
 		"""
 		Initialize the CRFSuite tagger
@@ -78,6 +79,13 @@ class MyCRFTagger(TaggerI):
 
 		feature_opt : dict
 			feature getter function options
+
+		custom_postag : bool
+			Whether to use custom POS tagger or not.
+
+		use_regex : bool
+			Whether to use regex for the gazetteers or not. If True, the gazetteers will be searched using regex, which is slower but more accurate. 
+			To compensate for the speed, gazetteers of minor size are used.
 
 		Set of possible training options (using LBFGS training algorithm).
 		- 'feature.minfreq': The minimum frequency of features.
@@ -143,35 +151,55 @@ class MyCRFTagger(TaggerI):
 		if self._language == "ned":
 			self._names = set(open("data/names_ned.txt", encoding="utf-8").readlines())
 			self._surnames = set(open("data/surnames_ned.txt", encoding="utf-8").readlines())
-			self._research_organizations = set(open("data/research_organizations_ned.txt", encoding="utf-8").readlines())
-		elif self._language == "esp":
-			self._names = set(open("data/names100_esp.txt", encoding="utf-8").readlines())
-			self._surnames = set(open("data/surnames_esp.txt", encoding="utf-8").readlines())
-			self._research_organizations = set(open("data/research_organizations_esp.txt", encoding="utf-8").readlines())
 
-		self._cities = set(open("data/cities15000.txt", encoding="utf-8").readlines())
+			if use_regex:
+				self._research_organizations = set(open("data/regex/research_organizations_ned.txt", encoding="utf-8").readlines())
+			else:
+				self._research_organizations = set(open("data/token/research_organizations.txt", encoding="utf-8").readlines())
+		
+		elif self._language == "esp":
+			self._surnames = set(open("data/surnames_esp.txt", encoding="utf-8").readlines())
+			
+			if use_regex:
+				self._names = set(open("data/regex/names500_esp.txt", encoding="utf-8").readlines())
+				self._research_organizations = set(open("data/regex/research_organizations_esp.txt", encoding="utf-8").readlines())
+			else:
+				self._names = set(open("data/token/names100_esp.txt", encoding="utf-8").readlines())
+				self._research_organizations = set(open("data/token/research_organizations.txt", encoding="utf-8").readlines())
+
 		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
 		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
+		if use_regex:
+			self._cities = set(open("data/regex/cities50000.txt", encoding="utf-8").readlines())
+		else:
+			self._cities = set(open("data/token/cities15000.txt", encoding="utf-8").readlines())	
 
 		# Create regex pattern for names, surnames, cities, companies, celebrities, and research organizations
-		companies_pattern = r'\b(?:' + '|'.join(re.escape(company) for company in self._companies) + r')\b'
-		self._companies_regex = re.compile(companies_pattern, re.IGNORECASE)
+		if use_regex:
+			companies_pattern = r'\b(?:' + '|'.join(re.escape(company) for company in self._companies) + r')\b'
+			self._companies_regex = re.compile(companies_pattern, re.IGNORECASE)
 
-		celebrities_pattern = r'\b(?:' + '|'.join(re.escape(celebrity) for celebrity in self._celebrities) + r')\b'
-		self._celebrities_regex = re.compile(celebrities_pattern, re.IGNORECASE)
+			celebrities_pattern = r'\b(?:' + '|'.join(re.escape(celebrity) for celebrity in self._celebrities) + r')\b'
+			self._celebrities_regex = re.compile(celebrities_pattern, re.IGNORECASE)
 
-		research_organizations_pattern = r'\b(?:' + '|'.join(re.escape(research_organization) for research_organization in self._research_organizations) + r')\b'
-		self._research_organizations_regex = re.compile(research_organizations_pattern, re.IGNORECASE)
+			research_organizations_pattern = r'\b(?:' + '|'.join(re.escape(research_organization) for research_organization in self._research_organizations) + r')\b'
+			self._research_organizations_regex = re.compile(research_organizations_pattern, re.IGNORECASE)
 
-		cities_pattern = r'\b(?:' + '|'.join(re.escape(city) for city in self._cities) + r')\b'
-		self._cities_regex = re.compile(cities_pattern, re.IGNORECASE)
+			cities_pattern = r'\b(?:' + '|'.join(re.escape(city) for city in self._cities) + r')\b'
+			self._cities_regex = re.compile(cities_pattern, re.IGNORECASE)
 
-		names_pattern = r'\b(?:' + '|'.join(re.escape(name) for name in self._names) + r')\b'
-		self._names_regex = re.compile(names_pattern, re.IGNORECASE)
+			if self._language == "esp":
+				names_pattern = r'\b(?:' + '|'.join(re.escape(name) for name in self._names) + r')\b'
+				self._names_regex = re.compile(names_pattern, re.IGNORECASE)
 
-		surnames_pattern = r'\b(?:' + '|'.join(re.escape(surname) for surname in self._surnames) + r')\b'
-		self._surnames_regex = re.compile(surnames_pattern, re.IGNORECASE)
+			if self._language == "ned":
+				surnames_pattern = r'\b(?:' + '|'.join(re.escape(surname) for surname in self._surnames) + r')\b'
+				self._surnames_regex = re.compile(surnames_pattern, re.IGNORECASE)
 
+		self.custom_postag = custom_postag
+		self.use_regex = use_regex
+
+		# Set the default feature getter parameters
 		self._feature_getter_params = {
 			'CAPITALIZATION': True,
 			'HAS_UPPER': True,
@@ -202,8 +230,6 @@ class MyCRFTagger(TaggerI):
 			'HEAD_DISTANCE': True,
 			'HEAD': True
 		} if feature_opt == {} else feature_opt
-
-		self.custom_postag = custom_postag
 
 	def set_model_file(self, model_file):
 		"""
@@ -258,7 +284,6 @@ class MyCRFTagger(TaggerI):
 		- HEAD: bool
 		"""
 		self._feature_getter_params = params
-
 
 	def get_feature_getter_params(self) -> dict:
 		"""
@@ -365,29 +390,115 @@ class MyCRFTagger(TaggerI):
 	
 	@cache
 	def _in_names(self, token) -> bool:
+		"""
+		Check if a token is the names list.
+
+		Parameters
+		----------
+		token : str
+			The token to check.
+
+		Returns
+		-------
+		bool
+			True if the token is in the names list, False otherwise.
+		"""
 		return token in self._names
 	
 	@cache
 	def _in_surnames(self, token) -> bool:
+		"""
+		Check if a token is the surnames list.
+
+		Parameters
+		----------
+		token : str
+			The token to check.
+
+		Returns
+		-------
+		bool
+			True if the token is in the surnames list, False otherwise.
+		"""
 		return token in self._surnames
 	
 	@cache
 	def _in_cities(self, token) -> bool:
+		"""
+		Check if a token is the cities list.
+
+		Parameters
+		----------
+		token : str
+			The token to check.
+
+		Returns
+		-------
+		bool
+			True if the token is in the cities list, False otherwise.
+		"""
 		return token in self._cities
 	
 	@cache
 	def _in_companies(self, token) -> bool:
+		"""
+		Check if a token is the companies list.
+
+		Parameters
+		----------
+		token : str
+			The token to check.
+
+		Returns
+		-------
+		bool
+			True if the token is in the companies list, False otherwise.
+		"""
 		return token in self._companies
 	
 	@cache
 	def _in_celebrities(self, token) -> bool:
+		"""
+		Check if a token is the celebrities list.
+
+		Parameters
+		----------
+		token : str
+			The token to check.
+
+		Returns
+		-------
+		bool
+			True if the token is in the celebrities list, False otherwise.
+		"""
 		return token in self._celebrities
 	
 	@cache
 	def _in_research_organizations(self, token) -> bool:
+		"""
+		Check if a token is the research organizations list.
+
+		Parameters
+		----------
+		token : str
+			The token to check.
+
+		Returns
+		-------
+		bool
+			True if the token is in the research organizations list, False otherwise.
+		"""
 		return token in self._research_organizations
 	
 	def set_feature_config(self, feature_config):
+		"""
+		Set the feature getter function parameters.
+
+		Parameters
+		----------
+		feature_config : dict
+			The feature configuration.
+		"""
 		self._feature_getter_params = feature_config
     
 	@cache
@@ -752,195 +863,208 @@ class MyCRFTagger(TaggerI):
 			if consider_next:
 				feature_list.append("NEXT_DEP_" + dep[idx+1][1])
 
-		# # Distance to head
-		# distances = self.get_head_distance(tokens)
-		# feature_list.append("DIST_" + str(distances[idx]))
-		# if idx > 0:
-		# 	feature_list.append("PREV_DIST_" + str(distances[idx-1]))
-		# if idx < len(tokens) - 1:
-		# 	feature_list.append("NEXT_DIST_" + str(distances[idx+1]))
 		
-		#Gazetteer
-		
-		# Names
-		if self._feature_getter_params.get('NAME',True):
-			if self._in_names(token):
-				feature_list.append("NAME")
-
-				# Previous and next name
-				if consider_prev and self._in_names(tokens[idx - 1]):
-					feature_list.append("PREV_NAME")
-				if consider_next and self._in_names(tokens[idx + 1]):
-					feature_list.append("NEXT_NAME")
-
-		# Surnames
-		if self._feature_getter_params.get('SURNAME',True):
-			if self._in_surnames(token):
-				feature_list.append("SURNAME")
-
-				# Previous and next surname
-				if consider_prev and self._in_surnames(tokens[idx - 1]):
-					feature_list.append("PREV_SURNAME")
-				if consider_next and self._in_surnames(tokens[idx + 1]):
-					feature_list.append("NEXT_SURNAME")
-
-		# Cities
-		if self._feature_getter_params.get('CITY',True):
-			if self._in_cities(token):
-				feature_list.append("CITY")
-
-				# Previous and next city
-				if consider_prev and self._in_cities(tokens[idx - 1]):
-					feature_list.append("PREV_CITY")
-				if consider_next and self._in_cities(tokens[idx + 1]):
-					feature_list.append("NEXT_CITY")
-
-		# Celebrities
-		if self._feature_getter_params.get('CELEBRITY',True):
-			if self._in_celebrities(token):
-				feature_list.append("CELEBRITY")
-
-				# Previous and next celebrity
-				if consider_prev and self._in_celebrities(tokens[idx - 1]):
-					feature_list.append("PREV_CELEBRITY")
-				if consider_next and self._in_celebrities(tokens[idx + 1]):
-					feature_list.append("NEXT_CELEBRITY")
-
-		# Companies
-		if self._feature_getter_params.get('COMPANY',True):
-			if self._in_companies(token):
-				feature_list.append("COMPANY")
-
-				# Previous and next company
-				if consider_prev and self._in_companies(tokens[idx - 1]):
-					feature_list.append("PREV_COMPANY")
-				if consider_next and self._in_companies(tokens[idx + 1]):
-					feature_list.append("NEXT_COMPANY")
-
-		# Research organizations
-		if self._feature_getter_params.get('RESEARCH_ORGANIZATION',True):
-			if self._in_research_organizations(token):
-				feature_list.append("RESEARCH_ORGANIZATION")
-
-				# Previous and next research organization
-				if consider_prev and self._in_research_organizations(tokens[idx - 1]):
-					feature_list.append("PREV_RESEARCH_ORGANIZATION")
-				if consider_next and self._in_research_organizations(tokens[idx + 1]):
-					feature_list.append("NEXT_RESEARCH_ORGANIZATION")
-
-		# Previous tag prediction
-		# if idx > 0:
-		#	feature_list.append("PREV_TAG_" + self._tagger.tag([self._get_features(tokens, idx - 1)])[0])
+		#Gazetteers
+		if not self.use_regex:
 			
-		""" # New gazetteers
-		
-		# Names
-		if self._feature_getter_params.get('NAME',True):
-			name_indices = self._get_name_indices(tokens)
-			for name, indices in name_indices:
-				if idx in indices:
+			# Names
+			if self._feature_getter_params.get('NAME',True):
+				if self._in_names(token):
 					feature_list.append("NAME")
-					break
-			if consider_prev:
-				for name, indices in name_indices:
-					if idx - 1 in indices:
+
+					# Previous and next name
+					if consider_prev and self._in_names(tokens[idx - 1]):
 						feature_list.append("PREV_NAME")
-						break
-			if consider_next:
-				for name, indices in name_indices:
-					if idx + 1 in indices:
+					if consider_next and self._in_names(tokens[idx + 1]):
 						feature_list.append("NEXT_NAME")
-						break
 
-		# Surnames
-		if self._feature_getter_params.get('SURNAME',True):
-			surname_indices = self._get_surname_indices(tokens)
-			for surname, indices in surname_indices:
-				if idx in indices:
+			# Surnames
+			if self._feature_getter_params.get('SURNAME',True):
+				if self._in_surnames(token):
 					feature_list.append("SURNAME")
-					break
-			if consider_prev:
-				for surname, indices in surname_indices:
-					if idx - 1 in indices:
+
+					# Previous and next surname
+					if consider_prev and self._in_surnames(tokens[idx - 1]):
 						feature_list.append("PREV_SURNAME")
-						break
-			if consider_next:
-				for surname, indices in surname_indices:
-					if idx + 1 in indices:
+					if consider_next and self._in_surnames(tokens[idx + 1]):
 						feature_list.append("NEXT_SURNAME")
-						break
 
-		# Cities
-		if self._feature_getter_params.get('CITY',True):
-			city_indices = self._get_city_indices(tokens)
-			for city, indices in city_indices:
-				if idx in indices:
+			# Cities
+			if self._feature_getter_params.get('CITY',True):
+				if self._in_cities(token):
 					feature_list.append("CITY")
-					break
-			if consider_prev:
-				for city, indices in city_indices:
-					if idx - 1 in indices:
+
+					# Previous and next city
+					if consider_prev and self._in_cities(tokens[idx - 1]):
 						feature_list.append("PREV_CITY")
-						break
-			if consider_next:
-				for city, indices in city_indices:
-					if idx + 1 in indices:
+					if consider_next and self._in_cities(tokens[idx + 1]):
 						feature_list.append("NEXT_CITY")
-						break
 
-		# Companies
-		if self._feature_getter_params.get('COMPANY',True):
-			company_indices = self._get_company_indices(tokens)
-			for company, indices in company_indices:
-				if idx in indices:
-					feature_list.append("COMPANY")
-					break
-			if consider_prev:
-				for company, indices in company_indices:
-					if idx - 1 in indices:
-						feature_list.append("PREV_COMPANY")
-						break
-			if consider_next:
-				for company, indices in company_indices:
-					if idx + 1 in indices:
-						feature_list.append("NEXT_COMPANY")
-						break
-
-		# Celebrities
-		if self._feature_getter_params.get('CELEBRITY',True):
-			celebrity_indices = self._get_celebrity_indices(tokens)
-			for celebrity, indices in celebrity_indices:
-				if idx in indices:
+			# Celebrities
+			if self._feature_getter_params.get('CELEBRITY',True):
+				if self._in_celebrities(token):
 					feature_list.append("CELEBRITY")
-					break
-			if consider_prev:
-				for celebrity, indices in celebrity_indices:
-					if idx - 1 in indices:
-						feature_list.append("PREV_CELEBRITY")
-						break
-			if consider_next:
-				for celebrity, indices in celebrity_indices:
-					if idx + 1 in indices:
-						feature_list.append("NEXT_CELEBRITY")
-						break
 
-		# Research organizations
-		if self._feature_getter_params.get('RESEARCH_ORGANIZATION',True):
-			research_organization_indices = self._get_research_organization_indices(tokens)
-			for research_organization, indices in research_organization_indices:
-				if idx in indices:
+					# Previous and next celebrity
+					if consider_prev and self._in_celebrities(tokens[idx - 1]):
+						feature_list.append("PREV_CELEBRITY")
+					if consider_next and self._in_celebrities(tokens[idx + 1]):
+						feature_list.append("NEXT_CELEBRITY")
+
+			# Companies
+			if self._feature_getter_params.get('COMPANY',True):
+				if self._in_companies(token):
+					feature_list.append("COMPANY")
+
+					# Previous and next company
+					if consider_prev and self._in_companies(tokens[idx - 1]):
+						feature_list.append("PREV_COMPANY")
+					if consider_next and self._in_companies(tokens[idx + 1]):
+						feature_list.append("NEXT_COMPANY")
+
+			# Research organizations
+			if self._feature_getter_params.get('RESEARCH_ORGANIZATION',True):
+				if self._in_research_organizations(token):
 					feature_list.append("RESEARCH_ORGANIZATION")
-					break
-			if consider_prev:
-				for research_organization, indices in research_organization_indices:
-					if idx - 1 in indices:
+
+					# Previous and next research organization
+					if consider_prev and self._in_research_organizations(tokens[idx - 1]):
 						feature_list.append("PREV_RESEARCH_ORGANIZATION")
-						break
-			if consider_next:
-				for research_organization, indices in research_organization_indices:
-					if idx + 1 in indices:
+					if consider_next and self._in_research_organizations(tokens[idx + 1]):
 						feature_list.append("NEXT_RESEARCH_ORGANIZATION")
-						break """
+		
+		# Regex gazetteers
+		else:
+						
+			# Names
+			if self._feature_getter_params.get('NAME',True):
+				if self._language == "esp":
+					name_indices = self._get_name_indices(tokens)
+					for name, indices in name_indices:
+						if idx in indices:
+							feature_list.append("NAME")
+							break
+					if consider_prev:
+						for name, indices in name_indices:
+							if idx - 1 in indices:
+								feature_list.append("PREV_NAME")
+								break
+					if consider_next:
+						for name, indices in name_indices:
+							if idx + 1 in indices:
+								feature_list.append("NEXT_NAME")
+								break
+				
+				elif self._language == "ned": # Dutch almost always has names with only one word, so no regex is needed
+					if self._in_names(token):
+						feature_list.append("NAME")
+
+						# Previous and next name
+						if consider_prev and self._in_names(tokens[idx - 1]):
+							feature_list.append("PREV_NAME")
+						if consider_next and self._in_names(tokens[idx + 1]):
+							feature_list.append("NEXT_NAME")
+
+			# Surnames
+			if self._feature_getter_params.get('SURNAME',True):
+				if self._language == "ned":
+					surname_indices = self._get_surname_indices(tokens)
+					for surname, indices in surname_indices:
+						if idx in indices:
+							feature_list.append("SURNAME")
+							break
+					if consider_prev:
+						for surname, indices in surname_indices:
+							if idx - 1 in indices:
+								feature_list.append("PREV_SURNAME")
+								break
+					if consider_next:
+						for surname, indices in surname_indices:
+							if idx + 1 in indices:
+								feature_list.append("NEXT_SURNAME")
+								break
+
+				elif self._language == "esp": # Spanish almost always has surnames with only one word, so no regex is needed
+					if self._in_surnames(token):
+						feature_list.append("SURNAME")
+
+						# Previous and next surname
+						if consider_prev and self._in_surnames(tokens[idx - 1]):
+							feature_list.append("PREV_SURNAME")
+						if consider_next and self._in_surnames(tokens[idx + 1]):
+							feature_list.append("NEXT_SURNAME")
+
+			# Cities
+			if self._feature_getter_params.get('CITY',True):
+				city_indices = self._get_city_indices(tokens)
+				for city, indices in city_indices:
+					if idx in indices:
+						feature_list.append("CITY")
+						break
+				if consider_prev:
+					for city, indices in city_indices:
+						if idx - 1 in indices:
+							feature_list.append("PREV_CITY")
+							break
+				if consider_next:
+					for city, indices in city_indices:
+						if idx + 1 in indices:
+							feature_list.append("NEXT_CITY")
+							break
+
+			# Companies
+			if self._feature_getter_params.get('COMPANY',True):
+				company_indices = self._get_company_indices(tokens)
+				for company, indices in company_indices:
+					if idx in indices:
+						feature_list.append("COMPANY")
+						break
+				if consider_prev:
+					for company, indices in company_indices:
+						if idx - 1 in indices:
+							feature_list.append("PREV_COMPANY")
+							break
+				if consider_next:
+					for company, indices in company_indices:
+						if idx + 1 in indices:
+							feature_list.append("NEXT_COMPANY")
+							break
+
+			# Celebrities
+			if self._feature_getter_params.get('CELEBRITY',True):
+				celebrity_indices = self._get_celebrity_indices(tokens)
+				for celebrity, indices in celebrity_indices:
+					if idx in indices:
+						feature_list.append("CELEBRITY")
+						break
+				if consider_prev:
+					for celebrity, indices in celebrity_indices:
+						if idx - 1 in indices:
+							feature_list.append("PREV_CELEBRITY")
+							break
+				if consider_next:
+					for celebrity, indices in celebrity_indices:
+						if idx + 1 in indices:
+							feature_list.append("NEXT_CELEBRITY")
+							break
+
+			# Research organizations
+			if self._feature_getter_params.get('RESEARCH_ORGANIZATION',True):
+				research_organization_indices = self._get_research_organization_indices(tokens)
+				for research_organization, indices in research_organization_indices:
+					if idx in indices:
+						feature_list.append("RESEARCH_ORGANIZATION")
+						break
+				if consider_prev:
+					for research_organization, indices in research_organization_indices:
+						if idx - 1 in indices:
+							feature_list.append("PREV_RESEARCH_ORGANIZATION")
+							break
+				if consider_next:
+					for research_organization, indices in research_organization_indices:
+						if idx + 1 in indices:
+							feature_list.append("NEXT_RESEARCH_ORGANIZATION")
+							break
 
 		return feature_list
 	
