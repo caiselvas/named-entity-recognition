@@ -59,8 +59,9 @@ class CompleteNER():
         self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt)
         self.tagger.train(self.train_data, file)
     def validation(self):
-        self.test(self.validation_data)
-    def test(self, data = None, plot = False):
+        precision, recall, f1, err, default_acc, matrix = self.test(self.validation_data)
+        return precision, recall, f1, err, default_acc, matrix
+    def test(self, data = None, plot = False, verb = False):
         data = self.test_data if data == None else data
         data_to_list =  [[token for token, _ in sentence] for sentence in data]
         tagged = []
@@ -71,13 +72,15 @@ class CompleteNER():
 
         precision, recall, f1 = self.precision_recall_f1(tp, fn, fp)
         default_acc = self.default_accuracy(data)
-        print(f"Language {self.language}")
-        print("Precision:", precision)
-        print("Recall:", recall)
-        print("F1-score:", f1)
-        print("Total errors:", err)
-        print("Default accuracy:", default_acc)
-        self.plot_confusion_matrix() if plot else None
+        if verb:
+            print(f"Language {self.language}")
+            print("Precision:", precision)
+            print("Recall:", recall)
+            print("F1-score:", f1)
+            print("Total errors:", err)
+            print("Default accuracy:", default_acc)
+        matrix = self.plot_confusion_matrix(plot)
+        return precision, recall, f1, err, default_acc, matrix
 
 
     def evaluate(self, data, predicted):
@@ -152,7 +155,7 @@ class CompleteNER():
         f1_score = 2 * (precision * recall) / (precision + recall)
         return precision, recall, f1_score
     
-    def plot_confusion_matrix(self):
+    def plot_confusion_matrix(self, plot):
         # Extract unique entity types
         matrix_dict = self.matrix
         unique_labels = sorted(set(label for pair in matrix_dict.keys() for label in pair))
@@ -166,9 +169,11 @@ class CompleteNER():
                 matrix[i, j] = matrix_dict.get((label1, label2), 0)
 
         # Create a heatmap
-        plt.figure(figsize=(10, 8))
-        sns.heatmap(matrix, annot=True, fmt='g', cmap='Blues', xticklabels=unique_labels, yticklabels=unique_labels)
-        plt.xlabel('Predicted Labels')
-        plt.ylabel('True Labels')
-        plt.title('Confusion Matrix')
-        plt.show()
+        if plot:
+            plt.figure(figsize=(10, 8))
+            sns.heatmap(matrix, annot=True, fmt='g', cmap='Blues', xticklabels=unique_labels, yticklabels=unique_labels)
+            plt.xlabel('Predicted Labels')
+            plt.ylabel('True Labels')
+            plt.title('Confusion Matrix')
+            plt.show()
+        return matrix
