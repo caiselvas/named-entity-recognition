@@ -27,34 +27,37 @@ import pandas as pd
 
 # Define your feature configurations
 feature_configs = {
-    "capitalization": [True, False],
-    "has_upper": [True, False],
-    "has_num": [True, False],
-    "punctuation": [True, False],
-    "suffix": [True, False],
-    "word": [True, False],
-    "length": [True, False],
-    "prefix": [True, False],
-    "prev_word": [True, False],
-    "next_word": [True, False],
-    "pos_tag": [True, False],
-    "lemma": [True, False],
-    "morph": [True, False],
-    "title": [True, False],
-    "names": [True, False],
-    "surnames": [True, False],
-    "cities": [True, False],
-    "celebrities": [True, False],
-    "companies": [True, False],
-    "research": [True, False],
-    "comilles": [True, False]
-}
-
+			'CAPITALIZATION': [True, False],
+			'HAS_UPPER': [True, False],
+			'HAS_NUM': [True, False],
+			'PUNCTUATION': [True, False],
+			'SUF': [True, False],
+			'WORD': [True, False],
+			'LEN': [True, False],
+			'NEXT': [True, False],
+			'POS': [True, False],
+			'LEMMA': [True, False],
+			'CITY': [True, False],
+			'COMPANY': [True, False],
+			'CELEBRITY': [True, False],
+			'RESEARCH_ORGANIZATION': [True, False],
+			'NAME': [True, False],
+			'SURNAME': [True, False],
+			'PREV': [True, False],
+			'NEXT': [True, False],
+			'NUMBER': [True, False],
+			'GENDER': [True, False],
+			'PERSON': [True, False],
+			'PRONTYPE': [True, False],
+			'DEP':[True, False],
+			'HEAD_DISTANCE': [True, False],
+			'HEAD': [True, False],
+		}
 # Define combinations to avoid (you can adjust this based on your domain knowledge)
 avoid_combinations = [
-    {"capitalization": False, "has_upper": True},  # Capitalization usually implies having uppercase letters
-    {"capitalization": False, "word": False},  # Capitalization is relevant only if words are included
-    # Add more combinations to avoid if necessary
+    {"CAPITALIZATION": False, "HAS_UPPER": True},  # Capitalization usually implies having uppercase letters
+    # se'n poden posar més
+    
 ]
 
 # Filter out combinations to avoid
