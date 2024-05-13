@@ -54,7 +54,8 @@ class MyCRFTagger(TaggerI):
 		feature_func=None, 
 		verbose=False, 
 		training_opt={},
-    feature_opt={}
+		feature_opt={},
+		custom_postag = False
 		):
 		"""
 		Initialize the CRFSuite tagger
@@ -170,6 +171,8 @@ class MyCRFTagger(TaggerI):
 			'HEAD': True
 		} if feature_opt == {} else feature_opt
 
+		self.custom_postag = custom_postag
+
 	def set_model_file(self, model_file):
 		self._model_file = model_file
 		self._tagger.open(self._model_file)
@@ -223,7 +226,14 @@ class MyCRFTagger(TaggerI):
 	
 	@cache
 	def get_postag(self, tokens) -> tuple:
-		return self._pos_tagger.get_postag(tokens)
+		if self.custom_postag:
+			try:
+				return self.custom_postag[tuple(tokens)]
+			except:
+				print("No s'ha trobat el POS")
+				return self._pos_tagger.get_postag(tokens)
+		else:
+			return self._pos_tagger.get_postag(tokens)
 	
 	@cache
 	def get_morph(self, tokens) -> tuple:
