@@ -192,6 +192,8 @@ class MyCRFTagger(TaggerI):
 			'SURNAME': True,
 			'PREV': True,
 			'NEXT': True,
+			'2NEXT': True,
+			'2PREV': True,
 			'NUMBER': True,
 			'GENDER': True,
 			'PERSON': True,
@@ -650,9 +652,16 @@ class MyCRFTagger(TaggerI):
 		if consider_prev:
 			feature_list.append("PREV_" + tokens[idx - 1])
 
+		if self._feature_getter_params.get('2PREV',True):
+			if idx > 1:
+				feature_list.append("2PREV_" + tokens[idx - 2])
 		# Next word
 		if consider_next:
 			feature_list.append("NEXT_" + tokens[idx + 1])
+
+		if self._feature_getter_params.get('2NEXT',True):
+			if idx + 1 < len(tokens) - 1:
+				feature_list.append("2NEXT_" + tokens[idx + 2])
 
 		# POS tag the sentence
 		if self._feature_getter_params.get('POS', True):

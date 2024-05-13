@@ -35,6 +35,8 @@ feature_configs = {
 			'WORD': [True, False],
 			'LEN': [True, False],
 			'NEXT': [True, False],
+            '2PREV': [True, False],
+            '2NEXT': [True, False],
 			'POS': [True, False],
 			'LEMMA': [True, False],
 			'CITY': [True, False],
@@ -56,7 +58,7 @@ feature_configs = {
 # Define combinations to avoid (you can adjust this based on your domain knowledge)
 avoid_combinations = [
     {"CAPITALIZATION": False, "HAS_UPPER": True},  # Capitalization usually implies having uppercase letters
-    # se'n poden posar més
+    # HERE ADD A LOT OF THE COMBINATIONS 
     
 ]
 
