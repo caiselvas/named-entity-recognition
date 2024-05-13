@@ -64,7 +64,7 @@ class CompleteNER():
         self.postag = postags if self.postag else self.postag
         return new_X
     
-    def load_from_file(self, file):
+    def load_from_file(self, file, feature_opt = {}, use_regex = False, custom_postag = False):
         """
         Load a model from a file and set it to the tagger.
 
@@ -76,7 +76,7 @@ class CompleteNER():
         self.tagger = MyCRFTagger(language=self.language)
         self.tagger.set_model_file(file)
     
-    def train(self, verbose = False, training_opt = {}, feature_opt = {}, use_regex = False, file = "model.mdl"):
+    def train(self, verbose = False, training_opt = {}, feature_opt = {}, use_regex = False, file = "model.mdl", custom_postag = False):
         """
         Train the CRF tagger.
 
@@ -91,7 +91,7 @@ class CompleteNER():
         file : str
             File path to save the model.
         """
-        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt, feature_opt=feature_opt, use_regex=use_regex)
+        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt, feature_opt=feature_opt, use_regex=use_regex, custom_postag=custom_postag)
         self.tagger.train(self.train_data, file)
 
     def validation(self):
