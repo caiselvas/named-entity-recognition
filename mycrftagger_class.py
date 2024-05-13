@@ -16,7 +16,7 @@ from typing import Any
 from nltk.tag.api import TaggerI
 from nltk.tag import pos_tag
 from nltk.stem import WordNetLemmatizer
-from custom_pos import CustomPOSTagger
+from custom_pos_class import CustomPOSTagger
 
 try:
 	import pycrfsuite
