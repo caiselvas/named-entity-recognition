@@ -72,6 +72,15 @@ class CompleteNER():
         ----------
         file : str
             File path.
+
+        feature_opt : dict
+            Feature options.
+
+        use_regex : bool
+            Use regex for gazetteers.
+
+        custom_postag : bool
+            Use custom postags instead of automatically generating them with Spacy.
         """
         self.tagger = MyCRFTagger(language=self.language)
         self.tagger.set_model_file(file)
@@ -87,6 +96,12 @@ class CompleteNER():
 
         training_opt : dict
             Training options.
+
+        feature_opt : dict
+            Feature options.
+
+        use_regex : bool
+            Use regex for gazetteers.
 
         file : str
             File path to save the model.
