@@ -121,7 +121,6 @@ class MyCRFTagger(TaggerI):
 		self._cities = set(open("data/cities15000.txt", encoding="utf-8").readlines())
 		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
 		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
-		self._research_organizations = set(open("data/research_organizations.txt", encoding="utf-8").readlines())
 
 		# Create regex pattern for names, surnames, cities, companies, celebrities, and research organizations
 		companies_pattern = r'\b(?:' + '|'.join(re.escape(company) for company in self._companies) + r')\b'
@@ -148,6 +147,7 @@ class MyCRFTagger(TaggerI):
 			'HAS_NUM': True,
 			'PUNCTUATION': True,
 			'SUF': True,
+			'PRE': True,
 			'WORD': True,
 			'LEN': True,
 			'NEXT': True,
@@ -168,7 +168,7 @@ class MyCRFTagger(TaggerI):
 			'DEP': True,
 			'HEAD_DISTANCE': True,
 			'HEAD': True
-		} if feature_opt == None else feature_opt
+		} if feature_opt == {} else feature_opt
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -375,7 +375,7 @@ class MyCRFTagger(TaggerI):
 			indices.append((match.group(), tuple(range(start_word_index, end_word_index + 1))))
 		
 		return indices
-
+	
 	def _get_features(self, tokens, idx, ):
 		"""
 		Extract basic features about this word including
@@ -392,8 +392,6 @@ class MyCRFTagger(TaggerI):
 		:return: a list which contains the features
 		:rtype: list(str)
 		"""
-		self._iterations_count += 1
-		print(f'Getting features for token {self._iterations_count}/{self._total_iterations}', end='\r')
 		
 		tokens = tuple(tokens)
 		token = tokens[idx]
@@ -745,10 +743,6 @@ class MyCRFTagger(TaggerI):
 		:return: list of tagged sentences.
 		:rtype: list(list(tuple(str,str)))
 		"""
-		self._iterations_count = 0
-		self._total_iterations = 0
-		for sent in sents:
-			self._total_iterations += len(sent)
 	
 		if self._model_file == "":
 			raise Exception(
@@ -778,11 +772,6 @@ class MyCRFTagger(TaggerI):
 		:params model_file : the model will be saved to this file.
 
 		"""
-		self._iterations_count = 0
-		self._total_iterations = 0
-		for sent in train_data:
-			self._total_iterations += len(sent)
-
 		trainer = pycrfsuite.Trainer(verbose=self._verbose)
 		trainer.set_params(self._training_options)
 
