@@ -563,73 +563,79 @@ class MyCRFTagger(TaggerI):
 		# if idx < len(tokens) - 1:
 		# 	feature_list.append("NEXT_DIST_" + str(distances[idx+1]))
 		
-		# Gazetteer
+		#Gazetteer
 		
-		# # Names
-		# if self._in_names(token):
-		# 	feature_list.append("NAME")
+		# Names
+		if self._feature_getter_params.get('NAME',True):
+			if self._in_names(token):
+				feature_list.append("NAME")
 
-		# 	# Previous and next name
-		# 	if idx > 0 and self._in_names(tokens[idx - 1]):
-		# 		feature_list.append("PREV_NAME")
-		# 	if idx < len(tokens) - 1 and self._in_names(tokens[idx + 1]):
-		# 		feature_list.append("NEXT_NAME")
+				# Previous and next name
+				if consider_prev and self._in_names(tokens[idx - 1]):
+					feature_list.append("PREV_NAME")
+				if consider_next and self._in_names(tokens[idx + 1]):
+					feature_list.append("NEXT_NAME")
 
-		# # Surnames
-		# if self._in_surnames(token):
-		# 	feature_list.append("SURNAME")
+		# Surnames
+		if self._feature_getter_params.get('SURNAME',True):
+			if self._in_surnames(token):
+				feature_list.append("SURNAME")
 
-		# 	# Previous and next surname
-		# 	if idx > 0 and self._in_surnames(tokens[idx - 1]):
-		# 		feature_list.append("PREV_SURNAME")
-		# 	if idx < len(tokens) - 1 and self._in_surnames(tokens[idx + 1]):
-		# 		feature_list.append("NEXT_SURNAME")
+				# Previous and next surname
+				if consider_prev and self._in_surnames(tokens[idx - 1]):
+					feature_list.append("PREV_SURNAME")
+				if consider_next and self._in_surnames(tokens[idx + 1]):
+					feature_list.append("NEXT_SURNAME")
 
-		# # Cities
-		# if self._in_cities(token):
-		# 	feature_list.append("CITY")
+		# Cities
+		if self._feature_getter_params.get('CITY',True):
+			if self._in_cities(token):
+				feature_list.append("CITY")
 
-		# 	# Previous and next city
-		# 	if idx > 0 and self._in_cities(tokens[idx - 1]):
-		# 		feature_list.append("PREV_CITY")
-		# 	if idx < len(tokens) - 1 and self._in_cities(tokens[idx + 1]):
-		# 		feature_list.append("NEXT_CITY")
+				# Previous and next city
+				if consider_prev and self._in_cities(tokens[idx - 1]):
+					feature_list.append("PREV_CITY")
+				if consider_next and self._in_cities(tokens[idx + 1]):
+					feature_list.append("NEXT_CITY")
 
-		# # Celebrities
-		# if self._in_celebrities(token):
-		# 	feature_list.append("CELEBRITY")
+		# Celebrities
+		if self._feature_getter_params.get('CELEBRITY',True):
+			if self._in_celebrities(token):
+				feature_list.append("CELEBRITY")
 
-		# 	# Previous and next celebrity
-		# 	if idx > 0 and self._in_celebrities(tokens[idx - 1]):
-		# 		feature_list.append("PREV_CELEBRITY")
-		# 	if idx < len(tokens) - 1 and self._in_celebrities(tokens[idx + 1]):
-		# 		feature_list.append("NEXT_CELEBRITY")
+				# Previous and next celebrity
+				if consider_prev and self._in_celebrities(tokens[idx - 1]):
+					feature_list.append("PREV_CELEBRITY")
+				if consider_next and self._in_celebrities(tokens[idx + 1]):
+					feature_list.append("NEXT_CELEBRITY")
 
-		# # Companies
-		# if self._in_companies(token):
-		# 	feature_list.append("COMPANY")
+		# Companies
+		if self._feature_getter_params.get('COMPANY',True):
+			if self._in_companies(token):
+				feature_list.append("COMPANY")
 
-		# 	# Previous and next company
-		# 	if idx > 0 and self._in_companies(tokens[idx - 1]):
-		# 		feature_list.append("PREV_COMPANY")
-		# 	if idx < len(tokens) - 1 and self._in_companies(tokens[idx + 1]):
-		# 		feature_list.append("NEXT_COMPANY")
+				# Previous and next company
+				if consider_prev and self._in_companies(tokens[idx - 1]):
+					feature_list.append("PREV_COMPANY")
+				if consider_next and self._in_companies(tokens[idx + 1]):
+					feature_list.append("NEXT_COMPANY")
 
-		# # Research organizations
-		# if self._in_research_organizations(token):
-		# 	feature_list.append("RESEARCH_ORGANIZATION")
+		# Research organizations
+		if self._feature_getter_params.get('RESEARCH_ORGANIZATION',True):
+			if self._in_research_organizations(token):
+				feature_list.append("RESEARCH_ORGANIZATION")
 
-		# 	# Previous and next research organization
-		# 	if idx > 0 and self._in_research_organizations(tokens[idx - 1]):
-		# 		feature_list.append("PREV_RESEARCH_ORGANIZATION")
-		# 	if idx < len(tokens) - 1 and self._in_research_organizations(tokens[idx + 1]):
-		# 		feature_list.append("NEXT_RESEARCH_ORGANIZATION")
+				# Previous and next research organization
+				if consider_prev and self._in_research_organizations(tokens[idx - 1]):
+					feature_list.append("PREV_RESEARCH_ORGANIZATION")
+				if consider_next and self._in_research_organizations(tokens[idx + 1]):
+					feature_list.append("NEXT_RESEARCH_ORGANIZATION")
 
-		# # Previous tag prediction
+		# Previous tag prediction
 		# if idx > 0:
-		# 	feature_list.append("PREV_TAG_" + self._tagger.tag([self._get_features(tokens, idx - 1)])[0])
+		#	feature_list.append("PREV_TAG_" + self._tagger.tag([self._get_features(tokens, idx - 1)])[0])
 			
-		# New gazetteers
+		""" # New gazetteers
 		
 		# Names
 		if self._feature_getter_params.get('NAME',True):
@@ -737,7 +743,7 @@ class MyCRFTagger(TaggerI):
 				for research_organization, indices in research_organization_indices:
 					if idx + 1 in indices:
 						feature_list.append("NEXT_RESEARCH_ORGANIZATION")
-						break
+						break """
 
 		return feature_list
 	
