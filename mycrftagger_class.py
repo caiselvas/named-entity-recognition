@@ -122,7 +122,6 @@ class MyCRFTagger(TaggerI):
 		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
 		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
 		self._research_organizations = set(open("data/research_organizations.txt", encoding="utf-8").readlines())
-		self.feature_config = feature_opt
 
 		# Create regex pattern for names, surnames, cities, companies, celebrities, and research organizations
 		companies_pattern = r'\b(?:' + '|'.join(re.escape(company) for company in self._companies) + r')\b'
@@ -169,7 +168,7 @@ class MyCRFTagger(TaggerI):
 			'DEP': True,
 			'HEAD_DISTANCE': True,
 			'HEAD': True
-		}
+		} if feature_opt == None else feature_opt
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -267,7 +266,7 @@ class MyCRFTagger(TaggerI):
 		return token in self._research_organizations
 	
 	def set_feature_config(self, feature_config):
-		self._feature_config = feature_config
+		self._feature_getter_params = feature_config
     
 	@cache
 	def _get_company_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
@@ -407,20 +406,20 @@ class MyCRFTagger(TaggerI):
 		if not token:
 			return feature_list
 
-		if self.feature_config.get("CAPITALIZATION", True):
+		if self._feature_getter_params.get("CAPITALIZATION", True):
 			if token[0].isupper():
 				feature_list.append("CAPITALIZATION")
 
-		if self.feature_config.get("HAS_UPPER", True):
+		if self._feature_getter_params.get("HAS_UPPER", True):
 			if any(map(str.isupper, token)):
 				feature_list.append("HAS_UPPER")
 		# Number
-		if self.feature_config.get("HAS_NUM", True):
+		if self._feature_getter_params.get("HAS_NUM", True):
 			if re.search(self._pattern, token) is not None:
 				feature_list.append("HAS_NUM")
 
 		# Punctuation
-		if self.feature_config.get("PUNCTUATION", True):
+		if self._feature_getter_params.get("PUNCTUATION", True):
 			punc_cat = {"Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po"}
 			if all(unicodedata.category(x) in punc_cat for x in token):
 				feature_list.append("PUNCTUATION")
@@ -496,7 +495,7 @@ class MyCRFTagger(TaggerI):
 			morph = self.get_morph(tokens)
 		
 			# Plural or singular
-			if self._feature_getter_params'NUMBER']:
+			if self._feature_getter_params['NUMBER']:
 				if morph[idx][1].get("Number", None):
 					feature_list.append("NUMBER_" + morph[idx][1].get("Number")[0])
 				if consider_prev:
