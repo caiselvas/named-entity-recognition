@@ -6,14 +6,16 @@ import seaborn as sns
 import numpy as np
 
 class CompleteNER():
-    def __init__(self, train_data, validation_data, test_data, language, method = "bio", custom = False):
+    def __init__(self, train_data, validation_data, test_data, language, method = "bio", custom = False, postag=False):
         assert method.lower() in ['bio', 'biow', 'io'], "Method not valid, options: 'bio', 'biow', 'io'"
         
         self.language = language
         self.method = method.lower()
+        self.postag = postag
         self.train_data = self.get_tuples(train_data) if not custom else train_data
         self.validation_data = self.get_tuples(validation_data) if not custom else validation_data
         self.test_data = self.get_tuples(test_data) if not custom else test_data
+        
 
     def get_tuples(self, X : list) -> list[tuple[str, str]]:
         """
@@ -32,30 +34,34 @@ class CompleteNER():
             List of tuples.
         """
         new_X = []
-        
+        postags = {} if self.postag in [True, False] else self.postag
         for sentence in X:
             tuple_sentence = []
+            postags[tuple(a[0] for a in sentence)] = []
             for idx, word in enumerate(sentence):
                 if self.method == 'bio':
                     tuple_sentence.append((word[0], word[2]))
-                
+                    postags[tuple(a[0] for a in sentence)].append((word[0], word[1]))
                 elif self.method == 'biow':
                     # When there is a B-TAG and the next word is an O-TAG, the B-TAG is changed to an W-TAG (length 1)
                     if word[2].startswith('B') and (idx+1) < len(sentence) and sentence[idx+1][2].startswith('O'):
                         tuple_sentence.append((word[0], f'W-{word[2][2:]}'))
+                        postags[tuple(a[0] for a in sentence)].append((word[0], word[1]))
                     elif word[2].startswith('B') and (idx+1) == len(sentence):
                         tuple_sentence.append((word[0], f'W-{word[2][2:]}'))
+                        postags[tuple(a[0] for a in sentence)].append((word[0], word[1]))
                     else:
                         tuple_sentence.append((word[0], word[2]))
-                
+                        postags[tuple(a[0] for a in sentence)].append((word[0], word[1]))
                 elif self.method == 'io':
                     if word[2].startswith('B'):
                         tuple_sentence.append((word[0], f'I-{word[2][2:]}'))
+                        postags[tuple(a[0] for a in sentence)].append((word[0], word[1]))
                     else:
                         tuple_sentence.append((word[0], word[2]))
-            
+                        postags[tuple(a[0] for a in sentence)].append((word[0], word[1]))
             new_X.append(tuple_sentence)
-        
+        self.postag = postags if self.postag else self.postag
         return new_X
     
     def load_from_file(self, file):
@@ -70,7 +76,7 @@ class CompleteNER():
         self.tagger = MyCRFTagger(language=self.language)
         self.tagger.set_model_file(file)
     
-    def train(self, verbose = False, training_opt = {}, file = "model.mdl"):
+    def train(self, verbose = False, training_opt = {}, feature_opt = {}, file = "model.mdl"):
         """
         Train the CRF tagger.
 
@@ -85,7 +91,7 @@ class CompleteNER():
         file : str
             File path to save the model.
         """
-        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt)
+        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt, feature_opt=feature_opt)
         self.tagger.train(self.train_data, file)
 
     def validation(self):
