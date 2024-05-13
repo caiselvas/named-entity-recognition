@@ -356,3 +356,6 @@ class CompleteNER():
             plt.show()
     
         return matrix
+    def inference(self, phrase):
+        phrase = phrase.split(" ")
+        return self.tagger.tag(phrase)
