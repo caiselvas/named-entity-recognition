@@ -76,7 +76,7 @@ class CompleteNER():
         self.tagger = MyCRFTagger(language=self.language)
         self.tagger.set_model_file(file)
     
-    def train(self, verbose = False, training_opt = {}, file = "model.mdl"):
+    def train(self, verbose = False, training_opt = {}, feature_opt = {}, file = "model.mdl"):
         """
         Train the CRF tagger.
 
@@ -91,7 +91,7 @@ class CompleteNER():
         file : str
             File path to save the model.
         """
-        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt)
+        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt, feature_opt=feature_opt)
         self.tagger.train(self.train_data, file)
 
     def validation(self):
