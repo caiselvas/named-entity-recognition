@@ -6,7 +6,7 @@ import seaborn as sns
 import numpy as np
 
 class CompleteNER():
-    def __init__(self, train_data, validation_data, test_data, language, method = "bio", custom = False, postag=False):
+    def __init__(self, train_data, validation_data, test_data, language, method = "bio", custom = False, postag=True):
         assert method.lower() in ['bio', 'biow', 'io'], "Method not valid, options: 'bio', 'biow', 'io'"
         
         self.language = language
@@ -300,9 +300,9 @@ class CompleteNER():
         tuple
             Precision, recall, f1-score.
         """
-        precision = tp / (tp + fp)
-        recall = tp / (tp + fn)
-        f1_score = 2 * (precision * recall) / (precision + recall)
+        precision = tp / (tp + fp) if tp + fp != 0 else 0
+        recall = tp / (tp + fn) if (tp+fn) != 0 else 0
+        f1_score = 2 * (precision * recall) / (precision + recall) if precision + recall != 0 else 0
         return precision, recall, f1_score
     
     def plot_confusion_matrix(self, plot: bool):
