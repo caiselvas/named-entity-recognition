@@ -148,7 +148,7 @@ class CompleteNER():
         for sentence in data_to_list:
             tagged_sentence = self.tagger.tag(sentence)
             tagged.append(self.to_bio(tagged_sentence))
-        tp, fn, fp, tot, err = self.evaluate(data, tagged)
+        tp, fn, fp, tot, err = self.evaluate([self.to_bio(d) for d in data], tagged)
 
         precision, recall, f1 = self.precision_recall_f1(tp, fn, fp)
         default_acc = self.default_accuracy(data)
