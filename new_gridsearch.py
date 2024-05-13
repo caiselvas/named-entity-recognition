@@ -1,3 +1,4 @@
+from multiprocessing import Pool
 import numpy as np
 import spacy
 import nltk
@@ -100,39 +101,38 @@ feature_groups = [
 
 all_feature_configs = generate_feature_configs(feature_groups)
 
-# Evaluate each feature configuration
-results_esp = []
-results_ned = []
-for feature_config in all_feature_configs:
-    esp, ned = evaluate_feature_config(feature_config)
-    results_esp.append(list(esp))
-    results_ned.append(list(ned))
-    print(f"Iteration {len(results_esp)/64} done")
-    
+def evaluate_feature_config_parallel(feature_config):
+    esp_result, ned_result = evaluate_feature_config(feature_config)
+    return esp_result, ned_result
 
-	
-# Convert results to a DataFrame
-results_df_esp = pd.DataFrame(results_esp, columns=["Precision", "Recall", "F1", "Error", "Default Accuracy", "Confusion Matrix", "Model Name"])
-# Sort results by F1 score
-results_df = results_df_esp.sort_values(by="F1", ascending=False)
-# Print best results
-best_model_name = results_df.iloc[0]["Model Name"]
-best_score = results_df.iloc[0]["F1"]
-print("Best Feature Configuration:", best_model_name)
-print("Best F1 Score:", best_score)
+# Define the number of processes to use
+num_processes = 4  # You can adjust this based on your CPU cores
 
-# Save results to a CSV file
-results_df.to_csv("grid_search_results_esp.csv", index=False)
+# Use Pool to parallelize feature configuration evaluation
+with Pool(num_processes) as pool:
+    results_parallel = pool.map(evaluate_feature_config_parallel, all_feature_configs)
 
+# Unpack results
+results_esp_parallel, results_ned_parallel = zip(*results_parallel)
 
-results_df_ned = pd.DataFrame(results_ned, columns=["Precision", "Recall", "F1", "Error", "Default Accuracy", "Confusion Matrix", "Model Name"])
-# Sort results by F1 score
-results_df = results_df_ned.sort_values(by="F1", ascending=False)
-# Print best results
-best_model_name = results_df.iloc[0]["Model Name"]
-best_score = results_df.iloc[0]["F1"]
-print("Best Feature Configuration:", best_model_name)
-print("Best F1 Score:", best_score)
+# Convert results to DataFrames
+results_df_esp_parallel = pd.DataFrame(results_esp_parallel, columns=["Precision", "Recall", "F1", "Error", "Default Accuracy", "Confusion Matrix", "Model Name"])
+results_df_ned_parallel = pd.DataFrame(results_ned_parallel, columns=["Precision", "Recall", "F1", "Error", "Default Accuracy", "Confusion Matrix", "Model Name"])
 
-# Save results to a CSV file
-results_df.to_csv("grid_search_results_ned.csv", index=False)
+# Sort and print best results for Spanish
+results_df_esp_parallel_sorted = results_df_esp_parallel.sort_values(by="F1", ascending=False)
+best_model_name_esp = results_df_esp_parallel_sorted.iloc[0]["Model Name"]
+best_score_esp = results_df_esp_parallel_sorted.iloc[0]["F1"]
+print("Best Feature Configuration for Spanish:", best_model_name_esp)
+print("Best F1 Score for Spanish:", best_score_esp)
+
+# Sort and print best results for Dutch
+results_df_ned_parallel_sorted = results_df_ned_parallel.sort_values(by="F1", ascending=False)
+best_model_name_ned = results_df_ned_parallel_sorted.iloc[0]["Model Name"]
+best_score_ned = results_df_ned_parallel_sorted.iloc[0]["F1"]
+print("Best Feature Configuration for Dutch:", best_model_name_ned)
+print("Best F1 Score for Dutch:", best_score_ned)
+
+# Save results to CSV files
+results_df_esp_parallel.to_csv("grid_search_results_esp_parallel.csv", index=False)
+results_df_ned_parallel.to_csv("grid_search_results_ned_parallel.csv", index=False)
