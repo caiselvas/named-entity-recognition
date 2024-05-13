@@ -54,37 +54,68 @@ class MyCRFTagger(TaggerI):
 		feature_func=None, 
 		verbose=False, 
 		training_opt={},
-    feature_opt={}
+    	feature_opt=None
 		):
 		"""
 		Initialize the CRFSuite tagger
 
-		:param feature_func: The function that extracts features for each token of a sentence. This function should take
+		Parameters
+		----------
+		language : str
+			The language of the tagger. It can be either 'ned' for Dutch or 'esp' for Spanish.
+
+		feature_func : function
+			The function that extracts features for each token of a sentence. This function should take
 			2 parameters: tokens and index which extract features at index position from tokens list. See the build in
 			_get_features function for more detail.
-		:param verbose: output the debugging messages during training.
-		:type verbose: boolean
-		:param training_opt: python-crfsuite training options
-		:type training_opt: dictionary
+
+		verbose : bool
+			Output the debugging messages during training.
+
+		training_opt : dict
+			python-crfsuite training options
+
+		feature_opt : dict
+			feature getter function options
 
 		Set of possible training options (using LBFGS training algorithm).
-			:'feature.minfreq': The minimum frequency of features.
-			:'feature.possible_states': Force to generate possible state features.
-			:'feature.possible_transitions': Force to generate possible transition features.
-			:'c1': Coefficient for L1 regularization.
-			:'c2': Coefficient for L2 regularization.
-			:'max_iterations': The maximum number of iterations for L-BFGS optimization.
-			:'num_memories': The number of limited memories for approximating the inverse hessian matrix.
-			:'epsilon': Epsilon for testing the convergence of the objective.
-			:'period': The duration of iterations to test the stopping criterion.
-			:'delta': The threshold for the stopping criterion; an L-BFGS iteration stops when the
-				improvement of the log likelihood over the last ${period} iterations is no greater than this threshold.
-			:'linesearch': The line search algorithm used in L-BFGS updates:
+		- 'feature.minfreq': The minimum frequency of features.
+		- 'feature.possible_states': Force to generate possible state features.
+		- 'feature.possible_transitions': Force to generate possible transition features.
+		- 'c1': Coefficient for L1 regularization.
+		- 'c2': Coefficient for L2 regularization.
+		- 'max_iterations': The maximum number of iterations for L-BFGS optimization.
+		- 'num_memories': The number of limited memories for approximating the inverse hessian matrix.
+		- 'epsilon': Epsilon for testing the convergence of the objective.
+		- 'period': The duration of iterations to test the stopping criterion.
+		- 'delta': The threshold for the stopping criterion; an L-BFGS iteration stops when the
+			improvement of the log likelihood over the last ${period} iterations is no greater than this threshold.
+		- 'linesearch': The line search algorithm used in L-BFGS updates:
+			- 'MoreThuente': More and Thuente's method,
+			- 'Backtracking': Backtracking method with regular Wolfe condition,
+			- 'StrongBacktracking': Backtracking method with strong Wolfe condition
+		- 'max_linesearch': The maximum number of trials for the line search algorithm.
 
-				- 'MoreThuente': More and Thuente's method,
-				- 'Backtracking': Backtracking method with regular Wolfe condition,
-				- 'StrongBacktracking': Backtracking method with strong Wolfe condition
-			:'max_linesearch':  The maximum number of trials for the line search algorithm.
+		Set of possible feature getter options:
+		- CAPITALIZATION: bool
+		- HAS_UPPER: bool
+		- HAS_NUM: bool
+		- PUNCTUATION: bool
+		- SUF: bool
+		- WORD: bool
+		- LEN: bool
+		- NEXT: bool
+		- POS: bool
+		- LEMMA: bool
+		- CITY: bool
+		- COMPANY: bool
+		- CELEBRITY: bool
+		- RESEARCH_ORGANIZATION: bool
+		- NAME: bool
+		- SURNAME: bool
+		- PREV: bool
+		- NEXT: bool
+		- NUMBER: bool
 		"""
 
 		self._model_file = ""
@@ -98,7 +129,6 @@ class MyCRFTagger(TaggerI):
 		self._verbose = verbose
 		self._training_options = training_opt
 		self._pattern = re.compile(r"\d")
-		
 
 		self._lemmatizer = WordNetLemmatizer()
 
@@ -121,7 +151,6 @@ class MyCRFTagger(TaggerI):
 		self._cities = set(open("data/cities15000.txt", encoding="utf-8").readlines())
 		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
 		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
-		self._research_organizations = set(open("data/research_organizations.txt", encoding="utf-8").readlines())
 
 		# Create regex pattern for names, surnames, cities, companies, celebrities, and research organizations
 		companies_pattern = r'\b(?:' + '|'.join(re.escape(company) for company in self._companies) + r')\b'
@@ -168,16 +197,23 @@ class MyCRFTagger(TaggerI):
 			'DEP': True,
 			'HEAD_DISTANCE': True,
 			'HEAD': True
-		} if feature_opt == None else feature_opt
+		} if feature_opt is None else feature_opt
 
 	def set_model_file(self, model_file):
+		"""
+		Set the model file for the tagger.
+
+		Parameters
+		----------
+		model_file : str
+			The path to the model file.
+		"""
 		self._model_file = model_file
 		self._tagger.open(self._model_file)
 
 
 	def __call__(self, tokens, idx) -> Any:
 		return self._get_features(tokens, idx)
-
 
 	def update_feature_getter_params(self, params: dict) -> None:
 		"""
@@ -219,26 +255,99 @@ class MyCRFTagger(TaggerI):
 
 
 	def get_feature_getter_params(self) -> dict:
+		"""
+		Get the feature getter parameters.
+
+		Returns
+		-------
+		dict
+			The feature getter parameters.
+		"""
 		return self._feature_getter_params
 	
 	@cache
-	def get_postag(self, tokens) -> tuple:
+	def get_postag(self, tokens: tuple) -> tuple:
+		"""
+		Get the POS tags of the tokens.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens to get the POS tags.
+
+		Returns
+		-------
+		tuple
+			The POS tags of the tokens.
+		"""
 		return self._pos_tagger.get_postag(tokens)
 	
 	@cache
-	def get_morph(self, tokens) -> tuple:
+	def get_morph(self, tokens: tuple) -> tuple:
+		"""
+		Get the morphological features of the tokens.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens to get the morphological features.
+
+		Returns
+		-------
+		tuple
+			The morphological features of the tokens.
+		"""
 		return self._pos_tagger.get_morph(tokens)
 	
 	@cache
-	def get_dep(self, tokens) -> tuple:
+	def get_dep(self, tokens: tuple) -> tuple:
+		"""
+		Get the dependencies of the tokens.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens to get the dependencies.
+
+		Returns
+		-------
+		tuple
+			The dependencies of the tokens.
+		"""
 		return self._pos_tagger.get_dep(tokens)
 	
 	@cache
-	def get_head(self, tokens) -> tuple:
+	def get_head(self, tokens: tuple) -> tuple:
+		"""
+		Get the head of the tokens.	
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens to get the head.
+
+		Returns
+		-------
+		tuple
+			The head of the tokens.
+		"""
 		return self._pos_tagger.get_head(tokens)
 	
 	@cache
-	def get_head_distance(self, tokens) -> tuple:
+	def get_head_distance(self, tokens: tuple) -> tuple:
+		"""
+		Get the head distance of the tokens.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens to get the head distance.
+
+		Returns
+		-------
+		tuple
+			The head distance of the tokens.
+		"""
 		return self._pos_tagger.get_head_distance(tokens)
 	
 	@cache
@@ -269,7 +378,20 @@ class MyCRFTagger(TaggerI):
 		self._feature_getter_params = feature_config
     
 	@cache
-	def _get_company_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
+	def _get_company_indices(self, tokens: tuple) -> list[tuple[str, tuple[int]]]:
+		"""
+		Get the indices of the words that are companies in the sentence.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens of the sentence.
+
+		Returns
+		-------
+		list
+			The indices of the words that are companies in the sentence.
+		"""
 		sentence = ' '.join(tokens)
 		
 		# Preparamos para recolectar los índices
@@ -287,7 +409,20 @@ class MyCRFTagger(TaggerI):
 		return indices
 	
 	@cache
-	def _get_celebrity_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
+	def _get_celebrity_indices(self, tokens: tuple) -> list[tuple[str, tuple[int]]]:
+		"""
+		Get the indices of the words that are celebrities in the sentence.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens of the sentence.
+
+		Returns
+		-------
+		list
+			The indices of the words that are celebrities in the sentence.
+		"""
 		sentence = ' '.join(tokens)
 		
 		# Preparamos para recolectar los índices
@@ -305,7 +440,20 @@ class MyCRFTagger(TaggerI):
 		return indices
 	
 	@cache
-	def _get_research_organization_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
+	def _get_research_organization_indices(self, tokens: tuple) -> list[tuple[str, tuple[int]]]:
+		"""
+		Get the indices of the words that are research organizations in the sentence.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens of the sentence.
+
+		Returns
+		-------
+		list
+			The indices of the words that are research organizations in the sentence.
+		"""
 		sentence = ' '.join(tokens)
 		
 		# Preparamos para recolectar los índices
@@ -324,6 +472,19 @@ class MyCRFTagger(TaggerI):
 	
 	@cache
 	def _get_city_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
+		"""
+		Get the indices of the words that are cities in the sentence.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens of the sentence.
+
+		Returns
+		-------
+		list
+			The indices of the words that are cities in the sentence.
+		"""
 		sentence = ' '.join(tokens)
 		
 		# Preparamos para recolectar los índices
@@ -342,6 +503,19 @@ class MyCRFTagger(TaggerI):
 	
 	@cache
 	def _get_name_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
+		"""
+		Get the indices of the words that are names in the sentence.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens of the sentence.
+
+		Returns
+		-------
+		list
+			The indices of the words that are names in the sentence.
+		"""
 		sentence = ' '.join(tokens)
 		
 		# Preparamos para recolectar los índices
@@ -360,6 +534,19 @@ class MyCRFTagger(TaggerI):
 	
 	@cache
 	def _get_surname_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
+		"""
+		Get the indices of the words that are surnames in the sentence.
+
+		Parameters
+		----------
+		tokens : tuple
+			The tokens of the sentence.
+		
+		Returns
+		-------
+		list
+			The indices of the words that are surnames in the sentence.
+		"""
 		sentence = ' '.join(tokens)
 		
 		# Preparamos para recolectar los índices
@@ -376,25 +563,23 @@ class MyCRFTagger(TaggerI):
 		
 		return indices
 
-	def _get_features(self, tokens, idx, ):
+	def _get_features(self, tokens, idx):
 		"""
-		Extract basic features about this word including
-			- Current word
-			- is it capitalized?
-			- Does it have punctuation?
-			- Does it have a number?
-			- Suffixes up to length 3
+		Extract features for a given token in a sentence.
 
-		Note that : we might include feature over previous word, next word etc.
+		Parameters
+		----------
+		tokens : iterable
+			The tokens of the sentence.
 
-		:param feature_config: Dictionary specifying which features to include
-		:type feature_config: dict, optional
-		:return: a list which contains the features
-		:rtype: list(str)
-		"""
-		self._iterations_count += 1
-		print(f'Getting features for token {self._iterations_count}/{self._total_iterations}', end='\r')
-		
+		idx : int
+			The index of the token to extract features.
+
+		Returns
+		-------
+		list
+			The features for the token.
+		"""		
 		tokens = tuple(tokens)
 		token = tokens[idx]
 
@@ -745,11 +930,7 @@ class MyCRFTagger(TaggerI):
 		:return: list of tagged sentences.
 		:rtype: list(list(tuple(str,str)))
 		"""
-		self._iterations_count = 0
-		self._total_iterations = 0
-		for sent in sents:
-			self._total_iterations += len(sent)
-	
+
 		if self._model_file == "":
 			raise Exception(
 				" No model file is found !! Please use train or set_model_file function"
@@ -778,10 +959,6 @@ class MyCRFTagger(TaggerI):
 		:params model_file : the model will be saved to this file.
 
 		"""
-		self._iterations_count = 0
-		self._total_iterations = 0
-		for sent in train_data:
-			self._total_iterations += len(sent)
 
 		trainer = pycrfsuite.Trainer(verbose=self._verbose)
 		trainer.set_params(self._training_options)
