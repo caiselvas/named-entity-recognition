@@ -91,7 +91,7 @@ class CompleteNER():
         file : str
             File path to save the model.
         """
-        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt, feature_opt=feature_opt, use_regex=use_regex, custom_postag=custom_postag)
+        self.tagger = MyCRFTagger(verbose=verbose, language=self.language, training_opt=training_opt, feature_opt=feature_opt, use_regex=use_regex, custom_postag=self.postag if custom_postag else False)
         self.tagger.train(self.train_data, file)
 
     def validation(self):
