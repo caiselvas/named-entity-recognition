@@ -113,6 +113,7 @@ class MyCRFTagger(TaggerI):
 		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
 		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
 		self._research_organizations = set(open("data/research_organizations.txt", encoding="utf-8").readlines())
+		self.feature_config = feature_opt
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -165,8 +166,11 @@ class MyCRFTagger(TaggerI):
 	@cache
 	def _in_research_organizations(self, token) -> bool:
 		return token in self._research_organizations
+	
+	def set_feature_config(self, feature_config):
+		self._feature_config = feature_config
 
-	def _get_features(self, tokens, idx, config=None):
+	def _get_features(self, tokens, idx, ):
 		"""
 		Extract basic features about this word including
 			- Current word
@@ -182,32 +186,6 @@ class MyCRFTagger(TaggerI):
 		:return: a list which contains the features
 		:rtype: list(str)
 		"""
-		feature_config = {
-				"capitalization": True,
-				"has_upper": True,
-				"has_num": True,
-				"punctuation": True,
-				"suffix": True,
-				"word": True,
-				"length": True,
-				"prefix": True,
-				"prev_word": True,
-				"next_word": True,
-				"pos_tag": True,
-				"lemma": True,
-				"morph": True,
-				"title": True,
-				"names": True,
-				"surnames": True,
-				"cities": True,
-				"celebrities": True,
-				"companies": True,
-				"research": True,
-				"comilles": True
-			}
-		if config != None:
-			for key in config.keys():
-				feature_config[key] = config[key]
 
 		token = tokens[idx]
 
@@ -217,54 +195,54 @@ class MyCRFTagger(TaggerI):
 			return feature_list
 
 		# Capitalization
-		if feature_config.get("capitalization", True):
+		if self.feature_config.get("capitalization", True):
 			if token[0].isupper():
 				feature_list.append("CAPITALIZATION")
 
-		if feature_config.get("has_upper", True):
+		if self.feature_config.get("has_upper", True):
 			if any(map(str.isupper, token)):
 				feature_list.append("HAS_UPPER")
 		# Number
-		if feature_config.get("has_num", True):
+		if self.feature_config.get("has_num", True):
 			if re.search(self._pattern, token) is not None:
 				feature_list.append("HAS_NUM")
 
 		# Punctuation
-		if feature_config.get("punctuation", True):
+		if self.feature_config.get("punctuation", True):
 			punc_cat = {"Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po"}
 			if all(unicodedata.category(x) in punc_cat for x in token):
 				feature_list.append("PUNCTUATION")
 
 		# Suffix up to length 3
-		if feature_config.get("suffix", True):
+		if self.feature_config.get("suffix", True):
 			for i in range(1, min(len(token), 4)):
 				feature_list.append("SUF_" + token[-i:])
 
 		# Word
-		if feature_config.get("word", True):
+		if self.feature_config.get("word", True):
 			feature_list.append("WORD_" + token)
 
 		# Length of the word
-		if feature_config.get("length", True):
+		if self.feature_config.get("length", True):
 			feature_list.append("LEN_" + str(len(token)))
 
 		# Prefix up to length 3
-		if feature_config.get("prefix", True):
+		if self.feature_config.get("prefix", True):
 			for i in range(1, min(len(token), 4)):
 				feature_list.append("PRE_" + token[:i])
 
 		# Previous word
-		if feature_config.get("prev_word", True):
+		if self.feature_config.get("prev_word", True):
 			if idx > 0:
 				feature_list.append("PREV_" + tokens[idx - 1])
 
 		# Next word
-		if feature_config.get("next_word", True):
+		if self.feature_config.get("next_word", True):
 			if idx < len(tokens) - 1:
 				feature_list.append("NEXT_" + tokens[idx + 1])
 
 		# POS tag the sentence
-		if feature_config.get("pos_tag", True):
+		if self.feature_config.get("pos_tag", True):
 			pos_tags = self.get_postag(tuple(tokens))
 			feature_list.append("POS_" + pos_tags[idx][1])
 			if idx > 0:
@@ -273,12 +251,12 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("POSTPOS_" + pos_tags[idx + 1][1])
 
 		# Lemma
-		if feature_config.get("lemma", True):
+		if self.feature_config.get("lemma", True):
 			lemma = self._lemmatizer.lemmatize(token)
 			feature_list.append("LEMMA_" + lemma)
 
 		# Morphological features
-		if feature_config.get("morph", True):
+		if self.feature_config.get("morph", True):
 			morph = self.get_morph(tuple(tokens))			
 			# Plural or singular
 			if morph[idx][1].get("Number", None):
@@ -321,7 +299,7 @@ class MyCRFTagger(TaggerI):
 					feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])
 
 		# Dependencies
-		if feature_config.get("dependencies", True):
+		if self.feature_config.get("dependencies", True):
 			dep = self.get_dep(tuple(tokens))
 			feature_list.append("DEP_" + dep[idx][1])
 			if idx > 0:
@@ -330,7 +308,7 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("NEXT_DEP_" + dep[idx+1][1])
 
 		# Title
-		if feature_config.get("title", True):
+		if self.feature_config.get("title", True):
 			if token.istitle():
 				feature_list.append("TITLE")
 			if idx > 0:
@@ -342,7 +320,7 @@ class MyCRFTagger(TaggerI):
 		
 		# Gazetteer
 		# Names
-		if feature_config.get("names", True):
+		if self.feature_config.get("names", True):
 			if self._in_names(token):
 				feature_list.append("NAME")
 
@@ -353,7 +331,7 @@ class MyCRFTagger(TaggerI):
 					feature_list.append("NEXT_NAME")
 
 		# Surnames
-		if feature_config.get("surnames", True):
+		if sef.feature_config.get("surnames", True):
 			if self._in_surnames(token):
 				feature_list.append("SURNAME")
 
@@ -364,7 +342,7 @@ class MyCRFTagger(TaggerI):
 					feature_list.append("NEXT_SURNAME")
 
 		# Cities
-		if feature_config.get("cities", True):
+		if self.feature_config.get("cities", True):
 			if self._in_cities(token):
 				feature_list.append("CITY")
 
@@ -375,7 +353,7 @@ class MyCRFTagger(TaggerI):
 					feature_list.append("NEXT_CITY")
 
 		# Celebrities
-		if feature_config.get("celebrities", True):
+		if self.feature_config.get("celebrities", True):
 			if self._in_celebrities(token):
 				feature_list.append("CELEBRITY")
 
@@ -386,7 +364,7 @@ class MyCRFTagger(TaggerI):
 					feature_list.append("NEXT_CELEBRITY")
 
 		# Companies
-		if feature_config.get("companies", True):
+		if self.feature_config.get("companies", True):
 			if self._in_companies(token):
 				feature_list.append("COMPANY")
 
@@ -397,7 +375,7 @@ class MyCRFTagger(TaggerI):
 					feature_list.append("NEXT_COMPANY")
 
 		# Research organizations
-		if feature_config.get("research", True):
+		if self.feature_config.get("research", True):
 			if self._in_research_organizations(token):
 				feature_list.append("RESEARCH_ORGANIZATION")
 
@@ -407,7 +385,7 @@ class MyCRFTagger(TaggerI):
 				if idx < len(tokens) - 1 and self._in_research_organizations(tokens[idx + 1]):
 					feature_list.append("NEXT_RESEARCH_ORGANIZATION")
 
-		if feature_config.get("comilles", True):
+		if self.feature_config.get("comilles", True):
 			if token == '"':
 				feature_list.append("COMILLES")
 		# # Previous tag prediction
