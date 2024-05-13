@@ -54,6 +54,7 @@ class MyCRFTagger(TaggerI):
 		feature_func=None, 
 		verbose=False, 
 		training_opt={},
+    feature_opt={}
 		):
 		"""
 		Initialize the CRFSuite tagger
@@ -120,6 +121,7 @@ class MyCRFTagger(TaggerI):
 		self._cities = set(open("data/cities15000.txt", encoding="utf-8").readlines())
 		self._companies = set(open("data/companies.txt", encoding="utf-8").readlines())
 		self._celebrities = set(open("data/celebrities.txt", encoding="utf-8").readlines())
+		self._research_organizations = set(open("data/research_organizations.txt", encoding="utf-8").readlines())
 
 		# Create regex pattern for names, surnames, cities, companies, celebrities, and research organizations
 		companies_pattern = r'\b(?:' + '|'.join(re.escape(company) for company in self._companies) + r')\b'
@@ -166,7 +168,7 @@ class MyCRFTagger(TaggerI):
 			'DEP': True,
 			'HEAD_DISTANCE': True,
 			'HEAD': True
-		}
+		} if feature_opt == None else feature_opt
 
 	def set_model_file(self, model_file):
 		self._model_file = model_file
@@ -263,6 +265,9 @@ class MyCRFTagger(TaggerI):
 	def _in_research_organizations(self, token) -> bool:
 		return token in self._research_organizations
 	
+	def set_feature_config(self, feature_config):
+		self._feature_getter_params = feature_config
+    
 	@cache
 	def _get_company_indices(self, tokens) -> list[tuple[str, tuple[int]]]:
 		sentence = ' '.join(tokens)
@@ -371,7 +376,7 @@ class MyCRFTagger(TaggerI):
 		
 		return indices
 
-	def _get_features(self, tokens, idx):
+	def _get_features(self, tokens, idx, ):
 		"""
 		Extract basic features about this word including
 			- Current word
@@ -382,6 +387,8 @@ class MyCRFTagger(TaggerI):
 
 		Note that : we might include feature over previous word, next word etc.
 
+		:param feature_config: Dictionary specifying which features to include
+		:type feature_config: dict, optional
 		:return: a list which contains the features
 		:rtype: list(str)
 		"""
@@ -391,37 +398,34 @@ class MyCRFTagger(TaggerI):
 		tokens = tuple(tokens)
 		token = tokens[idx]
 
-		consider_prev = self._feature_getter_params['PREV'] and idx > 0
-		consider_next = self._feature_getter_params['NEXT'] and idx < len(tokens) - 1
+		consider_prev = self._feature_getter_params.get('PREV',True) and idx > 0
+		consider_next = self._feature_getter_params.get('NEXT',True) and idx < len(tokens) - 1
 
 		feature_list = []
 
 		if not token:
 			return feature_list
 
-		# Capitalization
-		if self._feature_getter_params['CAPITALIZATION'] and \
-		token[0].isupper():
-			feature_list.append("CAPITALIZATION")
-		
-		# Uppercase
-		if self._feature_getter_params['HAS_UPPER'] and \
-		any(map(str.isupper, token)):
-			feature_list.append("HAS_UPPER")
+		if self._feature_getter_params.get("CAPITALIZATION", True):
+			if token[0].isupper():
+				feature_list.append("CAPITALIZATION")
 
+		if self._feature_getter_params.get("HAS_UPPER", True):
+			if any(map(str.isupper, token)):
+				feature_list.append("HAS_UPPER")
 		# Number
-		if self._feature_getter_params['HAS_NUM'] and \
-		re.search(self._pattern, token) is not None:
-			feature_list.append("HAS_NUM")
+		if self._feature_getter_params.get("HAS_NUM", True):
+			if re.search(self._pattern, token) is not None:
+				feature_list.append("HAS_NUM")
 
 		# Punctuation
-		if self._feature_getter_params['PUNCTUATION']:
+		if self._feature_getter_params.get("PUNCTUATION", True):
 			punc_cat = {"Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po"}
 			if all(unicodedata.category(x) in punc_cat for x in token):
 				feature_list.append("PUNCTUATION")
 
 		# Suffix up to length 3
-		if self._feature_getter_params['SUF']:
+		if self._feature_getter_params.get('SUF', True):
 			if len(token) > 1:
 				feature_list.append("SUF_" + token[-1:])
 			if len(token) > 2:
@@ -430,15 +434,15 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("SUF_" + token[-3:])
 
 		# Word
-		if self._feature_getter_params['WORD']:
+		if self._feature_getter_params.get('WORD', True):
 			feature_list.append("WORD_" + token)
 
 		# Length of the word
-		if self._feature_getter_params['LEN']:
+		if self._feature_getter_params.get('LEN', True):
 			feature_list.append("LEN_" + str(len(token)))
 
 		# Prefix up to length 3
-		if self._feature_getter_params['PRE']:
+		if self._feature_getter_params.get('PRE',True):
 			if len(token) > 1:
 				feature_list.append("PRE_" + token[:1])
 			if len(token) > 2:
@@ -455,7 +459,7 @@ class MyCRFTagger(TaggerI):
 			feature_list.append("NEXT_" + tokens[idx + 1])
 
 		# POS tag the sentence
-		if self._feature_getter_params['POS']:
+		if self._feature_getter_params.get('POS', True):
 			pos_tags = self.get_postag(tokens)
 			feature_list.append("POS_" + pos_tags[idx][1])
 			if consider_prev:
@@ -464,12 +468,12 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("POSTPOS_" + pos_tags[idx+1][1])
 		
 		# Lemma
-		if self._feature_getter_params['LEMMA']:
+		if self._feature_getter_params.get('LEMMA',True):
 			lemma = self._lemmatizer.lemmatize(token)
 			feature_list.append("LEMMA_" + lemma)
 
 		# Head
-		if self._feature_getter_params['HEAD']:
+		if self._feature_getter_params.get('HEAD',True):
 			head = self.get_head(tokens)
 			feature_list.append("HEAD_" + head[idx][0])
 			if consider_prev:
@@ -478,7 +482,7 @@ class MyCRFTagger(TaggerI):
 				feature_list.append("NEXT_HEAD_" + head[idx+1][0])
 
 		# Head distance
-		if self._feature_getter_params['HEAD_DISTANCE']:
+		if self._feature_getter_params.get('HEAD_DISTANCE',True):
 			distances = self.get_head_distance(tokens)
 			feature_list.append("HEAD_DISTANCE_" + str(distances[idx]))
 			if consider_prev:
@@ -535,7 +539,7 @@ class MyCRFTagger(TaggerI):
 						feature_list.append("NEXT_PRONTYPE_" + morph[idx+1][1].get("PronType")[0])
 
 		# Dependencies
-		if self._feature_getter_params['DEP']:
+		if self._feature_getter_params.get('DEP',True):
 			dep = self.get_dep(tokens)
 			feature_list.append("DEP_" + dep[idx][1])
 			if consider_prev:
@@ -620,7 +624,7 @@ class MyCRFTagger(TaggerI):
 		# New gazetteers
 		
 		# Names
-		if self._feature_getter_params['NAME']:
+		if self._feature_getter_params.get('NAME',True):
 			name_indices = self._get_name_indices(tokens)
 			for name, indices in name_indices:
 				if idx in indices:
@@ -638,7 +642,7 @@ class MyCRFTagger(TaggerI):
 						break
 
 		# Surnames
-		if self._feature_getter_params['SURNAME']:
+		if self._feature_getter_params.get('SURNAME',True):
 			surname_indices = self._get_surname_indices(tokens)
 			for surname, indices in surname_indices:
 				if idx in indices:
@@ -656,7 +660,7 @@ class MyCRFTagger(TaggerI):
 						break
 
 		# Cities
-		if self._feature_getter_params['CITY']:
+		if self._feature_getter_params.get('CITY',True):
 			city_indices = self._get_city_indices(tokens)
 			for city, indices in city_indices:
 				if idx in indices:
@@ -674,7 +678,7 @@ class MyCRFTagger(TaggerI):
 						break
 
 		# Companies
-		if self._feature_getter_params['COMPANY']:
+		if self._feature_getter_params.get('COMPANY',True):
 			company_indices = self._get_company_indices(tokens)
 			for company, indices in company_indices:
 				if idx in indices:
@@ -692,7 +696,7 @@ class MyCRFTagger(TaggerI):
 						break
 
 		# Celebrities
-		if self._feature_getter_params['CELEBRITY']:
+		if self._feature_getter_params.get('CELEBRITY',True):
 			celebrity_indices = self._get_celebrity_indices(tokens)
 			for celebrity, indices in celebrity_indices:
 				if idx in indices:
@@ -710,7 +714,7 @@ class MyCRFTagger(TaggerI):
 						break
 
 		# Research organizations
-		if self._feature_getter_params['RESEARCH_ORGANIZATION']:
+		if self._feature_getter_params.get('RESEARCH_ORGANIZATION',True):
 			research_organization_indices = self._get_research_organization_indices(tokens)
 			for research_organization, indices in research_organization_indices:
 				if idx in indices:
