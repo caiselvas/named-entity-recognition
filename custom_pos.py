@@ -14,3 +14,11 @@ class CustomPOSTagger:
     def get_dep(self, tokens):
         doc = self.nlp(" ".join(tokens))
         return tuple((token.text, token.dep_) for token in doc)
+    
+    def get_head(self, tokens):
+        doc = self.nlp(" ".join(tokens))
+        return tuple((token.text, token.head.text) for token in doc)
+    
+    def get_head_distance(self, tokens):
+        doc = self.nlp(" ".join(tokens))
+        return tuple(token.head.i - token.i for token in doc)
